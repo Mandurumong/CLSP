@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    scroll-behavior: smooth;
+}
+div{
+    padding: 20px;
+    
+    
+}
+
+
+
+a {
+    color: rgb(46, 45, 45);
+}
+
+#logo img{
+height: 150px;
+}
+header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  z-index: 1;
+}
+.header{
+    height: 150px;
+    display: flex;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1.5px solid #535353;
+}
+#top-nav{
+    position: absolute;
+    top: 10px;
+    right: 120px;
+}
+#top-nav button{
+    text-align: center;
+    margin-left: 20px;
+    background-color: #ffffff;
+}
+#top-nav button > a{
+    font-family: 'GangwonEdu_OTFBoldA';
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+}
+
+.pull-right{
+    float: right;
+    margin-bottom: 100px;
+
+}
+.search{
+    width: auto;
+    height: 30px;
+    
+}
+
+h1{
+font-size: 30px;
+margin-top: 20px;
+margin-left: 30px;
+
+}
+
+.form-control{
+    border: 1.5px solid rgb(73, 73, 73);
+    border-radius: 5px;
+
+}
+.form-control option {
+  font-family: 'GangwonEdu_OTFBoldA';
+  color: black;
+  font-size: 15pt;
+  
+}
+
+
+li, ul{
+    list-style: none;
+    color: black;
+}
+a{
+  text-decoration: none;
+}
+#logo{
+  margin-left: 90px;
+}
+.menu {
+    width: 100%;
+    overflow: hidden;
+    margin:auto;
+    text-align: center;
+  }
+  .menu > li {
+    width: 20%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    background-color: #ffffff;
+    text-decoration: none;
+  }
+  .menu a {
+    text-decoration: none;
+    font-family:'GangwonEduPowerExtraBoldA';
+    color: rgb(46, 45, 45);
+  }
+  .submenu > li {
+    line-height: 35px;
+    background-color: #ffffff;
+    font-size: 15pt;
+  }
+  .submenu {
+    height: 0; 
+    overflow: hidden;
+  }
+  .menu > li{
+    font-size: 25pt;
+  }
+  .menu > li:hover {
+    transition-duration: 0.5s;
+  }
+  .menu a:hover{
+    color: #535353;
+  }
+  .menu > li:hover .submenu {
+    height: 100px;
+    transition-duration: 1s;
+  }
+
+
+  .record_menu{
+    border-bottom: 1px solid #535353;
+    border-top:1px solid #535353;
+    margin: auto;
+    overflow: hidden;
+  }
+  .record_menu >li{
+    width: 25%;
+    float: left;
+    line-height: 40px;
+    background-color: #ffffff;
+    font-family: 'GangwonEdu_OTFBoldA';
+    color: black;
+    font-size: 15pt;
+  }
+
+  .record_menu a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+  }
+
+  #record_menu > li{
+    color: black;
+  }
+
+  /*------------------------*/
+
+  input {
+    border:1px solid rgb(159, 155, 155);
+    border-radius: 3px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 2px;
+  }
+
+  input[name=title] {
+    width: 95%;
+
+  }
+
+  input[name=writer] {
+    width: 30%;
+
+  }
+
+
+
+  .table .trtite {
+    border-top: 2px solid #3a3a4a;
+    
+
+  }
+
+  textarea {
+    width: 95%;
+    border:1px solid rgb(159, 155, 155);
+    border-radius: 3px;
+    font-size: 20px;
+    padding-left: 2px;
+    
+  }
+
+  .table {
+    width: 90%;
+    border-collapse : collapse
+    
+  }
+
+
+.table th, td {
+    
+    height: 49px;
+    padding: 13px 16px;
+    border-bottom: 1px solid #c9cbcc;
+    border-top: 1px solid #9a9c9e;
+    text-align: left;
+    color: #3a3a4a;
+    font-size: 18px;
+
+}
+
+input[type=submit]{
+    background-color: #ffffff;
+    width: 60px;
+    cursor:pointer;
+   
+}
+
+.sBtn {
+    text-align: center;
+    
+}
+
+
+
+
+  /*-------------------------*/
+
+/*----------------------------------*/
+

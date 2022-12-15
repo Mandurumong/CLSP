@@ -1,0 +1,174 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>성인병 위험도 측정과 예방법 제안 </title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="body-set">
+    <div id="container">
+        <header>
+            <div class="header">
+                <div id="logo">
+                    <a href="index.jsp" class="logo">
+                    <img src="#" alt="logo">
+                    </a>
+                </div>
+
+                <div id="top-nav">
+                    <button name="login"><a href="login.jsp">로그인</a></button>
+                    <button name="register"><a href="register.jsp">회원가입</a></button>
+                </div>
+
+            </div>
+
+            <nav>
+                <ul class="menu">
+                    <li>
+                      <a href="index.jsp">홈</a></li>
+                    <li>
+                      <a href="analytics.jsp">현황 분석</a></li>
+                    <li>
+                      <a href="selfTestM.jsp">자가 진단</a>
+                    </li>
+                    <li><a href="#">예방법</a>
+                    <li><a href="#">커뮤니티</a>
+                      <ul class="submenu">
+                        <li><a href="community_notice.jsp">공지사항</a></li>
+                        <li><a href="community_freeBoard.jsp">문의게시판</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+            </nav>
+       </header>
+
+        <div id="main">
+            <div class="slidebox">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <a href="#service_info"><img src="img/캐러셀1.png"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a href="analytics.jsp"><img src="img/현황분석캐러셀.png"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a href="#"><img src="img/예방법캐러셀.png"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a href="selfTestM.jsp"><img src="img/자가진단캐러셀.png"></a>
+                    </li>   
+                </ul>
+
+                <div class="slide-control">
+                    <div class="control01">
+                        <label for="slide04" class="prev"></label>
+                        <label for="slide02" class="next"></label>
+                    </div>
+                    <div class="control02">
+                        <label for="slide01" class="prev"></label>
+                        <label for="slide03" class="next"></label>
+                    </div>
+                    <div class="control03">
+                        <label for="slide02" class="prev"></label>
+                        <label for="slide04" class="next"></label>
+                    </div>
+                    <div class="control04">
+                        <label for="slide03" class="prev"></label>
+                        <label for="slide01" class="next"></label>
+                    </div>
+                </div>
+            </div>
+            
+
+        <div id="service_info">
+            <section class="m-info">
+                <h3>01</h3>
+                <h2>홈페이지의 소개</h2>
+                <br>
+                <img src="img/introduce.jpg">
+                <p>
+                    <br>
+                    <br>
+                   이 홈페이지는 빅데이터 분석을 통한<br>
+                    성인병 위험도 측정과 예방법을 제안해 주는 홈페이지 입니다.<br><br>
+                    데이터에 올라와 있는 성인병 유병률을<br>
+                    나이대와 성별 등으로 분석하고<br><br>
+                    분석된 데이터를 통해 사용자의 데이터와 비교하여 <br> 
+                    질병 발생 예측 위험도와 질병에 걸릴 확률,<br>
+                     사용자에게 맞는 예방법을 제시해 줍니다.
+                </p>
+            </section>
+        </div>
+
+        <div id="service_function">
+            <section class="m-function">
+                <h3>02</h3>
+                <h2>페이지 이용 안내</h2>
+                    <div class="flex-container">
+                        
+                        <div class="flex-item">
+                            <div class="item-icon-wrapper">
+                                <a href="analytics.jsp"><img src="img/analytics.png"></a>
+                            </div>
+                            <div class="subtitle">현황 분석</div>
+                            <div class="body">
+                                빅데이터를 분석하여
+                                <br>
+                                성별, 나이대 별로 현황을<br>
+                                바로 알 수 있어요
+                            </div>
+                        </div>
+
+                        <div class="flex-item">
+                            <div class="item-icon-wrapper">
+                                <a href="selfTestM.jsp"><img src="img/blog.png"></a>
+                            </div>
+                            <div class="subtitle">자가 진단</div>
+                            <div class="body">
+                                입력한 데이터를 분석하여<br> 현황 데이터와 비교하여<br>
+                                위험도와 발병률, 예방법을 <br> 제시 받을 수 있어요
+                            </div>
+                        </div>
+
+                        <div class="flex-item">
+                            <div class="item-icon-wrapper">
+                                <a href="#"><img src="img/glove.png"></a>
+                            </div>
+                            <div class="subtitle">예방법</div>
+                            <div class="body">
+                                자가 진단을 하지 않아도<br> 예방법을 확인 할 수 있어요<br>
+                                크게 식습관, 생활습관,<br> 운동, 기타로 나누어져 있어요
+                            </div>
+                        </div>
+                    </div>
+            </section>            
+        </div>
+        <div id="degreeOfRisk">
+            <h3>03</h3>
+            <h2>위험도 설명</h2>
+            <div id="graf">
+            <img src="img/위험도그래프.png">
+            </div>
+            <div id="text">
+                <p>위험도는 질병발생 예측건수를 위험도 모델에 적용하여 양호, 관심, 주의, 경고 , 위험 5단계로 나뉘어 집니다</p>
+            </div>
+
+        </div>
+        <div class="Tbtns">       
+            <div class="moveTopBtn"><button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/up-arrow.png" alt="맨 위로"></button></div>
+          </div>      
+    </div>
+        
+    </div>
+    <script src="script/top.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------------�룿�듃  & 湲곕낯�뀑�똿 ----------------------------*/
+html{
+    scroll-behavior: smooth; /*踰꾪듉�닃���쓣�븣 �솗 �씠�룞�븯吏��븡怨� 泥쒖쿇�엳 �씠�룞*/
+}
+body{
+  height: 100%;
+}
+h3{
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+/* -----------------------------�룿�듃  & 湲곕낯�뀑�똿 ---------------------------- */
+#logo img{
+    height: 150px;
+} /* 濡쒓퀬�겕湲�*/
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 260px;
+    z-index: 1;
+      
+}
+.header{
+    height: 150px;
+    display: flex;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1.5px solid #535353;
+        
+}
+#top-nav{
+    position: absolute;
+    top: 10px;
+    right: 120px;
+}
+#top-nav button{
+    text-align: center;
+    margin-left: 20px;
+    background-color: #ffffff;
+}
+#top-nav button > a{
+    font-family: 'GangwonEdu_OTFBoldA';
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+}
+li, ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#logo{
+ margin-left: 90px;
+      
+}
+/*-----------------------------------------------------------*/
+.menu {
+    width: 100%;
+    overflow: hidden;
+    margin:auto;
+    text-align: center;
+}
+.menu > li {
+    width: 20%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+.menu a {
+    text-decoration: none;
+    font-family:'GangwonEduPowerExtraBoldA';
+    color: rgb(46, 45, 45);
+}
+.submenu > li {
+    line-height: 35px;
+    background-color: #ffffff;
+    font-size: 15pt;
+    color: #535353;
+}
+.submenu {
+    height: 0; 
+    overflow: hidden;
+}
+.menu > li{
+    font-size: 20pt;
+}
+.menu > li:hover {
+    transition-duration: 0.5s;
+}
+.menu a:hover{
+    color: #535353;
+}
+.menu > li:hover .submenu {
+    height: 85px;
+    transition-duration: 1s;
+}
+/**/
+
+/**/
+#banner{
+    text-align: center;
+    border: 1px solid ;
+    height: 400px;
+    margin-left: 120px;
+    margin-right: 120px;
+    background-image: url("/img/MyApril2.jpg");
+    position: relative;
+    line-height: 50px;
+}
+#banner h2{
+    font-family: 'SDSamliphopangche_Basic';
+    font-size: 25pt;
+    position: relative;
+    margin-top: 190px;
+    color: #000000;
+}
+/**/
+/**/
+.tabs{
+    position: relative;
+    display: inline-block;
+    margin-left: 10%;
+    padding:30px;
+    box-sizing:border-box;
+    /* width:1600px; */
+    border-radius: 10px;
+    background:#fff;
+}
+input[type="radio"] {
+    display:none;
+    position: relative;
+}
+input[type="radio"] + label {
+  text-align: center;
+  display:inline-block;
+  padding:10px 20px;
+  background:#4f4f4f;
+  color:#fff;
+  width: 140px;
+  border-radius: 10px;
+  font-size: 16px; 
+  cursor:pointer;
+  font-family: 'SDSamliphopangche_Basic';
+ }
+
+input[type = "radio"]:checked + label {
+  background:#fff;
+  color:#9a7dab;
+  border: 1px solid #9a7dab;
+}
+.tab-content{
+    position: relative;
+    display:none;
+    margin-top:10px;
+    padding:10px;
+    font-size:30px;
+    box-sizing:border-box;
+    border-radius:10px;
+    text-align:center;
+    background: #e9e9e9;
+    color:#666;
+}
+.tab-content h2{
+    margin-top: 40px;
+    font-family:  'SDSamliphopangche_Basic';
+    color: #000000;
+}
+input[id = "tab1"]:checked ~ #tab1 {display:block;}
+input[id = "tab2"]:checked ~ #tab2 {display:block;}
+input[id = "tab3"]:checked ~ #tab3 {display:block;}
+input[id = "tab4"]:checked ~ #tab4 {display:block;}
+input[id = "tab5"]:checked ~ #tab5 {display:block;}
+input[id = "tab6"]:checked ~ #tab6 {display:block;}
+input[id = "tab7"]:checked ~ #tab7 {display:block;}
+input[id = "tab8"]:checked ~ #tab8 {display:block;}
+/**/ 
+.tab-content img{
+	margin-top:40px;
+	height:1200px
+	
+}
+
+/*吏꾨떒�븯�윭媛�湲� 踰꾪듉*/ 
+.Rbtns{
+ display: flex;
+ position: fixed;
+ left: 4rem;
+ bottom: 200px;
+}
+.Rbtns .rinkToTest{
+    padding: .6rem 1.5rem;
+    background-color: rgb(174, 174, 174);
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    transition: .2s;
+    color: rgb(255, 255, 255);
+    margin-right: .4rem;
+    width: 100px;
+    height: 120px;
+    border: 1px solid;
+    box-shadow: 2px 4px 5px rgb(0, 0, 0, 0.5);
+  }
+  .Rbtns .rinkToTest > a{
+    margin-top: 5px;
+    text-align: center;
+  }
+  .Rbtns .rinkToTest > a > img{
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .Rbtns .rinkToTest > a > span{
+    text-align: center;
+    margin-top: 5px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    float: left;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 24px;
+  }
+  .Rbtns :active{
+    position: relative;
+    top: 2px;
+}
+/*top踰꾪듉*/
+.Tbtns {
+    display: flex;
+    position: fixed;
+    right: .4rem;
+    bottom: .4rem;
+  }
+  #myBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 9999;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+  #myBtn > img {
+    width: 50px;
+    height: 50px;
+  }
