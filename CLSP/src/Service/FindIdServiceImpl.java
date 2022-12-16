@@ -12,8 +12,6 @@ public class FindIdServiceImpl implements FindIdService{
 	public FindIdServiceImpl() {
 		memberDao = MemberDao.getInstance();
 	}
-
-	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		MemberDto findId = (MemberDto)request.getAttribute("findId");

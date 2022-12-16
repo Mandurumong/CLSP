@@ -14,7 +14,6 @@ public class RegisterServiceImpl implements RegisterService{
 		memberDao = MemberDao.getInstance();
 	}
 	
-	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		MemberDto insMember = (MemberDto)request.getAttribute("insMember");
 		memberDao.insertMember(insMember);

@@ -13,7 +13,6 @@ public class FindPwServiceImpl implements FindPwService{
 		memberDao = MemberDao.getInstance();
 	}
 
-	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		MemberDto findPw = (MemberDto)request.getAttribute("findPw");
