@@ -28,9 +28,9 @@
     font-weight: normal;
     font-style: normal;
 }
-/*-----------------------------�룿�듃  & 湲곕낯�뀑�똿 ----------------------------*/
+/*-----------------------------폰트  & 기본셋팅 ----------------------------*/
 html{
-    scroll-behavior: smooth; /*踰꾪듉�닃���쓣�븣 �솗 �씠�룞�븯吏��븡怨� 泥쒖쿇�엳 �씠�룞*/
+    scroll-behavior: smooth; /*버튼눌렀을때 확 이동하지않고 천천히 이동*/
 }
 body{
   height: 100%;
@@ -42,10 +42,10 @@ h3{
   margin-top: 10px;
   text-align: center;
 }
-/* -----------------------------�룿�듃  & 湲곕낯�뀑�똿 ---------------------------- */
+/* -----------------------------폰트  & 기본셋팅 ---------------------------- */
 #logo img{
     height: 150px;
-} /* 濡쒓퀬�겕湲�*/
+} /* 로고크기*/
 header{
     position: sticky;
     top: 0;
@@ -190,6 +190,7 @@ input[type = "radio"]:checked + label {
     display:none;
     margin-top:10px;
     padding:10px;
+    /* height:800px; */
     font-size:30px;
     box-sizing:border-box;
     border-radius:10px;
@@ -202,6 +203,7 @@ input[type = "radio"]:checked + label {
     font-family:  'SDSamliphopangche_Basic';
     color: #000000;
 }
+
 input[id = "tab1"]:checked ~ #tab1 {display:block;}
 input[id = "tab2"]:checked ~ #tab2 {display:block;}
 input[id = "tab3"]:checked ~ #tab3 {display:block;}
@@ -210,14 +212,13 @@ input[id = "tab5"]:checked ~ #tab5 {display:block;}
 input[id = "tab6"]:checked ~ #tab6 {display:block;}
 input[id = "tab7"]:checked ~ #tab7 {display:block;}
 input[id = "tab8"]:checked ~ #tab8 {display:block;}
-/**/ 
+
 .tab-content img{
-	margin-top:40px;
-	height:1200px
-	
+    margin-top: 40px;
+    width: 1200px;
 }
 
-/*吏꾨떒�븯�윭媛�湲� 踰꾪듉*/ 
+/*진단하러가기 버튼*/ 
 .Rbtns{
  display: flex;
  position: fixed;
@@ -261,7 +262,8 @@ input[id = "tab8"]:checked ~ #tab8 {display:block;}
     position: relative;
     top: 2px;
 }
-/*top踰꾪듉*/
+
+/*top버튼*/
 .Tbtns {
     display: flex;
     position: fixed;
