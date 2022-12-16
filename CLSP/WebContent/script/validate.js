@@ -16,7 +16,7 @@ function fn_validate(){
 		alert("비밀번호를 입력해주세요.")
 	}
 	else if(user_pw1 != user_pw2){
-		alert("비밀번호 확인을 다시 입력 해주세요.")
+		alert("비밀번호가 일치하지 않습니다.")
 	
 	}
 	else if(user_id.length < 4 || user_id.length > 16){

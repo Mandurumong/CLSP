@@ -6,15 +6,13 @@ public class MemberDto {
 	private String user_id;
 	private String user_pw1;
 	private String user_email;
-//	private Timestamp reg_date;
 	
 	public MemberDto() {}
 	
-	public MemberDto(String id, String pw, String email /*, Timestamp date*/) {
+	public MemberDto(String id, String pw, String email) {
 		this.user_id = id;
 		this.user_pw1 = pw;
 		this.user_email = email;
-		//this.reg_date = date;
 	}
 
 	public String getUser_id() {
@@ -41,11 +39,4 @@ public class MemberDto {
 		this.user_email = user_email;
 	}
 
-//	public Timestamp getReg_date() {
-//		return reg_date;
-//	}
-//
-//	public void setReg_date(Timestamp reg_date) {
-//		this.reg_date = reg_date;
-//	}
 }

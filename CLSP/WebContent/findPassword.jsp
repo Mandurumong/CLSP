@@ -22,11 +22,11 @@
         <ul>
             <li>
                 <label for="user_email">이메일</label>
-                <input type="email" id="user_email" required autofocus>        
+                <input type="email" id="user_email" name="user_email" required autofocus>        
             </li>
             <li>
                 <label for="user_id">아이디</label>
-                <input type="text" id="user_id" required>
+                <input type="text" id="user_id" name="user_id" required>
             </li>
         </ul>
         </div>

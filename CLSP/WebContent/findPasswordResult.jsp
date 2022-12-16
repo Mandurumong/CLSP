@@ -2,11 +2,11 @@
     pageEncoding="utf-8" import="Model.*"%>
     <% request.setCharacterEncoding("utf-8"); %>
     <jsp:useBean id="dao" class="Model.MemberDao"/>
-    <jsp:useBean id="member" class="Model.MemberDto"/>
-    <jsp:setProperty property="*" name="member"/>
+    <jsp:useBean id="dto" class="Model.MemberDto"/>
+    <jsp:setProperty property="*" name="dto"/>
     
 <%
-  	String user_pw = dao.findPw(member);
+  	String user_pw = dao.findPw(dto);
 %>
 <!DOCTYPE html>
 <html lang="en">

@@ -99,6 +99,13 @@ public class MemberController extends HttpServlet {
 			requestDispatcher.forward(request, response);
 			
 		}
+		//비밀번호 변경
+		else if(command.equals("/modifyPassword.do")) {
+			System.out.println("비밀번호 재설정 실행");
+			
+			HttpSession session = request.getSession();
+			
+		}
 		//로그인
 		else if(command.equals("/login.do")) {
 			System.out.println("login 실행");
