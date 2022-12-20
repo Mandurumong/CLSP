@@ -38,7 +38,7 @@
         <div id="l-link">
             <p>
                 <a href="login.jsp">로그인</a>
-                <a href="findPassword.jsp">비밀번호 찾기</a>
+                <a href="findAccount.jsp">아이디 찾기</a>
             </p>
         </div>
         </fieldset>
