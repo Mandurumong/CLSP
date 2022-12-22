@@ -123,6 +123,7 @@
                  <h4>03</h4>
                  <h3>당뇨병 유병률 현황</h3>
                  <p>r 데이터 가져오기</p>
+                 
                  </article>
                  
                  <article class="cause">
@@ -135,7 +136,7 @@
                   <h2>당뇨병 유병자 10대 현황 분석</h2>
                   <article class="increase">
                   	<h4>01</h4>
-                  	<h3>당뇨병 유병률 현황</h3>
+                  	<h3>당뇨병 유병률 통계</h3>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -146,7 +147,7 @@
                   <h2>당뇨병 유병자 20대 현황 분석</h2>
                   <article class="increase">
                   	<h4>01</h4>
-                  	<h3>당뇨병 유병률 현황</h3>
+                  	<h3>당뇨병 유병률 통계</h3>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -157,7 +158,7 @@
                   <h2>당뇨병 유병자 30대 현황 분석</h2>
                   <article class="increase">
                   	<h4>01</h4>
-                  	<h3>당뇨병 유병률 현황</h3>
+                  	<h3>당뇨병 유병률 통계</h3>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -168,7 +169,7 @@
                    <h2>당뇨병 유병자 40대 현황 분석</h2>
                   <article class="increase">
                   	<h4>01</h4>
-                  	<h3>당뇨병 유병률 현황</h3>
+                  	<h3>당뇨병 유병률 통계</h3>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -179,7 +180,7 @@
                   <h2>당뇨병 유병자 50대 현황 분석</h2>
                   <article class="increase">
                   	<h4>01</h4>
-                  	<h3>당뇨병 유병률 현황</h3>
+                  	<h3>당뇨병 유병률 통계</h3>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -190,7 +191,7 @@
                   <h2>당뇨병 유병자 60대 현황 분석</h2>
                   <article class="increase">
                   	<h4>01</h4>
-                  	<h3>당뇨병 유병률 현황</h3>
+                  	<h3>당뇨병 유병률 통계</h3>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
