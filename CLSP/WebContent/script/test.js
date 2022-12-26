@@ -948,12 +948,18 @@ var test = new Vue({
             $('#q21').show();
     	},
     	next21: function(){
-    		alert("테스트");
-    		
-    		var form = document.form8;
-    		form.method="post";
-    		form.action="";
-    		form.submit();
+    		alert('test');
     	}
     }
 });
+
+function fn_test(){
+	var form = document.form1;
+	
+	form.method="post";
+	form.action="test.do";
+	form.submit();
+	
+}
+
+

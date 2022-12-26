@@ -47,7 +47,7 @@
        </header>
        
        <div id="test">
-       
+        <form name="form1" action="#" method="post" id="form1">
        	<div class="title-wrap">
           <h2 class="title">자가 진단 테스트</h2>
       	</div>
@@ -58,7 +58,6 @@
           	</div>
           	<div class="answer-wrap">
           		<div class="answer">
-          			<form name="form1" action="test1.jsp" method="post" id="form1">
           				10대<input type="radio" name="age" id="age_10" value="a10" required>
           				20대<input type="radio" name="age" id="age_20" value="a20" required>
           				30대<input type="radio" name="age" id="age_30" value="a30" required>
@@ -66,9 +65,11 @@
           				50대<input type="radio" name="age" id="age_50" value="a50" required>
           				60대<input type="radio" name="age" id="age_60" value="a60" required>
           				70대 이상<input type="radio" name="age" id="age_70" value="a70" required>         
-          			</form>
           		</div>
 			</div>
+			<div class="test-image">
+        		<img src="#">
+        	</div>
 			<div class="page">
 				<p>1/21</p>
 			</div>
@@ -82,16 +83,16 @@
         
         <div id="q2">
         	<div class="question-wrap">
-        		<h2>Q1. 아침을 먹나요?</h2>
+        		<h2>Q1. 아침을 먹나요?<br>(일주일에 4번 이상)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form2" action="#" method="post" id="form2">
-        				매일 먹는다<input type="radio" name="breakfast" id="bfevery" value="everyday" required>
-        				일주일에 3번 이상 <input type="radio" name="breakfast" id="bfsometime" value="sometime" required>
-        				일주일에 2번 이하 <input type="radio" name="breakfast" id="bfno" value="nope" required>
-        			</form>
+        				네<input type="radio" name="meal-breakfast" id="mbfyes" value="mbfyes" required>
+        				아니요<input type="radio" name="meal-breakfast" id="mbfno" value="mbfno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>2/21</p>
@@ -106,15 +107,16 @@
         
         <div id="q3">
         	<div class="question-wrap">
-        		<h2>Q2. 저녁을 8시 이후에 먹나요</h2>
+        		<h2>Q2. 8시 이후에 음식을 먹나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form3" action="#" method="post" id="form3">
-        				네<input type="radio" name="dinner" id="dinneraf8" value="after8" required>
-        				아니요<input type="radio" name="dinner" id="dinnerbef8" value="before8" required>
-        			</form>
+        				네<input type="radio" name="meal-8" id="maf8" value="maf8" required>
+        				아니요<input type="radio" name="meal-8" id="mbef8" value="mbef8" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>3/21</p>
@@ -129,15 +131,16 @@
         
         <div id="q4">
         <div class="question-wrap">
-        		<h2>Q3. 야식을 즐겨먹는 편인가요?(일주일에 3번 이상)</h2>
+        		<h2>Q3. 짜고 기름진 음식을 주로 먹나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form4" action="#" method="post" id="form4">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="meal-oily" id="moyes" value="moyes" required>
+        				아니요<input type="radio" name="meal-oily" id="mono" value="mono" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>4/21</p>
@@ -152,15 +155,16 @@
         
         <div id="q5">
         <div class="question-wrap">
-        		<h2>Q4. 5번째 질문</h2>
+        		<h2>Q4. 식사를 규칙적으로 하는 편인가요?<br>(매 비슷한 시간에 식사를 한다)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form5" action="#" method="post" id="form5">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="meal-regular" id="mryes" value="mryes" required>
+        				아니요<input type="radio" name="meal-regular" id="mrno" value="mrno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>5/21</p>
@@ -175,15 +179,16 @@
         
         <div id="q6">
         <div class="question-wrap">
-        		<h2>Q5. 6번째 질문</h2>
+        		<h2>Q5. 식사 시간이 짧은 편인가요?<br>(10분 이내)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form6" action="#" method="post" id="form6">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="meal-speed" id="mfyes" value="mfyes" required>
+        				아니요<input type="radio" name="meal-speed" id="mfno" value="mfno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>6/21</p>
@@ -198,15 +203,16 @@
         
         <div id="q7">
         <div class="question-wrap">
-        		<h2>Q6. 7번째 질문</h2>
+        		<h2>Q6. 식사 후 디저트를 드시나요?<br>(단 음료, 과자 등)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form7" action="#" method="post" id="form7">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="meal-snack" id="msyes" value="msyes" required>
+        				아니요<input type="radio" name="meal-snack" id="msno" value="msno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>7/21</p>
@@ -221,15 +227,16 @@
         
         <div id="q8">
         <div class="question-wrap">
-        		<h2>Q7. 8번째 질문</h2>
+        		<h2>Q7. 술을 자주 마시나요?<br>(일주일에 3회 이상)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="meal-alcohol" id="mayes" value="mayes" required>
+        				아니요<input type="radio" name="meal-alcohol" id="mano" value="mano" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>8/21</p>
@@ -244,15 +251,16 @@
         
         <div id="q9">
         <div class="question-wrap">
-        		<h2>Q8. 9번째 질문</h2>
+        		<h2>Q8. 배달 음식을 자주 먹나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="meal-deli" id="mdyes" value="mdyes" required>
+        				아니요<input type="radio" name="meal-deli" id="mdno" value="mdno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>9/21</p>
@@ -267,15 +275,16 @@
         
         <div id="q10">
         <div class="question-wrap">
-        		<h2>Q9. 10번째 질문</h2>
+        		<h2>Q9. 새벽 1시 이후에 주무시나요?<br>(일주일에 3회 이상)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="life-after1" id="layes" value="layes" required>
+        				아니요<input type="radio" name="life-after1" id="lano" value="lano" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>10/21</p>
@@ -290,15 +299,16 @@
         
         <div id="q11">
         <div class="question-wrap">
-        		<h2>Q10. 11번째 질문</h2>
+        		<h2>Q10. 잠을 6시간 이하로 주무시나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="life-sleept" id="lsyes" value="lsyes" required>
+        				아니요<input type="radio" name="life-sleept" id="lsno" value="lsno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>11/21</p>
@@ -313,15 +323,16 @@
         
         <div id="q12">
         <div class="question-wrap">
-        		<h2>Q11. 12번째 질문</h2>
+        		<h2>Q11. 밤에 불을 켜고 주무시나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="life-night" id="lnyes" value="lnyes" required>
+        				아니요<input type="radio" name="life-night" id="lnno" value="lnno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>12/21</p>
@@ -336,15 +347,16 @@
         
         <div id="q13">
         <div class="question-wrap">
-        		<h2>Q12. 13번째 질문</h2>
+        		<h2>Q12. 하루에 3회 이상으로 양치를 하시나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="life-brush" id="lbyes" value="lbyes" required>
+        				아니요<input type="radio" name="life-brush" id="lbno" value="lbno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>13/21</p>
@@ -358,15 +370,16 @@
         </div>
         <div id="q14">
         <div class="question-wrap">
-        		<h2>Q13. 14번째 질문</h2>
+        		<h2>Q13. 담배를 피우시나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="life-smoke" id="lskyes" value="lskyes" required>
+        				아니요<input type="radio" name="life-smoke" id="lskno" value="lskno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>14/21</p>
@@ -380,15 +393,16 @@
         </div>
         <div id="q15">
         <div class="question-wrap">
-        		<h2>Q14. 15번째 질문</h2>
+        		<h2>Q14. 규칙적으로 운동을 하시나요?<br>(일주일 5회 이상)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="exercise-regular" id="exryes" value="exryes" required>
+        				아니요<input type="radio" name="exercise-regular" id="exrno" value="exrno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>15/21</p>
@@ -403,15 +417,16 @@
         
         <div id="q16">
         <div class="question-wrap">
-        		<h2>Q15. 16번째 질문</h2>
+        		<h2>Q15. 하루에 30분 이상 운동을 하나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="exercise-30" id="ex30yes" value="ex30yes" required>
+        				아니요<input type="radio" name="exercise-30" id="ex30no" value="ex30no" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>16/21</p>
@@ -425,15 +440,16 @@
         </div>
         <div id="q17">
         <div class="question-wrap">
-        		<h2>Q16. 17번째 질문</h2>
+        		<h2>Q16. 오래 앉아 있을 때 스트레칭을 하시나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="exercise-st" id="exsyes" value="exsyes" required>
+        				아니요<input type="radio" name="exercise-st" id="exsno" value="exsno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>17/21</p>
@@ -447,15 +463,16 @@
         </div>
         <div id="q18">
         <div class="question-wrap">
-        		<h2>Q17. 18번째 질문</h2>
+        		<h2>Q17. 가족중에 당뇨병을 가진 사람이 있나요?<br>(2형 당뇨)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="etc-blood" id="ebyes" value="ebyes" required>
+        				아니요<input type="radio" name="etc-blood" id="ebno" value="ebno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>18/21</p>
@@ -469,15 +486,16 @@
         </div>
         <div id="q19">
         <div class="question-wrap">
-        		<h2>Q18. 19번째 질문</h2>
+        		<h2>Q18. 스트레스 받는 일이 많으신가요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="etc-stress" id="esyes" value="esyes" required>
+        				아니요<input type="radio" name="etc-stress" id="esno" value="esno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>19/21</p>
@@ -489,17 +507,19 @@
         		</div>
         	</div>
         </div>
+        
         <div id="q20">
         <div class="question-wrap">
-        		<h2>Q19. 20번째 질문</h2>
+        		<h2>Q19. 인슐린 저항성이 있으신가요?<br>(다낭성 증후군, 흑생가지세포종 등)</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="etc-insulin" id="eiyes" value="eiyes" required>
+        				아니요<input type="radio" name="etc-insulin" id="eino" value="eino" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>20/21</p>
@@ -513,15 +533,16 @@
         </div>
         <div id="q21">
         <div class="question-wrap">
-        		<h2>Q20. 21번째 질문</h2>
+        		<h2>Q20. 비만 이신가요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        			<form name="form8" action="#" method="post" id="form8">
-        				네<input type="radio" name="nightmeal" id="nmyes" value="nmyes" required>
-        				아니요<input type="radio" name="nightmeal" id="nmno" value="nmno" required>
-        			</form>
+        				네<input type="radio" name="etc-fat" id="efyes" value="efyes" required>
+        				아니요<input type="radio" name="etc-fat" id="efno" value="efno" required>
         		</div>
+        	</div>
+        	<div class="test-image">
+        		<img src="#">
         	</div>
         	<div class="page">
 				<p>21/21</p>
@@ -529,10 +550,11 @@
         	<div class="bottom">
         		<div class="controller-wrap">
         			<button class="prev-btn" v-on:click="prev21">이전</button>
-        			<button class="next-btn" v-on:click="next21">결과보기</button>
+        			<button class="next-btn" Onclick="fn_test()">결과보기</button>
         		</div>
         	</div>
         </div>
+        </form>
        </div><%--#test --%>
       </div> 
        <script src="script/test.js"></script>    

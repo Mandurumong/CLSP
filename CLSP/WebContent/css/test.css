@@ -217,6 +217,10 @@ a{
     margin-right: 10px;
 }
 /**/
+.test-image{
+	text-align: center;
+	padding-bottom: 10px
+}
 .page{
 	text-align: center;
 }

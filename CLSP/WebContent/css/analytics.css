@@ -191,7 +191,6 @@ input[type = "radio"]:checked + label {
     margin-top:10px;
     padding:10px;
     /* height:800px; */
-    font-size:30px;
     box-sizing:border-box;
     border-radius:10px;
     text-align:center;
@@ -199,11 +198,11 @@ input[type = "radio"]:checked + label {
     color:#666;
 }
 .tab-content h2{
+    font-size: 40px;
     margin-top: 40px;
     font-family:  'SDSamliphopangche_Basic';
     color: #000000;
 }
-
 input[id = "tab1"]:checked ~ #tab1 {display:block;}
 input[id = "tab2"]:checked ~ #tab2 {display:block;}
 input[id = "tab3"]:checked ~ #tab3 {display:block;}
@@ -213,11 +212,56 @@ input[id = "tab6"]:checked ~ #tab6 {display:block;}
 input[id = "tab7"]:checked ~ #tab7 {display:block;}
 input[id = "tab8"]:checked ~ #tab8 {display:block;}
 
+/**/ 
+.tab-content h3{
+    padding-bottom: 100px;
+}
 .tab-content img{
     margin-top: 40px;
     width: 1200px;
 }
+.tab-content h2{
+    padding-bottom: 20px;
+}
+.tab-content h4{
+    padding-top: 20px; 
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+.tab-content p{
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+#index_LSD {
+    padding-bottom: 20px;
+}
+#index_LSD button{
+    border: 1px solid ;
+    border-radius: 10%;
+    width: 250px;
+    background-color: #fff;
+}
+#index_LSD button a{
+    font-style: none;
+    color: black;
+    font-size: 20px;
+}
+/**/
+#LD1{
+	border-bottom: 1px dashed;
+}
+#LD1, #LD2{
+    position: relative;
+    padding-top: 20px;
+    overflow: hidden;
+}
+#LD1 h5, #LD2 h5{
+    padding-bottom: 10px;
+}
+#LD1 p, #LD2 p{
 
+}
 /*진단하러가기 버튼*/ 
 .Rbtns{
  display: flex;
@@ -262,7 +306,6 @@ input[id = "tab8"]:checked ~ #tab8 {display:block;}
     position: relative;
     top: 2px;
 }
-
 /*top버튼*/
 .Tbtns {
     display: flex;
