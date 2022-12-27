@@ -213,25 +213,29 @@ input[id = "tab7"]:checked ~ #tab7 {display:block;}
 input[id = "tab8"]:checked ~ #tab8 {display:block;}
 
 /**/ 
-.tab-content h3{
+#tab1 h3{
     padding-bottom: 100px;
 }
-.tab-content img{
+#tab1 img{
     margin-top: 40px;
     width: 1200px;
+    height: 800px
 }
-.tab-content h2{
+#tab1 h2{
     padding-bottom: 20px;
 }
-.tab-content h4{
+#tab1 h4{
     padding-top: 20px; 
     padding-bottom: 5px;
     font-size: 20px;
 }
-.tab-content p{
+#tab1 p{
     padding-bottom: 10px;
     font-size: 25px;
     font-family: 'GangwonEdu_OTFBoldA';
+}
+.increase h3{
+	padding-top: 10px;
 }
 #index_LSD {
     padding-bottom: 20px;

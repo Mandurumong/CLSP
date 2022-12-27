@@ -41,7 +41,10 @@ public class TestDao {
 		
 		try {
 			conn = getConnection();
+			String sql = "";
 			pstmt = conn.prepareStatement(sql);
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

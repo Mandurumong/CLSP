@@ -31,7 +31,7 @@
                         <li>
                           <a href="index.jsp">홈</a></li>
                         <li>
-                          <a href="analytics.jsp">현황 분석</a></li>
+                          <a href="analytics.do">현황 분석</a></li>
                         <li>
                           <a href="selfTestM.jsp">자가 진단</a>
                         </li>

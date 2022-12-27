@@ -31,7 +31,7 @@
                     <li>
                       <a href="index.jsp">홈</a></li>
                     <li>
-                      <a href="analytics.jsp">현황 분석</a></li>
+                      <a href="analytics.do">현황 분석</a></li>
                     <li>
                       <a href="selfTestM.jsp">자가 진단</a>
                     </li>
@@ -58,7 +58,7 @@
                         <a href="#service_info"><img src="img/캐러셀1.png"></a>
                     </li>
                     <li class="slideitem">
-                        <a href="analytics.jsp"><img src="img/현황분석캐러셀.png"></a>
+                        <a href="analytics.do"><img src="img/현황분석캐러셀.png"></a>
                     </li>
                     <li class="slideitem">
                         <a href="#"><img src="img/예방법캐러셀.png"></a>
@@ -117,7 +117,7 @@
                         
                         <div class="flex-item">
                             <div class="item-icon-wrapper">
-                                <a href="analytics.jsp"><img src="img/analytics.png"></a>
+                                <a href="analytics.do"><img src="img/analytics.png"></a>
                             </div>
                             <div class="subtitle">현황 분석</div>
                             <div class="body">
@@ -145,8 +145,8 @@
                             </div>
                             <div class="subtitle">예방법</div>
                             <div class="body">
-                                자가 진단을 하지 않아도<br> 예방법을 확인 할 수 있어요<br>
-                                크게 식습관, 생활습관,<br> 운동, 기타로 나누어져 있어요
+                                	자가 진단을 하지 않아도<br> 예방법을 확인 할 수 있어요<br>
+                               		크게 식습관, 생활습관,<br> 운동, 기타로 나누어져 있어요
                             </div>
                         </div>
                     </div>

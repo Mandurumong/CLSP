@@ -132,7 +132,7 @@ a{
     transition-duration: 1s;
   }
   /*-----------------------------------------------------------*/
-  .slidebox {
+ .slidebox {
     top: -120px;
     max-width:1200px;
     margin:0 auto;
@@ -173,11 +173,11 @@ a{
   }
   .slidebox .slide-control [class*="control"] label.prev {
     left:-50px;
-    background: url('/img/left-arrow.png') center center / 50% no-repeat;
+    background: url('img/left-arrow.png') center center 50% no-repeat;
   }
   .slidebox .slide-control [class*="control"] label.next {
     right:-50px;
-    background: url('/img/right-arrow.png') center center / 50% no-repeat;
+    background: url('img/right-arrow.png') center center 50% no-repeat;
   }
   
   [name="slide"] {

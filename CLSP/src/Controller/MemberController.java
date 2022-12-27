@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Model.AnalyticsDto;
 import Model.MemberDto;
 import Model.TestDto;
+import Service.AnalyticsService;
+import Service.AnalyticsServiceImpl;
 import Service.FindIdService;
 import Service.FindIdServiceImpl;
 import Service.FindPwService;
@@ -66,6 +69,7 @@ public class MemberController extends HttpServlet {
 			registerService.execute(request, response);
 			response.sendRedirect("index.jsp");			
 		}
+		
 		//아이디 찾기
 		else if(command.equals("/findId.do")) {
 			System.out.println("findId 실행");
@@ -83,6 +87,7 @@ public class MemberController extends HttpServlet {
 			requestDispatcher.forward(request, response);
 						
 		}
+		
 		//비밀번호 찾기
 		else if(command.equals("/findPw.do")){
 			System.out.println("findPw 실행");
@@ -100,6 +105,7 @@ public class MemberController extends HttpServlet {
 			requestDispatcher.forward(request, response);
 			
 		}
+		
 		//비밀번호 변경
 		else if(command.equals("/modifyPassword.do")) {
 			System.out.println("비밀번호 재설정 실행");
@@ -107,6 +113,7 @@ public class MemberController extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 		}
+		
 		//로그인
 		else if(command.equals("/login.do")) {
 			System.out.println("login 실행");
@@ -133,6 +140,7 @@ public class MemberController extends HttpServlet {
 	            response.sendRedirect("login.jsp");
 	         }
 		}
+		
 		//자가진단
 		else if(command.equals("/test.do")) {
 			System.out.println("test 실행");
@@ -160,8 +168,19 @@ public class MemberController extends HttpServlet {
 			String stress = request.getParameter("etc-stress"); //스트레스 받는가
 			String insulin = request.getParameter("etc-insulin"); //인슐린 저항성 여부
 			String fat = request.getParameter("etc-fat"); // 비만?
-
 			
+		}
+		//현황분석
+		else if(command.equals("/analytics.do")) {
+			System.out.println("현황분석 실행");
+			
+			AnalyticsDto analytics = new AnalyticsDto();
+			
+			AnalyticsService analyticsService = new AnalyticsServiceImpl();
+			analyticsService.execute(request, response);
+			
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("analytics.jsp");
+			requestDispatcher.forward(request, response);
 			
 		}
 	}
