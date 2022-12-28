@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="Model.*, java.util.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +22,17 @@
                     </a>
                 </div>
 
-                <div id="top-nav">
-                    <button name="login"><a href="login.jsp">로그인</a></button>
-                    <button name="register"><a href="register.jsp">회원가입</a></button>
+				<div id="top-nav">
+                	<c:choose>
+                	<c:when test="${user_id == null }">
+                  	<button name="login"><a href='<c:url value="login.jsp" />'>로그인</a></button>
+                  	<button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
+                	</c:when>
+                	<c:otherwise>
+                	<button name="logout"><a href='<c:url value="logout.do" />'>로그아웃</a></button>
+                  	<button name="mypage"><a href='<c:url value="mypage_info.jsp" />'>마이페이지</a></button>
+                	</c:otherwise>
+                	</c:choose>    
                 </div>
 
             </div>
@@ -47,6 +60,12 @@
             <div id="banner">
                 <h2>현황 분석</h2>
             </div>
+            
+            <%
+            	AnalyticsDto analytics = new AnalyticsDto();
+            
+            %>
+            
             <div class="tabs">
             
               <input type="radio" name="tabmemu" id = "tab1" checked>
@@ -142,11 +161,11 @@
                   	<h4>01</h4>
                   	
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 0-19 세 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 <% %> % 입니다.</p>
+                  	<p>2021년 기준, 0-19 세 환자 수는 <%= analytics.getPatient2021_10() %> 명 으로, 남성은 <%= analytics.getPatient2021_10_m() %> 명, 여성은 <%= analytics.getPatient2021_10_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 <%= (analytics.getPatient2021_10()*100) / analytics.getPatient2021() %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_10_m()*100)/analytics.getPatient2021_10() %> %, 여성 <%= (analytics.getPatient2021_10_f()*100)/analytics.getPatient2021_10() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   	
@@ -162,8 +181,8 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 20-29 세 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 20-29 세 환자가 차지하는 비율은 <% %>% 입니다.</p>
+                  	<p>2021년 기준, 20-29 세 환자 수는 <%= analytics.getPatient2021_20() %> 명 으로, 남성은 <%= analytics.getPatient2021_20_m() %> 명, 여성은 <%= analytics.getPatient2021_20_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 20-29 세 환자가 차지하는 비율은 <%= (analytics.getPatient2021_20()*100) / analytics.getPatient2021() %>% 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
                   	<p>남성 <% %> %, 여성 <% %> % </p>

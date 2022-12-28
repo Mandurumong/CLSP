@@ -37,7 +37,10 @@ public class AnalyticsDao {
 		return conn;
 	}
 	
-	public void analytics10() {
+	public AnalyticsDto analytics10() {
+		
+		AnalyticsDto analyticsdto = new AnalyticsDto();
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -58,10 +61,15 @@ public class AnalyticsDao {
 			int patient2021_10 = rs.getInt(1);
 			System.out.println(patient2021_10);
 			
+			analyticsdto.setPatient2021_10(patient2021_10);
+			
+			
 		}catch(Exception e) {
 			System.out.println("analytics10() 에러 발생");
 			e.printStackTrace();
 		}
+		
+		return analyticsdto;
 	}
 	
 	public void analytics20() {

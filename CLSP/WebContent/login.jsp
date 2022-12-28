@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,7 @@
 </head>
 
 <body>
+
     <div id="container">
         <div id="logo">
             <a href="index.jsp" class="logo">
@@ -21,14 +26,14 @@
         <h1>로그인</h1>
         <ul>
             <li>
-                <input type="text" name="user_id"  id="userId" placeholder="아이디" required autofocus>        
+                <input type="text" name="user_id"  id="user_id" placeholder="아이디" required autofocus>        
             </li>
             <li>
-                <input type="password" name="user_pw" id="userPw" placeholder="비밀번호" required>
+                <input type="password" name="user_pw" id="user_pw" placeholder="비밀번호" required>
             </li>
         </ul>
         <div id="button">
-            <button type="submit">로그인</button>
+            <input type="button" value="로그인" onclick="login_validate()">
         </div>
     </fieldset>
     </form>
@@ -41,5 +46,9 @@
         </p>
     </div>
 </div>
+<script src="script/login_validate.js"></script>
+
+
+	
 </body>
 </html>

@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +24,18 @@
                         </a>
                     </div>
     
-                    <div id="top-nav">
-                        <button name="login"><a href="login.jsp">로그인</a></button>
-                        <button name="register"><a href="register.jsp">회원가입</a></button>
-                    </div>
+				<div id="top-nav">
+                	<c:choose>
+                	<c:when test="${user_id == null }">
+                  	<button name="login"><a href='<c:url value="login.jsp" />'>로그인</a></button>
+                  	<button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
+                	</c:when>
+                	<c:otherwise>
+                	<button name="logout"><a href='<c:url value="logout.do" />'>로그아웃</a></button>
+                  	<button name="mypage"><a href='<c:url value="mypage_info.jsp" />'>마이페이지</a></button>
+                	</c:otherwise>
+                	</c:choose>    
+                </div>
     
                 </div>
     
