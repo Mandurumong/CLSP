@@ -1,9 +1,12 @@
 package Service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.AnalyticsDao;
+import Model.AnalyticsDto;
 
 public class AnalyticsServiceImpl implements AnalyticsService{
 
@@ -13,9 +16,8 @@ public class AnalyticsServiceImpl implements AnalyticsService{
 		analyticsDao = AnalyticsDao.getInstance();
 	}
 
-	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		analyticsDao.analytics10();
-		analyticsDao.analytics20();
+	public AnalyticsDto execute(HttpServletRequest request, HttpServletResponse response) {
+		return analyticsDao.analytics10();
 	}
 
 }

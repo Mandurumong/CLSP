@@ -1,9 +1,13 @@
 package Service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Model.AnalyticsDto;
+
 public interface AnalyticsService {
 
-	void execute(HttpServletRequest request, HttpServletResponse response); 
+	AnalyticsDto execute(HttpServletRequest request, HttpServletResponse response); 
 }

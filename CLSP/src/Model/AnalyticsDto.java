@@ -33,7 +33,7 @@ public class AnalyticsDto {
 	private int patient2021;
 	
 	public AnalyticsDto() {}
-
+	
 	public AnalyticsDto(int p10, int p20, int p30, int p40, int p50, int p60, int p70, int p10m, int p20m, int p30m, int p40m, int p50m, int p60m, int p70m, int p10f, int p20f, int p30f, int p40f, int p50f, int p60f, int p70f, int p) {
 		
 		this.patient2021 = p;

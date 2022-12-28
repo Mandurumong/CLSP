@@ -61,11 +61,6 @@
                 <h2>현황 분석</h2>
             </div>
             
-            <%
-            	AnalyticsDto analytics = new AnalyticsDto();
-            
-            %>
-            
             <div class="tabs">
             
               <input type="radio" name="tabmemu" id = "tab1" checked>
@@ -149,12 +144,9 @@
                  </article>
                  
               </div>
-              <%
-              	//int patient = Integer.parseInt(s);
-            		  
-              	//AnalyticsDto analyticsDto = AnalyticsDao.getInstance().analytics10();
-              
-              %>
+             <%
+            	AnalyticsDto analytics = (AnalyticsDto)request.getAttribute("analytics");
+            %>
               <div class="tab-content" id="tab2">
                   <h2>당뇨병 유병자 10대 이하 현황 분석</h2>
                   <article class="increase">
@@ -162,11 +154,11 @@
                   	
                   	<h3>당뇨병 유병률 통계</h3>
                   	<p>2021년 기준, 0-19 세 환자 수는 <%= analytics.getPatient2021_10() %> 명 으로, 남성은 <%= analytics.getPatient2021_10_m() %> 명, 여성은 <%= analytics.getPatient2021_10_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 <%= (analytics.getPatient2021_10()*100) / analytics.getPatient2021() %> % 입니다.</p>
+                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 약  <%= (analytics.getPatient2021_10()*100) / analytics.getPatient2021() %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
                   	<p>남성 <%= (analytics.getPatient2021_10_m()*100)/analytics.getPatient2021_10() %> %, 여성 <%= (analytics.getPatient2021_10_f()*100)/analytics.getPatient2021_10() %> % </p>
-                  	
+ 
                   	<h3>전체 비율</h3>
                   	
                   </article>
@@ -182,10 +174,10 @@
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
                   	<p>2021년 기준, 20-29 세 환자 수는 <%= analytics.getPatient2021_20() %> 명 으로, 남성은 <%= analytics.getPatient2021_20_m() %> 명, 여성은 <%= analytics.getPatient2021_20_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 20-29 세 환자가 차지하는 비율은 <%= (analytics.getPatient2021_20()*100) / analytics.getPatient2021() %>% 입니다.</p>
+                  	<p>전체 환자 수에서의 20-29 세 환자가 차지하는 비율은 약 <%= analytics.getPatient2021_20()*100 / analytics.getPatient2021() %>% 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_20_m()*100)/analytics.getPatient2021_20() %> %, 여성 <%= (analytics.getPatient2021_20_f()*100)/analytics.getPatient2021_20() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   	
@@ -202,11 +194,11 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 30-39 세 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 30-39 세 환자가 차지하는 비율은 <% %>% 입니다.</p>
+                  	<p>2021년 기준, 30-39 세 환자 수는 <%= analytics.getPatient2021_30() %> 명 으로, 남성은 <%= analytics.getPatient2021_30_m() %> 명, 여성은 <%= analytics.getPatient2021_30_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 30-39 세 환자가 차지하는 비율은 약 <%= (analytics.getPatient2021_30()*100) / analytics.getPatient2021()  %>% 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_30_m()*100)/analytics.getPatient2021_30() %> %, 여성 <%= (analytics.getPatient2021_30_f()*100)/analytics.getPatient2021_30() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   </article>
@@ -221,11 +213,11 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 40-49 세 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 40-49 세 환자가 차지하는 비율은 <% %> % 입니다.</p>
+                  	<p>2021년 기준, 40-49 세 환자 수는 <%= analytics.getPatient2021_40() %> 명 으로, 남성은 <%= analytics.getPatient2021_40_m() %> 명, 여성은 <%= analytics.getPatient2021_40_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 40-49 세 환자가 차지하는 비율은 약 <%= (analytics.getPatient2021_40()*100) / analytics.getPatient2021() %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_40_m()*100)/analytics.getPatient2021_40() %> %, 여성 <%= (analytics.getPatient2021_40_f()*100)/analytics.getPatient2021_40() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   </article>
@@ -240,11 +232,11 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 50-59 세 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 50-59 세 환자가 차지하는 비율은 <% %> % 입니다.</p>
+                  	<p>2021년 기준, 50-59 세 환자 수는 <%= analytics.getPatient2021_50() %> 명 으로, 남성은 <%= analytics.getPatient2021_50_m() %> 명, 여성은 <%= analytics.getPatient2021_50_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 50-59 세 환자가 차지하는 비율은 약 <%= (analytics.getPatient2021_50()*100) / analytics.getPatient2021() %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_50_m()*100)/analytics.getPatient2021_50() %> %, 여성 <%= (analytics.getPatient2021_50_f()*100)/analytics.getPatient2021_50() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   </article>
@@ -259,11 +251,11 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 60-69 세 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 60-69 세 환자가 차지하는 비율은 <% %> % 입니다.</p>
+                  	<p>2021년 기준, 60-69 세 환자 수는 <%= analytics.getPatient2021_60() %> 명 으로, 남성은 <%= analytics.getPatient2021_60_m() %> 명, 여성은 <%=analytics.getPatient2021_60_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 60-69 세 환자가 차지하는 비율은 약 <%= (analytics.getPatient2021_60()*100) / analytics.getPatient2021() %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_60_m()*100)/analytics.getPatient2021_60() %> %, 여성 <%= (analytics.getPatient2021_60_f()*100)/analytics.getPatient2021_60() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   </article>
@@ -278,11 +270,11 @@
                  	<h2>당뇨병 유병자 70대 이상 현황 분석</h2>
                  	<h4>01</h4>
                   	<h3>당뇨병 유병률 현황</h3>
-                  	<p>2021년 기준, 70세 이상 환자 수는 <% %> 명 으로, 남성은 <% %> 명, 여성은 <% %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 70 세 이상 환자가 차지하는 비율은 <% %> % 입니다.</p>
+                  	<p>2021년 기준, 70세 이상 환자 수는 <%= analytics.getPatient2021_70() %> 명 으로, 남성은 <%= analytics.getPatient2021_70_m() %> 명, 여성은 <%= analytics.getPatient2021_70_f() %> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 70 세 이상 환자가 차지하는 비율은 약 <%= (analytics.getPatient2021_70()*100) / analytics.getPatient2021() %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <% %> %, 여성 <% %> % </p>
+                  	<p>남성 <%= (analytics.getPatient2021_70_m()*100)/analytics.getPatient2021_70() %> %, 여성 <%= (analytics.getPatient2021_70_f()*100)/analytics.getPatient2021_70() %> % </p>
                   	
                   	<h3>전체 비율</h3>
                   </article>
@@ -294,7 +286,6 @@
               </div>
             </div>
         </div>
-    
       <div class="Rbtns">
         <div class="rinkToTest"><a href="selfTestM.jsp"><img src="img/check-list.png" alt="진단 하러 가기"><span>진단<br> 하러가기</span></a></div>
       </div>

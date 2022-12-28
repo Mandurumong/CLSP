@@ -141,6 +141,11 @@ public class MemberController extends HttpServlet {
 	         }
 		}
 		
+		//로그아웃
+		else if(command.equals("/logout.do")) {
+			
+		}
+		
 		//자가진단
 		else if(command.equals("/test.do")) {
 			System.out.println("test 실행");
@@ -174,10 +179,10 @@ public class MemberController extends HttpServlet {
 		else if(command.equals("/analytics.do")) {
 			System.out.println("현황분석 실행");
 			
-			AnalyticsDto analytics = new AnalyticsDto();
-			
 			AnalyticsService analyticsService = new AnalyticsServiceImpl();
-			analyticsService.execute(request, response);
+			AnalyticsDto analytics = analyticsService.execute(request, response);
+			
+			request.setAttribute("analytics", analytics);
 			
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("analytics.jsp");
 			requestDispatcher.forward(request, response);
