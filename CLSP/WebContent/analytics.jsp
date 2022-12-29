@@ -11,6 +11,10 @@
     <meta charset="UTF-8">
     <title>성인병 위험도 측정과 예방법 제안 : 현황 분석</title>
     <link rel="stylesheet" href="css/analytics.css">
+    
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>
+
 </head>
 <body class="body-set">
     <div id="container">
@@ -154,7 +158,7 @@
                   	
                   	<h3>당뇨병 유병률 통계</h3>
                   	<p>2021년 기준, 0-19 세 환자 수는 <%= analytics.getPatient2021_10() %> 명 으로, 남성은 <%= analytics.getPatient2021_10_m() %> 명, 여성은 <%= analytics.getPatient2021_10_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 약  <%= (analytics.getPatient2021_10()*100) / analytics.getPatient2021() %> % 입니다.</p>
+                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 약  <%= ((analytics.getPatient2021_10()*1000) / analytics.getPatient2021())/10 %> % 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
                   	<p>남성 <%= (analytics.getPatient2021_10_m()*100)/analytics.getPatient2021_10() %> %, 여성 <%= (analytics.getPatient2021_10_f()*100)/analytics.getPatient2021_10() %> % </p>
