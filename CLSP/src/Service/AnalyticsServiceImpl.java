@@ -17,7 +17,7 @@ public class AnalyticsServiceImpl implements AnalyticsService{
 	}
 
 	public AnalyticsDto execute(HttpServletRequest request, HttpServletResponse response) {
-		return analyticsDao.analytics10();
+		return analyticsDao.analytics();
 	}
 
 }
