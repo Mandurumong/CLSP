@@ -137,9 +137,9 @@
 				 <article id="increase_whole">
                  <h4>03</h4>
                  <h3>당뇨병 유병률 현황</h3>
-                 <canvas id="Chart" width="900" height="600"></canvas>           
+                 <canvas id="Chart" width="1200" height="600"></canvas>           
                  </article>
-                 
+                 <canvas id="Chart_genderAll" width="1200" height="600"></canvas>
                  <article id="cause_whole">
                  <h4>04</h4>
                  <h3>원인</h3>
@@ -162,7 +162,9 @@
                   	<p>남성 <%= (analytics.getPatient2021_10_m()*100)/analytics.getPatient2021_10() %> %, 여성 <%= (analytics.getPatient2021_10_f()*100)/analytics.getPatient2021_10() %> % </p>
  
                   	<h3>전체 비율</h3>
-					<canvas id="Chart10" width="900" height="600"></canvas>
+					<canvas id="Chart10" width="1200" height="600"></canvas>
+					<canvas id="Chart_gender10" width="1200" height="600"></canvas>
+					
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -182,7 +184,9 @@
                   	<p>남성 <%= (analytics.getPatient2021_20_m()*100)/analytics.getPatient2021_20() %> %, 여성 <%= (analytics.getPatient2021_20_f()*100)/analytics.getPatient2021_20() %> % </p>
                   	
                   	<h3>전체 비율</h3>
-                  	<canvas id="Chart20" width="900" height="600"></canvas>
+                  	<canvas id="Chart20" width="1200" height="600"></canvas>
+                  	<canvas id="Chart_gender20" width="1200" height="600"></canvas>
+                  	
                   </article>
                   
                   <article class="cause">
@@ -203,7 +207,9 @@
                   	<p>남성 <%= (analytics.getPatient2021_30_m()*100)/analytics.getPatient2021_30() %> %, 여성 <%= (analytics.getPatient2021_30_f()*100)/analytics.getPatient2021_30() %> % </p>
                   	
                   	<h3>전체 비율</h3>
-                  	<canvas id="Chart30" width="900" height="600"></canvas>
+                  	<canvas id="Chart30" width="1200" height="600"></canvas>
+                  	<canvas id="Chart_gender30" width="1200" height="600"></canvas>
+                  	
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -223,7 +229,8 @@
                   	<p>남성 <%= (analytics.getPatient2021_40_m()*100)/analytics.getPatient2021_40() %> %, 여성 <%= (analytics.getPatient2021_40_f()*100)/analytics.getPatient2021_40() %> % </p>
                   	
                   	<h3>전체 비율</h3>
-                  	<canvas id="Chart40" width="900" height="600"></canvas>
+                  	<canvas id="Chart40" width="1200" height="600"></canvas>
+                  	<canvas id="Chart_gender40" width="1200" height="600"></canvas>
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -243,7 +250,9 @@
                   	<p>남성 <%= (analytics.getPatient2021_50_m()*100)/analytics.getPatient2021_50() %> %, 여성 <%= (analytics.getPatient2021_50_f()*100)/analytics.getPatient2021_50() %> % </p>
                   	
                   	<h3>전체 비율</h3>
-                  	<canvas id="Chart50" width="900" height="600"></canvas>
+                  	<canvas id="Chart50" width="1200" height="600"></canvas>
+                  	<canvas id="Chart_gender50" width="1200" height="600"></canvas>
+                  	
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -263,7 +272,9 @@
                   	<p>남성 <%= (analytics.getPatient2021_60_m()*100)/analytics.getPatient2021_60() %> %, 여성 <%= (analytics.getPatient2021_60_f()*100)/analytics.getPatient2021_60() %> % </p>
                   	
                   	<h3>전체 비율</h3>
-                  	<canvas id="Chart60" width="900" height="600"></canvas>
+                  	<canvas id="Chart60" width="1200" height="600"></canvas>
+                  	<canvas id="Chart_gender60" width="1200" height="600"></canvas>
+                  	
                   </article>
                   <article class="cause">
                   	<h4>02</h4>
@@ -283,7 +294,9 @@
                   	<p>남성 <%= (analytics.getPatient2021_70_m()*100)/analytics.getPatient2021_70() %> %, 여성 <%= (analytics.getPatient2021_70_f()*100)/analytics.getPatient2021_70() %> % </p>
                   	
                   	<h3>전체 비율</h3>
-					<canvas id="Chart70" width="900" height="600"></canvas>
+					<canvas id="Chart70" width="1200" height="600"></canvas>
+					<canvas id="Chart_gender70" width="1200" height="600"></canvas>
+					
                   </article>
                   <article class="cause">
                   	<h4>02</h4>

@@ -15,6 +15,8 @@ import Model.MemberDto;
 import Model.TestDto;
 import Service.AnalyticsService;
 import Service.AnalyticsServiceImpl;
+import Service.DuplicationCheck;
+import Service.DuplicationCheckImpl;
 import Service.FindIdService;
 import Service.FindIdServiceImpl;
 import Service.FindPwService;
@@ -68,6 +70,19 @@ public class MemberController extends HttpServlet {
 			RegisterService registerService = new RegisterServiceImpl();
 			registerService.execute(request, response);
 			response.sendRedirect("index.jsp");			
+		}
+		//아이디 중복 체크
+		else if(command.equals("/dbCheckId.do")) {
+			
+			HttpSession session = request.getSession();
+			DuplicationCheck duplication = new DuplicationCheckImpl();
+			
+			String id = request.getParameter("user_id");
+			System.out.println("dbCheckId 실행");
+			int result = duplication.idCheck(id);
+			
+			session.setAttribute("result", result);
+			response.sendRedirect("dbCheckId.jsp");
 		}
 		
 		//아이디 찾기
@@ -173,6 +188,9 @@ public class MemberController extends HttpServlet {
 			String stress = request.getParameter("etc-stress"); //스트레스 받는가
 			String insulin = request.getParameter("etc-insulin"); //인슐린 저항성 여부
 			String fat = request.getParameter("etc-fat"); // 비만?
+			
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("testResult.jsp");
+			requestDispatcher.forward(request, response);
 			
 		}
 		//현황분석

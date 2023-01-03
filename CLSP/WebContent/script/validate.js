@@ -31,6 +31,9 @@ function fn_validate(){
 		  alert("비밀번호는 영소문자, 숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
 	
 	}
+	else if(signup.idDuplication.value != "idCheck"){
+		alert("아이디 중복체크를 해주세요.");
+	}
 	else{
 		signup.method="post";
 		signup.action="insertMember.do";
@@ -48,7 +51,7 @@ function fn_idCheck(){
 		user_id.focus();
 	}
 	else{
-		window.open("#");
+		window.open("${contextPath}/Controller/dbCheakId.do?user_id="+id, "", "width=500, height=300" );
 	}
 	
 }

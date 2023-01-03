@@ -69,6 +69,36 @@ public class MemberDao {
 			}
 		}
 	}
+	//아이디 중복 체크
+	public int selectAllId(String id) {
+		int result = -1;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("SELECT user_id FROM Member Where user_id=?");
+			pstmt.setString(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = 1;
+				System.out.println("result 값 :"+result);
+			}else {
+				result = 0;
+				System.out.println("result 값 : "+result);
+			}
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("selectAllId 오류 발생");
+		}
+		return result;
+	}
+	
 	//아이디 찾기
 	public String findId(MemberDto member) {
 		String user_id = null;
