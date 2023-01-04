@@ -31,9 +31,9 @@ function fn_validate(){
 		  alert("비밀번호는 영소문자, 숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
 	
 	}
-	else if(signup.idDuplication.value != "idCheck"){
-		alert("아이디 중복체크를 해주세요.");
-	}
+//	else if(signup.idDuplication.value != "idCheck"){
+//		alert("아이디 중복체크를 해주세요.");
+//	}
 	else{
 		signup.method="post";
 		signup.action="insertMember.do";
@@ -42,16 +42,17 @@ function fn_validate(){
 	}
 }
 
-function fn_idCheck(){
-	var signup = document.signup;
-	var user_id = signup.user_id.value;
-	
-	if(user_id.length == 0 || user_id == ""){
-		alert("아이디를 먼저 입력해주세요.")
-		user_id.focus();
-	}
-	else{
-		window.open("${contextPath}/Controller/dbCheakId.do?user_id="+id, "", "width=500, height=300" );
-	}
-	
-}
+//function fn_idCheck(){
+//	var signup = document.signup;
+//	var user_id = signup.user_id.value;
+//	
+//	if(user_id.length == 0 || user_id == ""){
+//		alert("아이디를 먼저 입력해주세요.")
+//		user_id.focus();
+//	}
+//	else{
+//		window.name = "아이디 중복체크";
+//		window.open("dbCheakId.do?user_id="+id, "", "width=500, height=300" );
+//	}
+//	
+//}

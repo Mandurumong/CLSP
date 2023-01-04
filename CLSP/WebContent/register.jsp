@@ -24,8 +24,9 @@
                 <li>
                 <label for= "user_id">아이디</label>
                 <input type= "text" name ="user_id" id="user_id" autofocus placeholder="4자~16자 사이 공백없이" required>
-                <input type= "button" value="중복확인" onClick="fn_idCheck()" name="dbCheckId" class="checkId" >
+<!--            <input type= "button" value="중복확인" onClick="fn_idCheck()" name="dbCheckId" class="checkId" >
                 <input type="hidden" name="idDuplication" value="idUncheck"/>
+                 --> 
                 </li>
                 <li>
                 <label for="user_pw1">비밀번호</label>

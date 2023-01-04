@@ -28,9 +28,9 @@
     font-weight: normal;
     font-style: normal;
 }
-/*-----------------------------폰트  & 기본셋팅 ----------------------------*/
+/*-----------------------------�룿�듃  & 湲곕낯�뀑�똿 ----------------------------*/
 html{
-    scroll-behavior: smooth; /*버튼눌렀을때 확 이동하지않고 천천히 이동*/
+    scroll-behavior: smooth; /*踰꾪듉�닃���쓣�븣 �솗 �씠�룞�븯吏��븡怨� 泥쒖쿇�엳 �씠�룞*/
 }
 body{
   height: 100%;
@@ -42,10 +42,10 @@ h3{
   margin-top: 10px;
   text-align: center;
 }
-/* -----------------------------폰트  & 기본셋팅 ---------------------------- */
+/* -----------------------------�룿�듃  & 湲곕낯�뀑�똿 ---------------------------- */
 #logo img{
     height: 150px;
-} /* 로고크기*/
+} /* 濡쒓퀬�겕湲�*/
 header{
     position: sticky;
     top: 0;
@@ -158,14 +158,17 @@ a{
     border: 1px solid black;
     margin-left: 150px;
     margin-right: 150px;  
-    height: 700px; 
+    /*height: 700px;*/ 
 
+}
+#content h3{
+	margin-top: 50px;
 }    
 #content h2{
     font-family: 'SDSamliphopangche_Basic';
     font-size: 30px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 #content p{
     text-align: center;
@@ -214,3 +217,14 @@ a{
     position: relative;
     top: 2px;
 }
+#whatIsRisk {
+	align-items: center;
+  	text-align: center;
+}
+#whatIsRisk img{
+	width: 60%;
+  	/*padding-top: -50px;*/
+  	display: block;
+  	margin: auto;
+}
+#whatIsRisk 

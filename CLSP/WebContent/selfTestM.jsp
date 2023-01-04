@@ -62,23 +62,23 @@
         </div>
         <div id="content">
             <section id="selfTest_info">
+            	<h3>01</h3>
                 <h2>자가 진단 테스트란?</h2>
                 <p><b>자가 진단 테스트</b>는 식습관, 생활 습관, 운동, 유전 등 과 같은<br> 여러가지의 성인병에 걸릴 확률을 높혀주는 요인들을 분석하여<br> 사용자가 성인병에 걸릴 위험도와 확률에 대해 진단을 해보는 테스트 입니다.</p>
             </section>
-            <section class="down">
-                <a href="#whatIsRisk"><img src="img/down-arrow.png" alt="더보기"></a>
-            </section>
+            
             <section id="whatIsRisk">
+            	<h3>02</h3>
                 <h2>위험도 분석이란?</h2>
+                <img alt="위험도 분석 사진" src="img/위험도그래프.png">
                 <p>단위를 양호, 관심, 주의, 경고, 위험<br>
                 5가지로 나누어 사용자가 입력한 데이터에 따라 분석하여<br>
                 위험도를 구분하는 것 입니다.
                 </p>
             </section>
-            <section class="down">
-                <a href="#move"><img src="img/down-arrow.png" alt="더보기"></a>
-            </section>
+            
             <section id="move">
+            	<h3>03</h3>
                 <h2>나의 당뇨 위험도 측정하고 맞춤 예방법 추천 받기</h2>
                 <button type="button" id="go" name="goTest"><a href="test.jsp"><span>진단 시작하기</span></a></button>
             </section>

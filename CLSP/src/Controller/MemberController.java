@@ -71,20 +71,7 @@ public class MemberController extends HttpServlet {
 			registerService.execute(request, response);
 			response.sendRedirect("index.jsp");			
 		}
-		//아이디 중복 체크
-		else if(command.equals("/dbCheckId.do")) {
-			
-			HttpSession session = request.getSession();
-			DuplicationCheck duplication = new DuplicationCheckImpl();
-			
-			String id = request.getParameter("user_id");
-			System.out.println("dbCheckId 실행");
-			int result = duplication.idCheck(id);
-			
-			session.setAttribute("result", result);
-			response.sendRedirect("dbCheckId.jsp");
-		}
-		
+
 		//아이디 찾기
 		else if(command.equals("/findId.do")) {
 			System.out.println("findId 실행");
