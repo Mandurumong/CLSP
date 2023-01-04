@@ -100,8 +100,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-breakfast" id="mbfyes" value="mbfyes" required>
-        				아니요<input type="radio" name="meal-breakfast" id="mbfno" value="mbfno" required>
+        				네<input type="radio" name="meal-breakfast" value="mbfyes" required>
+        				아니요<input type="radio" name="meal-breakfast" value="mbfno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -124,8 +124,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-8" id="maf8" value="maf8" required>
-        				아니요<input type="radio" name="meal-8" id="mbef8" value="mbef8" required>
+        				네<input type="radio" name="meal-8" value="maf8" required>
+        				아니요<input type="radio" name="meal-8"  value="mbef8" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -148,8 +148,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-oily" id="moyes" value="moyes" required>
-        				아니요<input type="radio" name="meal-oily" id="mono" value="mono" required>
+        				네<input type="radio" name="meal-oily" value="moyes" required>
+        				아니요<input type="radio" name="meal-oily" value="mono" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -172,8 +172,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-regular" id="mryes" value="mryes" required>
-        				아니요<input type="radio" name="meal-regular" id="mrno" value="mrno" required>
+        				네<input type="radio" name="meal-regular" value="mryes" required>
+        				아니요<input type="radio" name="meal-regular" value="mrno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -196,8 +196,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-speed" id="mfyes" value="mfyes" required>
-        				아니요<input type="radio" name="meal-speed" id="mfno" value="mfno" required>
+        				네<input type="radio" name="meal-speed" value="mfyes" required>
+        				아니요<input type="radio" name="meal-speed" value="mfno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -220,8 +220,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-snack" id="msyes" value="msyes" required>
-        				아니요<input type="radio" name="meal-snack" id="msno" value="msno" required>
+        				네<input type="radio" name="meal-snack" value="msyes" required>
+        				아니요<input type="radio" name="meal-snack" value="msno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -244,8 +244,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-alcohol" id="mayes" value="mayes" required>
-        				아니요<input type="radio" name="meal-alcohol" id="mano" value="mano" required>
+        				네<input type="radio" name="meal-alcohol" value="mayes" required>
+        				아니요<input type="radio" name="meal-alcohol" value="mano" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -268,8 +268,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-deli" id="mdyes" value="mdyes" required>
-        				아니요<input type="radio" name="meal-deli" id="mdno" value="mdno" required>
+        				네<input type="radio" name="meal-deli" value="mdyes" required>
+        				아니요<input type="radio" name="meal-deli" value="mdno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -292,8 +292,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-after1" id="layes" value="layes" required>
-        				아니요<input type="radio" name="life-after1" id="lano" value="lano" required>
+        				네<input type="radio" name="life-after1" value="layes" required>
+        				아니요<input type="radio" name="life-after1" value="lano" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -316,8 +316,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-sleept" id="lsyes" value="lsyes" required>
-        				아니요<input type="radio" name="life-sleept" id="lsno" value="lsno" required>
+        				네<input type="radio" name="life-sleept" value="lsyes" required>
+        				아니요<input type="radio" name="life-sleept" value="lsno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -340,8 +340,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-night" id="lnyes" value="lnyes" required>
-        				아니요<input type="radio" name="life-night" id="lnno" value="lnno" required>
+        				네<input type="radio" name="life-night" value="lnyes" required>
+        				아니요<input type="radio" name="life-night" value="lnno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -364,8 +364,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-brush" id="lbyes" value="lbyes" required>
-        				아니요<input type="radio" name="life-brush" id="lbno" value="lbno" required>
+        				네<input type="radio" name="life-brush" value="lbyes" required>
+        				아니요<input type="radio" name="life-brush" value="lbno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -387,8 +387,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-smoke" id="lskyes" value="lskyes" required>
-        				아니요<input type="radio" name="life-smoke" id="lskno" value="lskno" required>
+        				네<input type="radio" name="life-smoke" value="lskyes" required>
+        				아니요<input type="radio" name="life-smoke" value="lskno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -410,8 +410,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="exercise-regular" id="exryes" value="exryes" required>
-        				아니요<input type="radio" name="exercise-regular" id="exrno" value="exrno" required>
+        				네<input type="radio" name="exercise-regular" value="exryes" required>
+        				아니요<input type="radio" name="exercise-regular" value="exrno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -434,8 +434,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="exercise-30" id="ex30yes" value="ex30yes" required>
-        				아니요<input type="radio" name="exercise-30" id="ex30no" value="ex30no" required>
+        				네<input type="radio" name="exercise-30" value="ex30yes" required>
+        				아니요<input type="radio" name="exercise-30" value="ex30no" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -457,8 +457,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="exercise-st" id="exsyes" value="exsyes" required>
-        				아니요<input type="radio" name="exercise-st" id="exsno" value="exsno" required>
+        				네<input type="radio" name="exercise-st" value="exsyes" required>
+        				아니요<input type="radio" name="exercise-st" value="exsno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -480,8 +480,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="etc-blood" id="ebyes" value="ebyes" required>
-        				아니요<input type="radio" name="etc-blood" id="ebno" value="ebno" required>
+        				네<input type="radio" name="etc-blood" value="ebyes" required>
+        				아니요<input type="radio" name="etc-blood" value="ebno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -503,8 +503,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="etc-stress" id="esyes" value="esyes" required>
-        				아니요<input type="radio" name="etc-stress" id="esno" value="esno" required>
+        				네<input type="radio" name="etc-stress" value="esyes" required>
+        				아니요<input type="radio" name="etc-stress" value="esno" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -527,8 +527,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="etc-insulin" id="eiyes" value="eiyes" required>
-        				아니요<input type="radio" name="etc-insulin" id="eino" value="eino" required>
+        				네<input type="radio" name="etc-insulin" value="eiyes" required>
+        				아니요<input type="radio" name="etc-insulin" value="eino" required>
         		</div>
         	</div>
         	<div class="test-image">
@@ -550,8 +550,8 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="etc-fat" id="efyes" value="efyes" required>
-        				아니요<input type="radio" name="etc-fat" id="efno" value="efno" required>
+        				네<input type="radio" name="etc-fat" value="efyes" required>
+        				아니요<input type="radio" name="etc-fat" value="efno" required>
         		</div>
         	</div>
         	<div class="test-image">
