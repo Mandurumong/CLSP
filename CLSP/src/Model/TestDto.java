@@ -21,7 +21,7 @@ public class TestDto {
 	String exercise30; //하루에 30분 이상 운동하는가
 	String strech; //스트레칭을 하는가
 	
-	String blood; //유전
+	String inheritance; //유전
 	String stress; //스트레스 받는가
 	String insulin; //인슐린 저항성이 있는가
 	String fat; //비만?
@@ -57,8 +57,8 @@ public class TestDto {
 		this.strech = strech;
 	}
 	
-	public TestDto(String blood, String stress, String insulin, String fat) {
-		this.blood = blood;
+	public TestDto(String inheritance, String stress, String insulin, String fat) {
+		this.inheritance = inheritance;
 		this.stress = stress;
 		this.insulin = insulin;
 		this.fat = fat;
@@ -200,12 +200,12 @@ public class TestDto {
 		this.strech = strech;
 	}
 
-	public String getBlood() {
-		return blood;
+	public String getinheritance() {
+		return inheritance;
 	}
 
-	public void setBlood(String blood) {
-		this.blood = blood;
+	public void setinheritance(String inheritance) {
+		this.inheritance = inheritance;
 	}
 
 	public String getStress() {

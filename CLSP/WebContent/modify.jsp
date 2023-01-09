@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>개인정보수정</title>
-    <link rel="stylesheet" href="/css/modify.css">
+    <link rel="stylesheet" href="css/modify.css">
 
 </head>
 <body>
@@ -21,7 +25,7 @@
     
                     <div id="top-nav">
                         <button name="logout"><a href="#">로그아웃</a></button>
-                        <button name="mypage"><a href="/mypage_info.jsp">마이페이지</a></button>
+                        <button name="mypage"><a href="mypage_info.jsp">마이페이지</a></button>
                     </div>
                 </div>
     
@@ -37,8 +41,8 @@
                         <li><a href="#">예방법</a>
                         <li><a href="#">커뮤니티</a>
                           <ul class="submenu">
-                            <li><a href="/community_notice.jsp">공지사항</a></li>
-                            <li><a href="/community_freeBoard.jsp">문의게시판</a></li>
+                            <li><a href="community_notice.jsp">공지사항</a></li>
+                            <li><a href="community_freeBoard.jsp">문의게시판</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -49,9 +53,9 @@
             
            <nav>
             <ul class="record_menu">
-              <li><a href="/mypage_info.jsp">마이페이지</a></li>
-              <li><a href="/mypage_info.jsp">개인정보 수정</a></li>
-              <li><a href="/userQna.jsp">나의 문의 사항</a></li>
+              <li><a href="mypage_info.jsp">마이페이지</a></li>
+              <li><a href="mypage_info.jsp">개인정보 수정</a></li>
+              <li><a href="userQna.jsp">나의 문의 사항</a></li>
             </ul>
            </nav>
             <div class="main-info">
@@ -66,7 +70,7 @@
                     <ul>
                         <li>
                          <label for="uid">아이디</label>
-                         <input type="text" id="uid" placeholder="user" name = "uid" readonly>
+                         <input type="text" id="uid" placeholder=<%=user_id %> name = "uid" readonly>
                         </li>
                         <li>
                          <label for="pwd1">현재 비밀번호</label>

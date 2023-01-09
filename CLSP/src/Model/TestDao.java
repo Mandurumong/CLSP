@@ -35,16 +35,28 @@ public class TestDao {
 		return conn;
 	}
 	
-	public void selfTest() {
+	public void eatingTest() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			conn = getConnection();
-			String sql = "";
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement("SELECT score FROM habits WHERE test_value=? AND category='eatingHabits'");
+//			pstmt.setString(1, );
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void lifeTest() {
+		
+	}
+	
+	public void exerciseTest() {
+		
+	}
+	
+	public void etcTest() {
+		
 	}
 }

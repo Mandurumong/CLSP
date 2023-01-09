@@ -171,7 +171,7 @@ public class MemberController extends HttpServlet {
 			String exerciseRegular = request.getParameter("exercise-regular"); //규칙적인 운동
 			String exercise30 = request.getParameter("exercise-30"); // 하루 30분 이상 운동
 			String strech = request.getParameter("exercise-st"); // 스트레칭 하는가
-			String blood = request.getParameter("etc-blood"); // 유전
+			String inheritance = request.getParameter("etc-inheritance"); // 유전
 			String stress = request.getParameter("etc-stress"); //스트레스 받는가
 			String insulin = request.getParameter("etc-insulin"); //인슐린 저항성 여부
 			String fat = request.getParameter("etc-fat"); // 비만?
