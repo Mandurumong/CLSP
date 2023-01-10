@@ -25,6 +25,8 @@ import Service.LoginService;
 import Service.LoginServiceImpl;
 import Service.RegisterService;
 import Service.RegisterServiceImpl;
+import Service.TestService;
+import Service.TestServiceImpl;
 
 @WebServlet("*.do")
 public class MemberController extends HttpServlet {
@@ -145,8 +147,11 @@ public class MemberController extends HttpServlet {
 		
 		//로그아웃
 		else if(command.equals("/logout.do")) {
+			System.out.println("logout 실행");
 			
-		}
+	        request.getSession().invalidate();
+	        response.sendRedirect("logout.jsp");
+	       }
 		
 		//자가진단
 		else if(command.equals("/test.do")) {
@@ -154,27 +159,37 @@ public class MemberController extends HttpServlet {
 			
 			TestDto test = new TestDto(); 
 			
-			String age = request.getParameter("age"); // 나이대
-			String breakfast = request.getParameter("meal-breakfast"); //아침여부
-			String dinnerTime = request.getParameter("meal-8"); // 저녁 8시 이후 먹는지
-			String mealOily = request.getParameter("meal-oily"); // 야식 먹는지
-			String mealRegular = request.getParameter("meal-regular"); // 규칙적인 식사
-			String mealSpeed =  request.getParameter("meal-speed"); // 식사 속도
-			String mealSnack = request.getParameter("meal-snack"); // 식사 후 간식
-			String alcohol = request.getParameter("meal-alcohol"); // 술
-			String mealdeli = request.getParameter("meal-deli"); // 기름진 음식, 배달음식 
-			String after1 = request.getParameter("life-after1"); //1시 이후 취침
-			String sleepTime = request.getParameter("life-sleept"); //수면시간
-			String light = request.getParameter("life-night"); // 불켜고 자는가
-			String brush = request.getParameter("life-brush"); //하루 3회 이상 양치질 
-			String smoke = request.getParameter("life-smoke"); //담배를 피는가
-			String exerciseRegular = request.getParameter("exercise-regular"); //규칙적인 운동
-			String exercise30 = request.getParameter("exercise-30"); // 하루 30분 이상 운동
-			String strech = request.getParameter("exercise-st"); // 스트레칭 하는가
-			String inheritance = request.getParameter("etc-inheritance"); // 유전
-			String stress = request.getParameter("etc-stress"); //스트레스 받는가
-			String insulin = request.getParameter("etc-insulin"); //인슐린 저항성 여부
-			String fat = request.getParameter("etc-fat"); // 비만?
+			
+			test.setAge(request.getParameter("age"));// 나이대
+			
+			test.setBreakfast(request.getParameter("meal-breakfast"));//아침여부
+			test.setDinnerTime(request.getParameter("meal-8")); // 저녁 8시 이후 먹는지
+			test.setNightMeal(request.getParameter("meal-oily")); // 야식 먹는지
+			test.setMealRegular(request.getParameter("meal-regular")); // 규칙적인 식사
+			test.setMealSpeed(request.getParameter("meal-speed")); // 식사 속도
+			test.setMealSnack(request.getParameter("meal-snack")); // 식사 후 간식
+			test.setAlcohol(request.getParameter("meal-alcohol")); // 술
+			test.setMealdeli(request.getParameter("meal-deli")); // 기름진 음식, 배달음식 
+			
+			test.setAfter1(request.getParameter("life-after1")); //1시 이후 취침
+			test.setSleepTime(request.getParameter("life-sleept")); //수면시간
+			test.setLight(request.getParameter("life-night")); // 불켜고 자는가
+			test.setBrush(request.getParameter("life-brush")); //하루 3회 이상 양치질 
+			test.setSmoke(request.getParameter("life-smoke")); //담배를 피는가
+			
+			test.setExerciseRegular(request.getParameter("exercise-regular")); //규칙적인 운동
+			test.setExercise30(request.getParameter("exercise-30")); // 하루 30분 이상 운동
+			test.setStrech(request.getParameter("exercise-st")); // 스트레칭 하는가
+			
+			test.setinheritance(request.getParameter("etc-inheritance")); // 유전
+			test.setStress(request.getParameter("etc-stress")); //스트레스 받는가
+			test.setInsulin(request.getParameter("etc-insulin")); //인슐린 저항성 여부
+			test.setFat(request.getParameter("etc-fat")); // 비만?
+			
+			request.setAttribute("test", test);
+			
+			TestService testService = new TestServiceImpl();
+			testService.execute(request, response);
 			
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("testResult.jsp");
 			requestDispatcher.forward(request, response);

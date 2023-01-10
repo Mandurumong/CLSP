@@ -46,6 +46,7 @@
                 </div>
             </fieldset>
         </form>
+        <p>이미 계정이 있으세요?<a href="login.jsp">로그인</a>
         </div>
        <script src="script/validate.js"></script>
 </body>

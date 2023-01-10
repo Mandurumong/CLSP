@@ -142,56 +142,7 @@ a{
     font-size: 40px;
 }
 /**/
-/* #select {
-    align-items: center;
-    border: 1px solid black;
-    margin-left: 150px;
-    margin-right: 150px;  
-    height: 300px; 
 
-}     */
-/*#select h2{
-    font-family: 'SDSamliphopangche_Basic';
-    font-size: 30px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-#select p{
-    text-align: center;
-    font-family: 'GangwonEdu_OTFBoldA';
-    font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-#select #form1{
-    text-align: center;
-    font-size: 25px;
-}
-#select input[type="submit"]{
-    text-align: center;
-    display: block;
-    font-size: 30px;
-    font-family: 'SDSamliphopangche_Basic';
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: inline-block;
-    width: 200px;
-    height: 60px;
-    border: 1px solid;
-    border-radius: 45%;
-    background-color: #ffffff;
-    border-color: #262626;
-    line-height: 45px;
-    cursor: pointer;
-    box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
-}
-#select input[type="submit"]:active{
-    box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
-    position: relative;
-    top: 2px;
-} */
 /*  */
 .question-wrap{
     position: relative;
@@ -207,6 +158,7 @@ a{
     position: relative;
     height: 100%;
     margin-bottom: 50px;
+    margin-top: -30px;
 }
 .answer {
     text-align: center;
@@ -218,11 +170,17 @@ a{
 }
 /**/
 .test-image{
+	margin-top: -50px;
 	text-align: center;
-	padding-bottom: 10px
+}
+.test-image img{
+	text-align: center;
+	width: 700px;
+	height: 330px;
 }
 .page{
 	text-align: center;
+	padding-bottom: 100px;
 }
 /**/
 .controller-wrap{

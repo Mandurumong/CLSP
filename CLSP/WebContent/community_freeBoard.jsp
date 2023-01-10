@@ -49,11 +49,7 @@
                           <a href="selfTestM.jsp">자가 진단</a>
                         </li>
                         <li><a href="#">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-                            <li><a href="community_notice.jsp">공지사항</a></li>
-                            <li><a href="community_freeBoard.jsp">문의게시판</a></li>
-                          </ul>
+                        <li><a href="community_freeBoard.jsp">게시판</a>
                         </li>
                       </ul>
                 </nav>
@@ -61,13 +57,6 @@
 
            <div id="main">
             
-           <nav>
-            <ul class="record_menu">
-              <li><a href="#">커뮤니티</a></li>
-              <li><a href="community_notice.jsp">공지사항</a></li>
-              <li><a href="community_freeBoard.jsp">문의게시판</a></li>
-            </ul>
-           </nav>
            <div class="container">
             <h1>
                 <a href="community_freeBoard.jsp">문의게시판</a>

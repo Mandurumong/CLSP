@@ -2,6 +2,7 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -35,28 +36,74 @@ public class TestDao {
 		return conn;
 	}
 	
-	public void eatingTest() {
+	public void eatingTest(TestDto test) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT score FROM habits WHERE test_value=? AND category='eatingHabits'");
-//			pstmt.setString(1, );
+			pstmt = conn.prepareStatement("SELECT category, sum(score) FROM habits WHERE test_value=? Group By category");
+			
+			
+			System.out.println("eatingTest 실행");
+			
 		}catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("eatingTest 실행 예외");
 		}
 	}
 	
-	public void lifeTest() {
-		
-	}
-	
-	public void exerciseTest() {
-		
-	}
-	
-	public void etcTest() {
-		
-	}
+//	public void lifeTest(TestDto test) {
+//		Connection conn = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		
+//		try {
+//			conn = getConnection();
+//			pstmt = conn.prepareStatement("SELECT score FROM habits WHERE test_value=? AND category='lifeHabits'");
+//			
+//			System.out.println("lifeTest 실행");
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//			System.out.println("lifeTest 실행 예외");
+//		}
+//		
+//	}
+//	
+//	public void exerciseTest(TestDto test) {
+//		Connection conn = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		
+//		try {
+//			conn = getConnection();
+//			pstmt = conn.prepareStatement("SELECT score FROM habits WHERE test_value=? AND category='exercise'");
+//			
+//			System.out.println("exercise 실행");
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//			System.out.println("exercise 실행 예외");
+//		}
+//	}
+//	
+//	public void etcTest(TestDto test) {
+//		Connection conn = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		
+//		try {
+//			conn = getConnection();
+//			pstmt = conn.prepareStatement("SELECT score FROM habits WHERE test_value=? AND category='etc'");
+//			
+//			System.out.println("etc 실행");
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//			System.out.println("etc 실행 예외");
+//		}
+//		
+//	}
 }

@@ -49,11 +49,7 @@
                       <a href="selfTestM.jsp">자가 진단</a>
                     </li>
                     <li><a href="#">예방법</a>
-                    <li><a href="#">커뮤니티</a>
-                      <ul class="submenu">
-                        <li><a href="community_notice.jsp">공지사항</a></li>
-                        <li><a href="community_freeBoard.jsp">문의게시판</a></li>
-                      </ul>
+                    <li><a href="community_freeBoard.jsp">게시판</a>
                     </li>
                   </ul>
             </nav>
@@ -81,7 +77,7 @@
           		</div>
 			</div>
 			<div class="test-image">
-        		<img src="#">
+        		<img src="img/age.jpg">
         	</div>
 			<div class="page">
 				<p>1/21</p>
@@ -153,7 +149,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/oilyfood.jpg">
         	</div>
         	<div class="page">
 				<p>4/21</p>
@@ -264,7 +260,7 @@
         
         <div id="q9">
         <div class="question-wrap">
-        		<h2>Q8. 배달 음식을 자주 먹나요?</h2>
+        		<h2>Q8. 배달 음식을 자주 시켜 먹거나 외식을 자주 하나요?</h2>
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
@@ -273,7 +269,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/deliver.jpg">
         	</div>
         	<div class="page">
 				<p>9/21</p>
