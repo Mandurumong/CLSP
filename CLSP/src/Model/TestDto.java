@@ -26,42 +26,41 @@ public class TestDto {
 	String insulin; //인슐린 저항성이 있는가
 	String fat; //비만?
 	
+	int eatBreakfast; //사용자가 선택한 아침 점수
+	int eatTime8; // 야식 점수
+	int eatOily; //기름진 음식 점수
+	int eatRegular; //규칙적인 식사 점수
+	int eatSpeed; //빠른 식사 점수
+	int eatSnack; // 간식 점수
+	int eatAlcohol; // 술 점수
+	int eatDeliver; //배달음식 점수
+	
+	int lifeAfter1;
+	int lifeSleepTime;
+	int lifeLightOn;
+	int lifeBrush;
+	int lifeSmoke;
+	
+	int exerciseHRegular;
+	int exerciseH30;
+	int exerciseStrech;
+	
+	int etcInheritance;
+	int etcStress;
+	int etcInsulin;
+	int etcFat;
+	
+	int eatingHabits; //식습관 점수 합산
+	int lifeHabits; //생활습관 점수 합산
+	int exercise; //운동습관 점수 합산
+	int etc; //기타 점수 합산
+	
+	int allScore;
+	
 	public TestDto() {}
 	
 	public TestDto(String age) {
 		this.age = age;
-	}
-
-	public TestDto(String breakfast, String dinnerTime, String nightMeal, String mealRegular, String mealSpeed, String mealSnack, String alcohol, String mealdeli) {
-		this.breakfast = breakfast;
-		this.dinnerTime = dinnerTime;
-		this.nightMeal = nightMeal;
-		this.mealRegular = mealRegular;
-		this.mealSpeed = mealSpeed;
-		this.mealSnack = mealSnack;
-		this.alcohol = alcohol;
-		this.mealdeli = mealdeli;
-	}
-	
-	public TestDto(String after1, String sleepTime, String light, String brush, String smoke) {
-		this.after1 = after1;
-		this.sleepTime = sleepTime;
-		this.light = light;
-		this.brush = brush;
-		this.smoke = smoke;
-	}
-	
-	public TestDto(String exR, String ex30, String strech) {
-		this.exerciseRegular = exR;
-		this.exercise30 = ex30;
-		this.strech = strech;
-	}
-	
-	public TestDto(String inheritance, String stress, String insulin, String fat) {
-		this.inheritance = inheritance;
-		this.stress = stress;
-		this.insulin = insulin;
-		this.fat = fat;
 	}
 
 	public String getAge() {
@@ -200,14 +199,6 @@ public class TestDto {
 		this.strech = strech;
 	}
 
-	public String getinheritance() {
-		return inheritance;
-	}
-
-	public void setinheritance(String inheritance) {
-		this.inheritance = inheritance;
-	}
-
 	public String getStress() {
 		return stress;
 	}
@@ -232,4 +223,215 @@ public class TestDto {
 		this.fat = fat;
 	}
 	
+	public String getInheritance() {
+		return inheritance;
+	}
+
+	public void setInheritance(String inheritance) {
+		this.inheritance = inheritance;
+	}
+
+	
+	//받아오는 값
+	
+	public int getEatBreakfast() {
+		return eatBreakfast;
+	}
+
+	public void setEatBreakfast(int eatBreakfast) {
+		this.eatBreakfast = eatBreakfast;
+	}
+
+	public int getEatTime8() {
+		return eatTime8;
+	}
+
+	public void setEatTime8(int eatTime8) {
+		this.eatTime8 = eatTime8;
+	}
+
+	public int getEatOily() {
+		return eatOily;
+	}
+
+	public void setEatOily(int eatOily) {
+		this.eatOily = eatOily;
+	}
+
+	public int getEatRegular() {
+		return eatRegular;
+	}
+
+	public void setEatRegular(int eatRegular) {
+		this.eatRegular = eatRegular;
+	}
+
+	public int getEatSpeed() {
+		return eatSpeed;
+	}
+
+	public void setEatSpeed(int eatSpeed) {
+		this.eatSpeed = eatSpeed;
+	}
+
+	public int getEatSnack() {
+		return eatSnack;
+	}
+
+	public void setEatSnack(int eatSnack) {
+		this.eatSnack = eatSnack;
+	}
+
+	public int getEatAlcohol() {
+		return eatAlcohol;
+	}
+
+	public void setEatAlcohol(int eatAlcohol) {
+		this.eatAlcohol = eatAlcohol;
+	}
+
+	public int getEatDeliver() {
+		return eatDeliver;
+	}
+
+	public void setEatDeliver(int eatDeliver) {
+		this.eatDeliver = eatDeliver;
+	}
+	
+	public int getLifeAfter1() {
+		return lifeAfter1;
+	}
+
+	public void setLifeAfter1(int lifeAfter1) {
+		this.lifeAfter1 = lifeAfter1;
+	}
+
+	public int getLifeSleepTime() {
+		return lifeSleepTime;
+	}
+
+	public void setLifeSleepTime(int lifeSleepTime) {
+		this.lifeSleepTime = lifeSleepTime;
+	}
+
+	public int getLifeLightOn() {
+		return lifeLightOn;
+	}
+
+	public void setLifeLightOn(int lifeLightOn) {
+		this.lifeLightOn = lifeLightOn;
+	}
+
+	public int getLifeBrush() {
+		return lifeBrush;
+	}
+
+	public void setLifeBrush(int lifeBrush) {
+		this.lifeBrush = lifeBrush;
+	}
+
+	public int getLifeSmoke() {
+		return lifeSmoke;
+	}
+
+	public void setLifeSmoke(int lifeSmoke) {
+		this.lifeSmoke = lifeSmoke;
+	}
+
+	public int getExerciseHRegular() {
+		return exerciseHRegular;
+	}
+
+	public void setExerciseHRegular(int exerciseHRegular) {
+		this.exerciseHRegular = exerciseHRegular;
+	}
+
+	public int getExerciseH30() {
+		return exerciseH30;
+	}
+
+	public void setExerciseH30(int exerciseH30) {
+		this.exerciseH30 = exerciseH30;
+	}
+
+	public int getExerciseStrech() {
+		return exerciseStrech;
+	}
+
+	public void setExerciseStrech(int exerciseStrech) {
+		this.exerciseStrech = exerciseStrech;
+	}
+
+	public int getEtcInheritance() {
+		return etcInheritance;
+	}
+
+	public void setEtcInheritance(int etcInheritance) {
+		this.etcInheritance = etcInheritance;
+	}
+
+	public int getEtcStress() {
+		return etcStress;
+	}
+
+	public void setEtcStress(int etcStress) {
+		this.etcStress = etcStress;
+	}
+
+	public int getEtcInsulin() {
+		return etcInsulin;
+	}
+
+	public void setEtcInsulin(int etcInsulin) {
+		this.etcInsulin = etcInsulin;
+	}
+
+	public int getEtcFat() {
+		return etcFat;
+	}
+
+	public void setEtcFat(int etcFat) {
+		this.etcFat = etcFat;
+	}
+
+	public void setExercise(int exercise) {
+		this.exercise = exercise;
+	}
+
+	public void setEatingHabits(int eatingHabits) {
+		this.eatingHabits = eatingHabits;
+	}
+
+	public void setLifeHabits(int lifeHabits) {
+		this.lifeHabits = lifeHabits;
+	}
+
+	public void setEtc(int etc) {
+		this.etc = etc;
+	}
+
+	public int getEatingHabits() {
+		eatingHabits = eatBreakfast + eatTime8 + eatOily + eatRegular + eatSpeed + eatSnack + eatAlcohol + eatDeliver; 
+		return eatingHabits;
+	}
+	
+	public int getLifeHabits() {
+		lifeHabits = lifeAfter1 + lifeSleepTime + lifeLightOn + lifeBrush + lifeSmoke;
+		return lifeHabits;
+	}
+	
+	public int getExercise() {
+		exercise = exerciseHRegular + exerciseH30 + exerciseStrech;
+		return exercise;
+	}
+	
+	public int getEtc() {
+		etc = etcFat + etcInheritance + etcInsulin + etcStress;
+		return etc;
+	}
+	
+	public int getAllScore() {
+		allScore = getEatingHabits() + getLifeHabits() + getExercise() + getEtc();
+		return allScore;
+	}
 }

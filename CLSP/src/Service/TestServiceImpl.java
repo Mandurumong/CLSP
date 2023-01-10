@@ -17,11 +17,9 @@ public class TestServiceImpl implements TestService{
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		TestDto test = (TestDto)request.getAttribute("test");
 		testDao.eatingTest(test);
-//		testDao.lifeTest(test);
-//		testDao.exerciseTest(test);
-//		testDao.etcTest(test);
-		
-//		return testDao.eatingTest();
+		testDao.lifeTest(test);
+		testDao.exerciseTest(test);
+		testDao.etcTest(test);
 	}
 
 }

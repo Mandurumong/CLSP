@@ -20,7 +20,7 @@
             <div class="header">
                 <div id="logo">
                     <a href="index.jsp" class="logo">
-                    <img src="#" alt="logo">
+                    <img src="img/그림1.png" alt="logo">
                     </a>
                 </div>
 
@@ -150,11 +150,11 @@
                   	<h4>01</h4>
                   	
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 0-19 세 환자 수는 <%= analytics.getPatient2021_10() %> 명 으로, 남성은 <%= analytics.getPatient2021_10_m() %> 명, 여성은 <%= analytics.getPatient2021_10_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 약  <%=(Math.round(((float)analytics.getPatient2021_10())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %> % 입니다.</p>
+                  	<p>2021년 기준, 0-19 세 환자 수는 <span><%= analytics.getPatient2021_10() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_10_m() %></span> 명, 여성은 <span><%= analytics.getPatient2021_10_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 0-19 세 환자가 차지하는 비율은 약  <span><%=(Math.round(((float)analytics.getPatient2021_10())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %> %</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_10_m()*100)/analytics.getPatient2021_10() %> %, 여성 <%= (analytics.getPatient2021_10_f()*100)/analytics.getPatient2021_10() %> % </p>
+                  	<p>남성 <span><%= (analytics.getPatient2021_10_m()*100)/analytics.getPatient2021_10() %> %</span>, 여성 <span><%= (analytics.getPatient2021_10_f()*100)/analytics.getPatient2021_10() %> %</span> </p>
  
                   	<h3>전체 비율</h3>
 					<canvas id="Chart10" width="1200" height="600"></canvas>

@@ -20,7 +20,7 @@
             <div class="header">
                 <div id="logo">
                     <a href="index.jsp" class="logo">
-                    <img src="#" alt="logo">
+                    <img src="img/그림1.png" alt="logo">
                     </a>
                 </div>
 
@@ -54,10 +54,19 @@
                   </ul>
             </nav>
        </header>
-
+	<%
+		TestDto testDto = (TestDto)request.getAttribute("test");
+	%>
            <div id="result_top_level" class="mb-auto wd-960">
             <div class="top_user">
-              <p><span>'사용자'</span>님의 결과</p>
+            	<c:choose>
+                	<c:when test="${user_id == null }">
+                  	     <p><span>사용자</span> 님의 결과</p>
+                	</c:when>
+                	<c:otherwise>
+                	     <p><span><%= user_id %></span> 님의 결과</p>
+                	</c:otherwise>
+            	</c:choose>  
               <div class="graph">
                 <ul>
                   <li>양호</li>
@@ -68,13 +77,23 @@
                 </ul>
               </div>
               <div class="user_result">
-                <p><span>사용자</span> 님의 당뇨 위험도는 <span>LV.2 관심 단계</span>이며 당뇨 발병 확률은 35% 입니다.</p>
+              	<c:choose>
+              		<c:when test="${user_id == null }">
+                		<p><span>사용자</span> 님의 당뇨 위험도는 <span>LV.2 관심 단계</span>이며 당뇨 발병 확률은 <span><%= testDto.getAllScore()%> %</span> 입니다.</p>
+                	</c:when>
+                	<c:otherwise>
+                		<p><span><%= user_id %></span> 님의 당뇨 위험도는 <span>LV.2 관심 단계</span>이며 당뇨 발병 확률은 <span><%= testDto.getAllScore()%> %</span> 입니다.</p>
+                	</c:otherwise>
+                </c:choose>
               </div>  <!-- user_result -->
             </div> <!-- top_user -->
             <h5 class="same_age">같은 나이 대의 통계</h5>
             <div class="foto">
               <p>
-                
+					식습관 점수 : <%=testDto.getEatingHabits() %>
+					생활 습관 점수 : <%=testDto.getLifeHabits() %> 
+					운동 점수 : <%= testDto.getExercise() %>
+					기타 점수 : <%= testDto.getEtc() %>
               </p>
             </div>
 
@@ -91,18 +110,27 @@
                   <li><div></div>기타</li>
                 </ul>
                 <ul class="first_cause">
-                  <li>식습관 60%</li>
-                  <li>생활습관20%</li>
+                  <li>식습관 <%= testDto.getEatingHabits()/testDto.getAllScore()*100 %>%</li>
+                  <li>생활습관<%= testDto.getLifeHabits()/testDto.getAllScore()*100%>%</li>
                 </ul> 
                 <ul class="sec_cause">
-                  <li>운동 10%</li>
-                  <li>기타 10%</li>
+                  <li>운동 <%= testDto.getExercise()/testDto.getAllScore()*100%>%</li>
+                  <li>기타 <%= testDto.getEtc()/testDto.getAllScore()*100%>%</li>
                 </ul>
-                <p class="border_main"><span>사용자</span> 님의 주요 위험 요인은 <span>식습관</span>입니다.</p>
-                <div class="more_info"><a href="#">제안 예방법 보기</a></div>
+                <c:choose>
+                	<c:when test="${user_id == null }">
+                		<p class="border_main"><span>사용자</span> 님의 주요 위험 요인은 <span>식습관</span>입니다.</p>
+                	</c:when>
+                	<c:otherwise>
+                		<p class="border_main"><span><%=user_id %></span> 님의 주요 위험 요인은 <span>식습관</span>입니다.</p>
+                	</c:otherwise>
+                </c:choose>
+                <div class="more_info"><a href="#prevention">제안 예방법 보기</a></div>
               </div>
             </div>
-
+			
+			<div id = "prevention">
+			</div>
             <div class="method_pr">
               <h5 class="same_age">제안 예방법</h5> 
               <p>식습관 개선하기</p>

@@ -163,6 +163,7 @@ public class MemberController extends HttpServlet {
 			test.setAge(request.getParameter("age"));// 나이대
 			
 			test.setBreakfast(request.getParameter("meal-breakfast"));//아침여부
+			System.out.println(test.getBreakfast());
 			test.setDinnerTime(request.getParameter("meal-8")); // 저녁 8시 이후 먹는지
 			test.setNightMeal(request.getParameter("meal-oily")); // 야식 먹는지
 			test.setMealRegular(request.getParameter("meal-regular")); // 규칙적인 식사
@@ -181,7 +182,7 @@ public class MemberController extends HttpServlet {
 			test.setExercise30(request.getParameter("exercise-30")); // 하루 30분 이상 운동
 			test.setStrech(request.getParameter("exercise-st")); // 스트레칭 하는가
 			
-			test.setinheritance(request.getParameter("etc-inheritance")); // 유전
+			test.setInheritance(request.getParameter("etc-inheritance")); // 유전
 			test.setStress(request.getParameter("etc-stress")); //스트레스 받는가
 			test.setInsulin(request.getParameter("etc-insulin")); //인슐린 저항성 여부
 			test.setFat(request.getParameter("etc-fat")); // 비만?

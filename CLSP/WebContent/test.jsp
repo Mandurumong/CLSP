@@ -20,7 +20,7 @@
             <div class="header">
                 <div id="logo">
                     <a href="index.jsp" class="logo">
-                    <img src="#" alt="logo">
+                    <img src="img/그림1.png" alt="logo">
                     </a>
                 </div>
 

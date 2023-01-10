@@ -174,6 +174,15 @@ public class AnalyticsDao {
 			System.out.println("analytics() 에러 발생");
 			e.printStackTrace();
 		}
+		finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch(Exception e2) {
+				e2.printStackTrace();
+				System.out.println("close 실패");
+			}
+		}
 		return analytics;
 	}
 }
