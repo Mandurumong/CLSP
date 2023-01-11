@@ -28,9 +28,9 @@
     font-weight: normal;
     font-style: normal;
 }
-/*-----------------------------�룿�듃  & 湲곕낯�뀑�똿 ----------------------------*/
+/*-----------------------------폰트  & 기본셋팅  ----------------------------*/
 html{
-    scroll-behavior: smooth; /*踰꾪듉�닃���쓣�븣 �솗 �씠�룞�븯吏��븡怨� 泥쒖쿇�엳 �씠�룞*/
+    scroll-behavior: smooth; /*버튼눌렀을때 확 이동하지않고 천천히 이동*/
 }
 body{
   height: 100%;
@@ -42,10 +42,10 @@ h3{
   margin-top: 10px;
   text-align: center;
 }
-/* -----------------------------�룿�듃  & 湲곕낯�뀑�똿 ---------------------------- */
+/* -----------------------------폰트  & 기본셋팅 ---------------------------- */
 #logo img{
     height: 150px;
-} /* 濡쒓퀬�겕湲�*/
+} /* 로고크기*/
 header{
     position: sticky;
     top: 0;
@@ -177,6 +177,52 @@ a{
     margin-top: 15px;
 }
 /**/
+.top_user {
+	margin: 0 auto;
+	text-align: center;
+}
+
+ .top_user ul{
+    width: 100%;
+    display: flex;
+    float: left;
+    justify-content: space-between;
+  }
+
+  .top_user ul li{
+    width: 20%;
+    padding:20px 0;
+    text-align: center;
+  }
+
+  .top_user ul li:nth-child(1){
+    background-color: #F1CDB1;
+  }
+
+  .top_user ul li:nth-child(2){
+    background-color: #A5C2E3;
+
+  }
+
+  .top_user ul li:nth-child(3){
+    background-color: #B1D095;
+  }
+
+  .top_user ul li:nth-child(4){
+    background-color: #F9DA78;
+  }
+
+  .top_user ul li:nth-child(5){
+    background-color: #EA3323;
+  }
+  
+.graph{
+   margin: 0;
+   padding: 0;
+   height: 61px;
+  }
+  
+/**/
 .down {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -220,6 +266,7 @@ a{
 #whatIsRisk {
 	align-items: center;
   	text-align: center;
+  	margin: 0 auto;
 }
 #whatIsRisk img{
 	width: 60%;

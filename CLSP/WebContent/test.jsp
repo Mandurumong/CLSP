@@ -67,13 +67,13 @@
           	</div>
           	<div class="answer-wrap">
           		<div class="answer">
-          				10대<input type="radio" name="age" value="age10" required>
-          				20대<input type="radio" name="age" value="age20" required>
-          				30대<input type="radio" name="age" value="age30" required>
-          				40대<input type="radio" name="age" value="age40" required>
-          				50대<input type="radio" name="age" value="age50" required>
-          				60대<input type="radio" name="age" value="age60" required>
-          				70대 이상<input type="radio" name="age" value="age70" required>         
+          				10대<input type="radio" name="age" value="10" required>
+          				20대<input type="radio" name="age" value="20" required>
+          				30대<input type="radio" name="age" value="30" required>
+          				40대<input type="radio" name="age" value="40" required>
+          				50대<input type="radio" name="age" value="50" required>
+          				60대<input type="radio" name="age" value="60" required>
+          				70대 이상<input type="radio" name="age" value="70" required>         
           		</div>
 			</div>
 			<div class="test-image">
@@ -245,7 +245,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/drink.jpg">
         	</div>
         	<div class="page">
 				<p>8/21</p>
@@ -365,7 +365,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/brush.jpg">
         	</div>
         	<div class="page">
 				<p>13/21</p>
@@ -551,7 +551,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/fat.jpg">
         	</div>
         	<div class="page">
 				<p>21/21</p>

@@ -4,6 +4,8 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+	TestDto testDto = (TestDto)request.getAttribute("test");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -11,6 +13,8 @@
 <meta charset="utf-8">
     <title>결과보기</title>
     <link rel="stylesheet" href="css/testResult.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>
 <body>
 <body>
@@ -44,7 +48,7 @@
                     <li>
                       <a href="index.jsp">홈</a></li>
                     <li>
-                      <a href="analytics.jsp">현황 분석</a></li>
+                      <a href="analytics.do">현황 분석</a></li>
                     <li>
                       <a href="selfTestM.jsp">자가 진단</a>
                     </li>
@@ -54,9 +58,6 @@
                   </ul>
             </nav>
        </header>
-	<%
-		TestDto testDto = (TestDto)request.getAttribute("test");
-	%>
            <div id="result_top_level" class="mb-auto wd-960">
             <div class="top_user">
             	<c:choose>
@@ -79,22 +80,73 @@
               <div class="user_result">
               	<c:choose>
               		<c:when test="${user_id == null }">
-                		<p><span>사용자</span> 님의 당뇨 위험도는 <span>LV.2 관심 단계</span>이며 당뇨 발병 확률은 <span><%= testDto.getAllScore()%> %</span> 입니다.</p>
+                		<p><span>사용자</span> 님의 당뇨 위험도는
+                		 
+                		<c:choose>
+                		<c:when test="${20> test.allScore}">
+                			<span>LV.1 양호 단계</span>
+                		</c:when>
+                		<c:when test="${40 > test.allScore}">
+                			<span>LV.2 관심 단계</span>
+                		</c:when>
+                		<c:when test="${60 > test.allScore}">
+                			<span>LV.3 주의 단계</span>
+                		</c:when>
+                		<c:when test="${80 > test.allScore}">
+                			<span>LV.4 경고 단계</span>
+                		</c:when>
+                		<c:otherwise>
+                			<span>LV.5 위험 단계</span>
+                		</c:otherwise>
+                		</c:choose>
+                		이며 당뇨 발병 확률은 <span><%= testDto.getAllScore()%> %</span> 입니다.</p>	                	
                 	</c:when>
+                	
                 	<c:otherwise>
-                		<p><span><%= user_id %></span> 님의 당뇨 위험도는 <span>LV.2 관심 단계</span>이며 당뇨 발병 확률은 <span><%= testDto.getAllScore()%> %</span> 입니다.</p>
+                	
+                		<p><span><%= user_id %></span> 님의 당뇨 위험도는 
+                		<c:choose>
+                		<c:when test="${test.allScore < 20}">
+                			<span>LV.1 양호 단계</span>
+                		</c:when>
+                		<c:when test="${40 > test.allScore}">
+                			<span>LV.2 관심 단계</span>
+                		</c:when>
+                		<c:when test="${60 > test.allScore}">
+                			<span>LV.3 주의 단계</span>
+                		</c:when>
+                		<c:when test="${80 > test.allScore}">
+                			<span>LV.4 경고 단계</span>
+                		</c:when>
+                		<c:otherwise>
+                			<span>LV.5 위험 단계</span>
+                		</c:otherwise>               		
+                		</c:choose>               		              		
+                		이며 당뇨 발병 확률은 <span><%= testDto.getAllScore()%> %</span> 입니다.</p>
                 	</c:otherwise>
                 </c:choose>
               </div>  <!-- user_result -->
             </div> <!-- top_user -->
-            <h5 class="same_age">같은 나이 대의 통계</h5>
+            <h5 class="same_age">같은 <%=testDto.getAge() %> 대의 통계</h5>
             <div class="foto">
+            	<h3>전체 비율</h3>
+            	<c:choose>
+            		<c:when test="${test.age == 10 }">
+            			<canvas id="Chart10" width="1200" height="600"></canvas>
+						<canvas id="Chart_gender10" width="1200" height="600"></canvas>
+            		</c:when>
+            		<c:when test="${test.age == 20 }">
+            		    <canvas id="Chart20" width="1200" height="600"></canvas>
+                  		<canvas id="Chart_gender20" width="1200" height="600"></canvas>
+            		</c:when>
+            		<c:otherwise>
+            		
+            		</c:otherwise>
+            	</c:choose>
               <p>
-					식습관 점수 : <%=testDto.getEatingHabits() %>
-					생활 습관 점수 : <%=testDto.getLifeHabits() %> 
-					운동 점수 : <%= testDto.getExercise() %>
-					기타 점수 : <%= testDto.getEtc() %>
+					자세한 사항은 현황분석을 확인해주세요
               </p>
+              <div class="more_info"><a href="analytics.do">현황 분석 보기</a></div>
             </div>
 
             <!-- 그래프 -->
@@ -110,21 +162,65 @@
                   <li><div></div>기타</li>
                 </ul>
                 <ul class="first_cause">
-                  <li>식습관 <%= testDto.getEatingHabits()/testDto.getAllScore()*100 %>%</li>
-                  <li>생활습관<%= testDto.getLifeHabits()/testDto.getAllScore()*100%>%</li>
+                  <li>식습관 <%= (testDto.getEatingHabits()*100/testDto.getAllScore()) %>%</li>
+                  <li>생활습관 <%= (testDto.getLifeHabits()*100/testDto.getAllScore()) %> %</li>
                 </ul> 
                 <ul class="sec_cause">
-                  <li>운동 <%= testDto.getExercise()/testDto.getAllScore()*100%>%</li>
-                  <li>기타 <%= testDto.getEtc()/testDto.getAllScore()*100%>%</li>
+                  <li>운동 <%= (testDto.getExercise()*100/testDto.getAllScore())%>%</li>
+                  <li>기타 <%= (testDto.getEtc()*100/testDto.getAllScore())%>%</li>
                 </ul>
+                
                 <c:choose>
                 	<c:when test="${user_id == null }">
-                		<p class="border_main"><span>사용자</span> 님의 주요 위험 요인은 <span>식습관</span>입니다.</p>
+                		<p class="border_main"><span>사용자</span> 님의 주요 위험 요인은 
+                		<c:choose>
+                			<c:when test="">               			
+                				<span>식습관</span>
+                			</c:when>
+                			<c:when test="">
+                				<span>생활습관</span>
+                			</c:when>
+                			<c:when test="">
+                				<span>운동</span>
+                			</c:when>
+                			<c:otherwise>
+                				<span>기타</span>
+                			</c:otherwise>
+                		</c:choose>
+                		입니다.</p>
                 	</c:when>
                 	<c:otherwise>
-                		<p class="border_main"><span><%=user_id %></span> 님의 주요 위험 요인은 <span>식습관</span>입니다.</p>
+                		<p class="border_main"><span><%=user_id %></span> 님의 주요 위험 요인은 
+                		<c:choose>
+                			<c:when test="">               			
+                				<span>식습관</span>
+                			</c:when>
+                			<c:when test="">
+                				<span>생활습관</span>
+                			</c:when>
+                			<c:when test="">
+                				<span>운동</span>
+                			</c:when>
+                			<c:otherwise>
+                				<span>기타</span>
+                			</c:otherwise>
+                		</c:choose>
+                		입니다.</p>
                 	</c:otherwise>
                 </c:choose>
+                
+                <c:choose>
+                	<c:when test="${test.eatingHabits == null}">
+                	 	<p>null</p>
+                	</c:when>
+                	<c:when test="${test.eatingHabits == 15}">
+                		<p>15</p>
+                	</c:when>
+                	<c:otherwise>
+                	 	<p>값이 들어왔다,,,</p>
+                	</c:otherwise>
+                </c:choose>
+                
                 <div class="more_info"><a href="#prevention">제안 예방법 보기</a></div>
               </div>
             </div>
@@ -157,5 +253,7 @@
               <img src="img/pngegg.png">
             </div>
           </div>
+<script src="script/chart10.js"></script>
+<script src="script/chart20.js"></script>
 </body>
 </html>

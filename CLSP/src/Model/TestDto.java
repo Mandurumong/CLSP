@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 public class TestDto {
 	String age; // 나이대
 	String breakfast; //아침여부
