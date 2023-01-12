@@ -163,14 +163,13 @@ public class MemberController extends HttpServlet {
 			test.setAge(request.getParameter("age"));// 나이대
 			
 			test.setBreakfast(request.getParameter("meal-breakfast"));//아침여부
-			System.out.println(test.getBreakfast());
 			test.setDinnerTime(request.getParameter("meal-8")); // 저녁 8시 이후 먹는지
-			test.setNightMeal(request.getParameter("meal-oily")); // 야식 먹는지
+			test.setMealOily(request.getParameter("meal-oily")); // 짜고 기름진 음식
 			test.setMealRegular(request.getParameter("meal-regular")); // 규칙적인 식사
 			test.setMealSpeed(request.getParameter("meal-speed")); // 식사 속도
 			test.setMealSnack(request.getParameter("meal-snack")); // 식사 후 간식
 			test.setAlcohol(request.getParameter("meal-alcohol")); // 술
-			test.setMealdeli(request.getParameter("meal-deli")); // 기름진 음식, 배달음식 
+			test.setMealdeli(request.getParameter("meal-deli")); // 배달음식 
 			
 			test.setAfter1(request.getParameter("life-after1")); //1시 이후 취침
 			test.setSleepTime(request.getParameter("life-sleept")); //수면시간

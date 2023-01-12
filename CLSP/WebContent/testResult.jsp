@@ -127,26 +127,48 @@
                 </c:choose>
               </div>  <!-- user_result -->
             </div> <!-- top_user -->
-            <h5 class="same_age">같은 <%=testDto.getAge() %> 대의 통계</h5>
+            <c:choose>
+            	<c:when test="${test.age == 70 }">
+            		<h5 class="same_age">같은 <%=testDto.getAge() %> 대 이상의 통계</h5>            
+            	</c:when>
+            	<c:otherwise>
+            		<h5 class="same_age">같은 <%=testDto.getAge() %> 대의 통계</h5> 
+            	</c:otherwise>
+            </c:choose>
             <div class="foto">
             	<h3>전체 비율</h3>
             	<c:choose>
             		<c:when test="${test.age == 10 }">
-            			<canvas id="Chart10" width="1200" height="600"></canvas>
-						<canvas id="Chart_gender10" width="1200" height="600"></canvas>
+            			<canvas id="Chart10" width="800" height="300"></canvas>
+						<canvas id="Chart_gender10" width="800" height="350"></canvas>
             		</c:when>
             		<c:when test="${test.age == 20 }">
-            		    <canvas id="Chart20" width="1200" height="600"></canvas>
-                  		<canvas id="Chart_gender20" width="1200" height="600"></canvas>
+            		    <canvas id="Chart20" width="800" height="300"></canvas>
+                  		<canvas id="Chart_gender20" width="800" height="350"></canvas>
+            		</c:when>
+            		<c:when test="${test.age == 30 }">
+            			<canvas id = "Chart30" width = "800" height="300"></canvas>
+            			<canvas id = "Chart_gender30" width="800" height="350"></canvas>
+            		</c:when>
+            		<c:when test="${test.age == 40 }">
+            			<canvas id ="Chart40" width = "800" height="300"></canvas>
+            			<canvas id = "Chart_gender40" width="800" height = "350"></canvas>
+            		</c:when>
+            		<c:when test="${test.age == 50 }">
+            		    <canvas id ="Chart50" width = "800" height="300"></canvas>
+            			<canvas id = "Chart_gender50" width="800" height = "350"></canvas>
+            		</c:when>
+            		<c:when test="${test.age == 60 }">
+            		    <canvas id ="Chart60" width = "800" height="300"></canvas>
+            			<canvas id = "Chart_gender60" width="800" height = "350"></canvas>
             		</c:when>
             		<c:otherwise>
-            		
+            		    <canvas id ="Chart70" width = "800" height="300"></canvas>
+            			<canvas id = "Chart_gender70" width="800" height = "350"></canvas>
             		</c:otherwise>
             	</c:choose>
-              <p>
-					자세한 사항은 현황분석을 확인해주세요
-              </p>
-              <div class="more_info"><a href="analytics.do">현황 분석 보기</a></div>
+              	<h4>자세한 사항은 현황분석을 확인해주세요</h4>
+              <button type="button" onclick="location.href='analytics.do'">현황 분석 보기</button>
             </div>
 
             <!-- 그래프 -->
@@ -174,13 +196,13 @@
                 	<c:when test="${user_id == null }">
                 		<p class="border_main"><span>사용자</span> 님의 주요 위험 요인은 
                 		<c:choose>
-                			<c:when test="">               			
+                			<c:when test="${ test.eatingHabits > test.lifeHabits && test.eatingHabits > test.exercise && test.eatingHabits > test.etc}">               			
                 				<span>식습관</span>
                 			</c:when>
-                			<c:when test="">
+                			<c:when test="${ test.lifeHabits > test.eatingHabits && test.lifeHabits > test.exercise && test.lifeHabits > test.etc}">
                 				<span>생활습관</span>
                 			</c:when>
-                			<c:when test="">
+                			<c:when test="${ test.exercise > test.eatingHabits && test.exercise > test.lifeHabits && test.lifeHabits > test.etc}">
                 				<span>운동</span>
                 			</c:when>
                 			<c:otherwise>
@@ -192,13 +214,13 @@
                 	<c:otherwise>
                 		<p class="border_main"><span><%=user_id %></span> 님의 주요 위험 요인은 
                 		<c:choose>
-                			<c:when test="">               			
+                			<c:when test="${ test.eatingHabits > test.lifeHabits && test.eatingHabits > test.exercise && test.eatingHabits > test.etc}">               			
                 				<span>식습관</span>
                 			</c:when>
-                			<c:when test="">
+                			<c:when test="${ test.lifeHabits > test.eatingHabits && test.lifeHabits > test.exercise && test.lifeHabits > test.etc}">
                 				<span>생활습관</span>
                 			</c:when>
-                			<c:when test="">
+                			<c:when test="${ test.exercise > test.eatingHabits && test.exercise > test.lifeHabits && test.lifeHabits > test.etc}">
                 				<span>운동</span>
                 			</c:when>
                 			<c:otherwise>
@@ -206,18 +228,6 @@
                 			</c:otherwise>
                 		</c:choose>
                 		입니다.</p>
-                	</c:otherwise>
-                </c:choose>
-                
-                <c:choose>
-                	<c:when test="${test.eatingHabits == null}">
-                	 	<p>null</p>
-                	</c:when>
-                	<c:when test="${test.eatingHabits == 15}">
-                		<p>15</p>
-                	</c:when>
-                	<c:otherwise>
-                	 	<p>값이 들어왔다,,,</p>
                 	</c:otherwise>
                 </c:choose>
                 
@@ -229,31 +239,220 @@
 			</div>
             <div class="method_pr">
               <h5 class="same_age">제안 예방법</h5> 
-              <p>식습관 개선하기</p>
-              <div>
-                <h5>1. 골고루 먹기</h5>
-                <ul class="no_1">
-                  <li>추천식단</li>
-                  <li><img src="">이미지</li>
-                </ul>
-              </div>
-              <div>
-                <h5>2. 배달음식 줄이기</h5>
-                <ul class="no_2">
-                  <li>상황 상 배달음식을 줄이기 힘드시다면<br> 아래 가게들을 참조해보세요.</li>
-                  <li>나트륨 줄이기 실천 음식점</li>
-                  <li><br><img src="img/배달.png"></li>
-                </ul>
-              </div>
-              <p class="al_center"><button type="button" onClick="location.href='test.jsp'" value="다시 하기"></button></p>
-            </div>
-
-
+              <c:choose>
+				<c:when test="${test.eatingHabits >= 15}">
+					<p>·식습관 개선하기</p>
+					<div>
+					<c:choose>
+						<c:when test="${ test.breakfast == 'eatBreakfast_no'}">
+						<div>
+                		<h5>아침 식사 하기</h5>
+                		<ul class="no_1">
+                  			<li>추천식단</li>
+                  			<li><img src="">이미지</li>
+                		</ul>
+                		</div>
+						</c:when>
+						<c:otherwise>?</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${ test.dinnerTime == 'eatMealAfter8_yes'}">
+						<div>
+							<h5>1. 야식 먹지 않기</h5>
+							<h5>2. 저녁 일찍 먹기</h5>
+						</div>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${ test.mealRegular == 'eatRegular_no' }">
+							<div>
+								<h5>규칙적인 식사 하기</h5>
+							</div>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.mealSpeed == 'eatSpeedFast_yes' }">
+						<div>
+							<h5>식사 속도 늦추기</h5>
+						</div>
+						</c:when>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.mealSnack =='eatSnack_yes' }">
+						<div>
+							<h5>식사 후 간식 먹지 않기</h5>
+						</div>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.alcohol == 'drinkAlcohol_yes' }">
+						<div>
+							<h5>술 줄이기</h5>
+						</div>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.mealdeli == 'deliver_yes'}">
+						<div>
+							<h5>배달 음식 줄이기</h5>
+							<ul class="no_2">
+                  				<li>상황 상 배달음식을 줄이기 힘드시다면<br> 아래 가게들을 참조해보세요.</li>
+                  				<li>나트륨 줄이기 실천 음식점</li>
+                  				<li><br><img src="img/배달.png"></li>
+                			</ul>
+						</div>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+              		</div>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+              </c:choose>
+              <c:choose>
+				<c:when test="${test.lifeHabits >= 15}">
+					<p>·생활습관 개선하기</p>
+					<c:choose>
+						<c:when test="${ test.after1 == spleepAfter1_yes}">
+							<h5>일찍 자세요</h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.sleepTime ==  sleepLess6_yes}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose> 
+					<c:choose>
+						<c:when test="${test.light ==  lightOn_yes}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.brush == brush3_no }">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.smoke == smoke_yes}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+				</c:when>
+				<c:otherwise></c:otherwise>
+              </c:choose>
+              <c:choose>
+				<c:when test="${test.exercise >= 15}">
+					<p>·운동습관 개선하기</p> 
+					<c:choose>
+						<c:when test="${test.exerciseRegular == exerciseRegular_no}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.exercise30 == exercise30_no }">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.strech == stretching_no}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+				</c:when>
+				<c:otherwise></c:otherwise>
+              </c:choose>
+              <c:choose>
+				<c:when test="${test.etc >= 15}">
+					<p>·기타습관 개선하기</p>
+					<c:choose>
+						<c:when test="${test.inheritance == inheritance_yes}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose> 
+					<c:choose>
+						<c:when test="${test.stress == stress_yes}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.insulin == insulinx_yes }">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${test.fat == fat_yes}">
+							<h5></h5>
+						</c:when>
+						<c:otherwise></c:otherwise>
+					</c:choose>
+				</c:when>
+				<c:otherwise>
+				
+				</c:otherwise>
+              </c:choose>
+            </div> 
+            
+			<div class="retry">
+				<button type="button" onclick="location.href='test.jsp'">다시하기</button>
+			</div>
+			
             <div class="arrow_top">
-              <img src="img/pngegg.png">
+            <c:choose>
+            	<c:when test="${test.allScore < 20}">
+            		<div id = "arrow1">
+              			<img src="img/pngegg.png">            	
+            		</div>
+            	</c:when>
+            	<c:when test="${40 > test.allScore}">
+            		<div id = "arrow2">
+              			<img src="img/pngegg.png">            	
+            		</div>
+            	</c:when>
+            	<c:when test="${60 > test.allScore}">
+            		<div id = "arrow3">
+              			<img src="img/pngegg.png">            	
+            		</div>
+            	</c:when>
+            	<c:when test="${80 > test.allScore}">
+            		<div id = "arrow4">
+              			<img src="img/pngegg.png">            	
+            		</div>
+            	</c:when>
+            	<c:otherwise>
+            		<div id = "arrow5">
+              			<img src="img/pngegg.png">            	
+            		</div>
+            	</c:otherwise>
+            </c:choose>
             </div>
+            <div class="Tbtns">       
+            	<div class="moveTopBtn"><button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/up-arrow.png" alt="맨 위로"></button></div>
+        	</div> 
           </div>
-<script src="script/chart10.js"></script>
-<script src="script/chart20.js"></script>
+          </div>
+	<script src="script/chart10.js"></script>
+	<script src="script/chart20.js"></script>
+	<script src="script/chart30.js"></script>
+	<script src="script/chart40.js"></script>
+	<script src="script/chart50.js"></script>
+	<script src="script/chart60.js"></script>
+	<script src="script/chart70.js"></script>
+	
+    <script src="script/top.js"></script>
 </body>
 </html>

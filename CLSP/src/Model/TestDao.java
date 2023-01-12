@@ -41,7 +41,6 @@ public class TestDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("SELECT score FROM habits WHERE test_value=?");
@@ -51,7 +50,7 @@ public class TestDao {
 			while(rs.next()) {
 				int eatBreakfast = rs.getInt(1);
 				test.setEatBreakfast(eatBreakfast);
-//				System.out.println(eatBreakfast);
+				System.out.println("break"+eatBreakfast);
 			}
 			
 			pstmt.setString(1, test.getDinnerTime());
@@ -59,13 +58,15 @@ public class TestDao {
 			while(rs.next()) {
 				int eatTime8 = rs.getInt(1);
 				test.setEatTime8(eatTime8);
+				System.out.println("Time"+eatTime8);
 			}
 			
-			pstmt.setString(1, test.getMealdeli());
+			pstmt.setString(1, test.getMealOily());
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				int eatOily = rs.getInt(1);
 				test.setEatOily(eatOily);
+				System.out.println("Oily"+eatOily);
 			}
 			
 			pstmt.setString(1, test.getMealRegular());
@@ -73,7 +74,7 @@ public class TestDao {
 			while(rs.next()) {
 				int eatRegular = rs.getInt(1);
 				test.setEatRegular(eatRegular);
-				System.out.println(eatRegular);
+				System.out.println("regular"+eatRegular);
 			}
 			
 			pstmt.setString(1, test.getMealSpeed());
@@ -81,6 +82,7 @@ public class TestDao {
 			while(rs.next()) {
 				int eatSpeed = rs.getInt(1);
 				test.setEatSpeed(eatSpeed);
+				System.out.println("speed");
 			}
 			
 			pstmt.setString(1, test.getMealSnack());
@@ -88,6 +90,7 @@ public class TestDao {
 			while(rs.next()) {
 				int eatSnack = rs.getInt(1);
 				test.setEatSnack(eatSnack);
+				System.out.println("snack"+eatSnack);
 			}
 			
 			pstmt.setString(1, test.getAlcohol());
@@ -95,6 +98,7 @@ public class TestDao {
 			while(rs.next()) {
 				int eatAlcohol = rs.getInt(1);
 				test.setEatAlcohol(eatAlcohol);
+				System.out.println("alcohol"+eatAlcohol);
 			}
 			
 			pstmt.setString(1, test.getMealdeli());
@@ -102,6 +106,7 @@ public class TestDao {
 			while(rs.next()) {
 				int eatDeliver = rs.getInt(1);
 				test.setEatDeliver(eatDeliver);
+				System.out.println("deliver"+eatDeliver);
 			}
 			
 		}catch(Exception e) {
@@ -156,7 +161,6 @@ public class TestDao {
 			while(rs.next()) {
 				int brush = rs.getInt(1);
 				test.setLifeBrush(brush);
-				System.out.println(brush);
 			}
 			
 			pstmt.setString(1, test.getSmoke());
@@ -164,7 +168,6 @@ public class TestDao {
 			while(rs.next()) {
 				int smoke = rs.getInt(1);
 				test.setLifeSmoke(smoke);
-				System.out.println(smoke);
 			}
 			
 		}catch(Exception e) {

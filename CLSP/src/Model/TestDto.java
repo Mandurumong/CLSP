@@ -1,17 +1,16 @@
 package Model;
 
-import java.util.List;
-
 public class TestDto {
 	String age; // 나이대
+	
 	String breakfast; //아침여부
 	String dinnerTime; // 저녁 8시 이후 먹는지
-	String nightMeal; // 야식 먹는지
+	String mealOily;//짜고 기름진 식사
 	String mealRegular; // 규칙적인 식사
 	String mealSpeed; // 식사 속도
 	String mealSnack; // 식사 후 간식
 	String alcohol; // 술
-	String mealdeli; // 기름진 음식, 배달음식 
+	String mealdeli; //배달음식 
 	
 	String after1; //1시 이후 취침
 	String sleepTime; // 잠 자는 시간 6시간 이하
@@ -89,12 +88,12 @@ public class TestDto {
 		this.dinnerTime = dinnerTime;
 	}
 
-	public String getNightMeal() {
-		return nightMeal;
+	public String getMealOily() {
+		return mealOily;
 	}
 
-	public void setNightMeal(String nightMeal) {
-		this.nightMeal = nightMeal;
+	public void setMealOily(String mealOily) {
+		this.mealOily = mealOily;
 	}
 
 	public String getMealRegular() {

@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <title>성인병 위험도 측정과 예방법 제안 : 자기진단</title>
     <link rel="stylesheet" href="css/test.css">
-           <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
        <script src="script/jquery-3.6.3.min.js"></script>
 </head>
 <body class="body-set">
@@ -56,7 +56,7 @@
        </header>
        
        <div id="test">
-        <form name="form1" action="#" method="post" id="form1">
+        <form name="form1" action="test.do" method="post" id="form1">
        	<div class="title-wrap">
           <h2 class="title">자가 진단 테스트</h2>
       	</div>
@@ -192,7 +192,7 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="meal-speed" value="eatSpeenFast_yes" required>
+        				네<input type="radio" name="meal-speed" value="eatSpeedFast_yes" required>
         				아니요<input type="radio" name="meal-speed" value="eatSpeedFast_no" required>
         		</div>
         	</div>
@@ -312,7 +312,7 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-sleept" value="SleepLess6_yes" required>
+        				네<input type="radio" name="life-sleept" value="sleepLess6_yes" required>
         				아니요<input type="radio" name="life-sleept" value="sleepLess6_no" required>
         		</div>
         	</div>
@@ -388,7 +388,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/smoke.jpg">
         	</div>
         	<div class="page">
 				<p>14/21</p>
@@ -435,7 +435,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/exercising.jpg">
         	</div>
         	<div class="page">
 				<p>16/21</p>
@@ -458,7 +458,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/streching.jpg">
         	</div>
         	<div class="page">
 				<p>17/21</p>
