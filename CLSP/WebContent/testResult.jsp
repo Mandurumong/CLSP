@@ -250,6 +250,8 @@
                 		<ul class="no_1">
                   			<li>추천식단</li>
                   			<li><img src="">이미지</li>
+							<%=testDto.getLifeHabits() %>
+							<%=testDto.getEtc() %>
                 		</ul>
                 		</div>
 						</c:when>
