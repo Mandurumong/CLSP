@@ -41,6 +41,9 @@ div{
 #logo img{
 height: 150px;
 }
+span1{
+	color:red;
+}
 
 canvas{
 	margin : auto;

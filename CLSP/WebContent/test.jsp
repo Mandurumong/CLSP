@@ -101,7 +101,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/breakfast.jpg">
         	</div>
         	<div class="page">
 				<p>2/21</p>
@@ -125,7 +125,7 @@
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/latenightsnack.jpg">
         	</div>
         	<div class="page">
 				<p>3/21</p>
@@ -288,12 +288,12 @@
         	</div>
         	<div class="answer-wrap">
         		<div class="answer">
-        				네<input type="radio" name="life-after1" value="spleepAfter1_yes" required>
+        				네<input type="radio" name="life-after1" value="sleepAfter1_yes" required>
         				아니요<input type="radio" name="life-after1" value="sleepAfter_no" required>
         		</div>
         	</div>
         	<div class="test-image">
-        		<img src="#">
+        		<img src="img/sleepafter1.jpg">
         	</div>
         	<div class="page">
 				<p>10/21</p>
