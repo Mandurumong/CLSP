@@ -39,7 +39,7 @@ div{
 }
 /**/
 #logo img{
-height: 150px;
+	height: 150px;
 }
 span1{
 	color:red;
@@ -261,13 +261,13 @@ a{
     height: 61px;
   }
 
-  .pie-chart1{
+ /* .pie-chart1{
   display:inline-block;
   width: 200px;
   height: 200px;
   background: conic-gradient(#F9DA78 0% 10%, #B1D095 10% 20%, #EA3323 20% 40%, #A5C2E3 40% 100%);
   border-radius: 50%;
-  }
+  }*/
 
 /**/
   .arrow_top {
@@ -286,7 +286,7 @@ a{
     width: 100px;
     height: 50px;
     position:absolute;
-    left: 320px;
+    left: 241px;
     top: 81px;
   }
   .arrow_top #arrow3 img{
@@ -365,6 +365,7 @@ a{
   .pie_wrap{
     display: flex;
     margin-top: 4rem;
+    margin-bottom: 0;
   }
 
   .pie_right{
@@ -459,6 +460,30 @@ a{
     color: red;
   }
 
+/**/
+#prevention{
+	margin-bottom: 145px;
+}
+.prevention-content h5{
+	padding-bottom: 10px;
+}
+/**/
+.prevention_list{
+	display: inline-block;
+	border-bottom: 1px solid;	
+}
+.Sprevention {
+	position: relative;
+	width : 1000px;
+	padding : 20px;
+}
+.Sprevention h5{
+	margin-top: 10px;
+}
+.Sprevention div{
+	/*text-indent : 10px;*/
+}
+
   /* 제안 예방법 btn */
 
   .more_info{
@@ -492,7 +517,7 @@ a{
 	padding : 0px;
 }
 /**/
-  .method_pr div{
+  .method_pr div .prevention_list:not{
     display: inline-block;
     /*border:1px solid black;*/
     background-color : rgb(245, 245, 242);
