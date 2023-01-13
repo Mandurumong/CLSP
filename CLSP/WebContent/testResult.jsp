@@ -322,7 +322,6 @@
               
               <c:choose>
 				<c:when test="${test.eatingHabits >= 15}">
-				<div class="prevention_list">
 					<p>·식습관 개선하기</p>
 					<div class ="Sprevention">
 						<c:choose>
@@ -368,7 +367,7 @@
 							<c:when test="${test.mealSpeed.equals('eatSpeedFast_yes')}">
 							<div class="prevention-content">
 								<h5>식사 속도 늦추기</h5>
-								<p></p>
+								<p>식사를 빠른 속도로 하게되면</p>
 							</div>
 							</c:when>
 						</c:choose>
@@ -412,14 +411,12 @@
 							<c:otherwise></c:otherwise>
 						</c:choose>
               		</div>
-				</div>
 				</c:when>
 				<c:otherwise></c:otherwise>
               </c:choose>
               
               <c:choose>
 				<c:when test="${test.lifeHabits >= 15}">
-				<div class="prevention_list">
 					<p>·생활습관 개선하기</p>
 					<div class ="Sprevention">
 					<c:choose>
@@ -468,14 +465,12 @@
 						<c:otherwise></c:otherwise>
 					</c:choose> 
 					</div>
-				</div>
 				</c:when>
 				<c:otherwise></c:otherwise>
               </c:choose>
               
               <c:choose>
 				<c:when test="${test.exercise >= 15}">
-				<div class="prevention_list">
 					<p>·운동습관 개선하기</p>
 					<div class ="Sprevention">
 					<c:choose>
@@ -506,14 +501,12 @@
 						<c:otherwise></c:otherwise>
 					</c:choose>
 					</div>
-				</div>
 				</c:when>
 				<c:otherwise></c:otherwise>
               </c:choose>
               
               <c:choose>
 				<c:when test="${test.etc >= 15}">
-				<div class="prevention_list">
 					<p>·기타습관 개선하기</p>
 					<div class ="Sprevention">
 					<c:choose>
@@ -571,7 +564,6 @@
 						<a href="#">-> 예방법 보러가기</a></p>
 					</div>			
 					</div>
-				</div>
 				</c:when>
 				<c:otherwise></c:otherwise>
               </c:choose>

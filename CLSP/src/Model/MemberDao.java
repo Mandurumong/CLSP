@@ -47,11 +47,12 @@ public class MemberDao {
 			
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("insert into Member values(?, ?, ?, to_char(sysdate))");
+			pstmt = conn.prepareStatement("insert into Member values(?, ?, ?, ?, to_char(sysdate))");
 				
 			pstmt.setString(1, member.getUser_id());
 			pstmt.setString(2, member.getUser_pw());
 			pstmt.setString(3, member.getUser_email());
+			pstmt.setInt(4, member.getLevel());
 				
 			pstmt.executeUpdate();
 		}

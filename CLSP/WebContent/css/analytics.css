@@ -43,7 +43,7 @@ h3{
   text-align: center;
 }
 h4{
-	margin-top : 10px
+	margin-top : 20px;
 }
 span{
 	font-weight: 600;
@@ -220,10 +220,10 @@ input[id = "tab8"]:checked ~ #tab8 {display:block;}
 
 /**/ 
 #tab1 h3{
-    padding-bottom: 100px;
+    padding-bottom: 20px;
 }
 #tab1 img{
-    margin-top: 40px;
+    margin-top: 30px;
     width: 1200px;
     height: 800px
 }

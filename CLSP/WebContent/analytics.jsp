@@ -4,6 +4,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+    AnalyticsDto analytics = (AnalyticsDto)request.getAttribute("analytics");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,12 +139,9 @@
                  <article id="cause_whole">
                  <h4>04</h4>
                  <h3>원인</h3>
-                 </article>
-                 
+                 </article>                 
               </div>
-             <%
-            	AnalyticsDto analytics = (AnalyticsDto)request.getAttribute("analytics");
-            %>
+
               <div class="tab-content" id="tab2">
                   <h2>당뇨병 유병자 10대 이하 현황 분석</h2>
                   <article class="increase">
@@ -158,6 +156,7 @@
  
                   	<h3>전체 비율</h3>
 					<canvas id="Chart10" width="1200" height="600"></canvas>
+					<br>
 					<canvas id="Chart_gender10" width="1200" height="600"></canvas>
 					
                   </article>
@@ -172,14 +171,15 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 20-29 세 환자 수는 <%= analytics.getPatient2021_20() %> 명 으로, 남성은 <%= analytics.getPatient2021_20_m() %> 명, 여성은 <%= analytics.getPatient2021_20_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 20-29 세 환자가 차지하는 비율은 약 <%= (Math.round(((float)analytics.getPatient2021_20())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %>% 입니다.</p>
+                  	<p>2021년 기준, 20-29 세 환자 수는 <span><%= analytics.getPatient2021_20() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_20_m() %></span> 명, 여성은 <span><%= analytics.getPatient2021_20_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 20-29 세 환자가 차지하는 비율은 약 <span><%= (Math.round(((float)analytics.getPatient2021_20())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %>%</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_20_m()*100)/analytics.getPatient2021_20() %> %, 여성 <%= (analytics.getPatient2021_20_f()*100)/analytics.getPatient2021_20() %> % </p>
+                  	<p>남성 <span><%= (analytics.getPatient2021_20_m()*100)/analytics.getPatient2021_20() %>%</span>, 여성 <span><%= (analytics.getPatient2021_20_f()*100)/analytics.getPatient2021_20() %>%</span></p>
                   	
                   	<h3>전체 비율</h3>
                   	<canvas id="Chart20" width="1200" height="600"></canvas>
+                  	<br>
                   	<canvas id="Chart_gender20" width="1200" height="600"></canvas>
                   	
                   </article>
@@ -195,14 +195,15 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 30-39 세 환자 수는 <%= analytics.getPatient2021_30() %> 명 으로, 남성은 <%= analytics.getPatient2021_30_m() %> 명, 여성은 <%= analytics.getPatient2021_30_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 30-39 세 환자가 차지하는 비율은 약 <%= (Math.round(((float)analytics.getPatient2021_30())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %>% 입니다.</p>
+                  	<p>2021년 기준, 30-39 세 환자 수는 <span><%= analytics.getPatient2021_30() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_30_m() %></span> 명, 여성은 <span><%= analytics.getPatient2021_30_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 30-39 세 환자가 차지하는 비율은 약 <span><%= (Math.round(((float)analytics.getPatient2021_30())*100 / (float)analytics.getPatient2021()*100) / 100.0) %>%</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_30_m()*100)/analytics.getPatient2021_30() %> %, 여성 <%= (analytics.getPatient2021_30_f()*100)/analytics.getPatient2021_30() %> % </p>
+                  	<p>남성 <span><%=(analytics.getPatient2021_30_m()*100)/analytics.getPatient2021_30()%>%</span>, 여성 <span><%= (analytics.getPatient2021_30_f()*100)/analytics.getPatient2021_30()%>%</span> </p>
                   	
                   	<h3>전체 비율</h3>
                   	<canvas id="Chart30" width="1200" height="600"></canvas>
+                  	<br>
                   	<canvas id="Chart_gender30" width="1200" height="600"></canvas>
                   	
                   </article>
@@ -217,14 +218,15 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 40-49 세 환자 수는 <%= analytics.getPatient2021_40() %> 명 으로, 남성은 <%= analytics.getPatient2021_40_m() %> 명, 여성은 <%= analytics.getPatient2021_40_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 40-49 세 환자가 차지하는 비율은 약 <%= (Math.round(((float)analytics.getPatient2021_40())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %> % 입니다.</p>
+                  	<p>2021년 기준, 40-49 세 환자 수는 <span><%= analytics.getPatient2021_40() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_40_m() %></span> 명, 여성은 <span><%= analytics.getPatient2021_40_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 40-49 세 환자가 차지하는 비율은 약 <span><%= (Math.round(((float)analytics.getPatient2021_40())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %> %</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_40_m()*100)/analytics.getPatient2021_40() %> %, 여성 <%= (analytics.getPatient2021_40_f()*100)/analytics.getPatient2021_40() %> % </p>
+                  	<p>남성 <span><%=(analytics.getPatient2021_40_m()*100)/analytics.getPatient2021_40()%>%</span>, 여성 <span><%= (analytics.getPatient2021_40_f()*100)/analytics.getPatient2021_40()%>%</span> </p>
                   	
                   	<h3>전체 비율</h3>
                   	<canvas id="Chart40" width="1200" height="600"></canvas>
+                  	<br>
                   	<canvas id="Chart_gender40" width="1200" height="600"></canvas>
                   </article>
                   <article class="cause">
@@ -238,14 +240,15 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 50-59 세 환자 수는 <%= analytics.getPatient2021_50() %> 명 으로, 남성은 <%= analytics.getPatient2021_50_m() %> 명, 여성은 <%= analytics.getPatient2021_50_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 50-59 세 환자가 차지하는 비율은 약 <%= (Math.round(((float)analytics.getPatient2021_50())*100 / (float)analytics.getPatient2021() * 100) / 100.0)%> % 입니다.</p>
+                  	<p>2021년 기준, 50-59 세 환자 수는 <span><%= analytics.getPatient2021_50() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_50_m() %></span> 명, 여성은 <span><%= analytics.getPatient2021_50_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 50-59 세 환자가 차지하는 비율은 약 <span><%=(Math.round(((float)analytics.getPatient2021_50())*100 / (float)analytics.getPatient2021() * 100) / 100.0)%>%</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_50_m()*100)/analytics.getPatient2021_50() %> %, 여성 <%= (analytics.getPatient2021_50_f()*100)/analytics.getPatient2021_50() %> % </p>
+                  	<p>남성 <span><%=(analytics.getPatient2021_50_m()*100)/analytics.getPatient2021_50()%>%</span>, 여성 <span><%= (analytics.getPatient2021_50_f()*100)/analytics.getPatient2021_50()%>%</span> </p>
                   	
                   	<h3>전체 비율</h3>
                   	<canvas id="Chart50" width="1200" height="600"></canvas>
+                  	<br>
                   	<canvas id="Chart_gender50" width="1200" height="600"></canvas>
                   	
                   </article>
@@ -260,17 +263,18 @@
                   <article class="increase">
                   	<h4>01</h4>
                   	<h3>당뇨병 유병률 통계</h3>
-                  	<p>2021년 기준, 60-69 세 환자 수는 <%= analytics.getPatient2021_60() %> 명 으로, 남성은 <%= analytics.getPatient2021_60_m() %> 명, 여성은 <%=analytics.getPatient2021_60_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 60-69 세 환자가 차지하는 비율은 약 <%= (Math.round(((float)analytics.getPatient2021_60())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %> % 입니다.</p>
+                  	<p>2021년 기준, 60-69 세 환자 수는 <span><%= analytics.getPatient2021_60() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_60_m() %></span> 명, 여성은 <span><%=analytics.getPatient2021_60_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 60-69 세 환자가 차지하는 비율은 약 <span><%=(Math.round(((float)analytics.getPatient2021_60())*100 / (float)analytics.getPatient2021()*100) / 100.0)%>%</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_60_m()*100)/analytics.getPatient2021_60() %> %, 여성 <%= (analytics.getPatient2021_60_f()*100)/analytics.getPatient2021_60() %> % </p>
+                  	<p>남성 <span><%=(analytics.getPatient2021_60_m()*100)/analytics.getPatient2021_60() %>%</span>, 여성 <span><%= (analytics.getPatient2021_60_f()*100)/analytics.getPatient2021_60()%>%</span> </p>
                   	
                   	<h3>전체 비율</h3>
                   	<canvas id="Chart60" width="1200" height="600"></canvas>
-                  	<canvas id="Chart_gender60" width="1200" height="600"></canvas>
-                  	
+                  	<br>
+                  	<canvas id="Chart_gender60" width="1200" height="600"></canvas>                 	
                   </article>
+                  
                   <article class="cause">
                   	<h4>02</h4>
                   	<h3>원인</h3>
@@ -282,16 +286,17 @@
                  	<h2>당뇨병 유병자 70대 이상 현황 분석</h2>
                  	<h4>01</h4>
                   	<h3>당뇨병 유병률 현황</h3>
-                  	<p>2021년 기준, 70세 이상 환자 수는 <%= analytics.getPatient2021_70() %> 명 으로, 남성은 <%= analytics.getPatient2021_70_m() %> 명, 여성은 <%= analytics.getPatient2021_70_f() %> 명 입니다.</p>
-                  	<p>전체 환자 수에서의 70 세 이상 환자가 차지하는 비율은 약 <%= (Math.round(((float)analytics.getPatient2021_70())*100 / (float)analytics.getPatient2021() * 100) / 100.0) %> % 입니다.</p>
+                  	<p>2021년 기준, 70세 이상 환자 수는 <span><%= analytics.getPatient2021_70() %></span> 명 으로, 남성은 <span><%= analytics.getPatient2021_70_m() %></span> 명, 여성은 <span><%= analytics.getPatient2021_70_f() %></span> 명 입니다.</p>
+                  	<p>전체 환자 수에서의 70 세 이상 환자가 차지하는 비율은 약 <span><%=(Math.round(((float)analytics.getPatient2021_70())*100 / (float)analytics.getPatient2021()*100) / 100.0) %>%</span> 입니다.</p>
                   	
                   	<h3>성별 비율</h3>
-                  	<p>남성 <%= (analytics.getPatient2021_70_m()*100)/analytics.getPatient2021_70() %> %, 여성 <%= (analytics.getPatient2021_70_f()*100)/analytics.getPatient2021_70() %> % </p>
+                  	<p>남성 <span><%=(analytics.getPatient2021_70_m()*100)/analytics.getPatient2021_70() %>%</span>, 여성 <span><%=(analytics.getPatient2021_70_f()*100)/analytics.getPatient2021_70()%>%</span> </p>
                   	
                   	<h3>전체 비율</h3>
 					<canvas id="Chart70" width="1200" height="600"></canvas>
+					<br>
 					<canvas id="Chart_gender70" width="1200" height="600"></canvas>
-					
+				
                   </article>
                   <article class="cause">
                   	<h4>02</h4>

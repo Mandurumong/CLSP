@@ -183,7 +183,7 @@ a{
 }
 
  .top_user ul{
-    width: 100%;
+    width: 70%;
     display: flex;
     float: left;
     justify-content: space-between;
@@ -219,7 +219,10 @@ a{
 .graph{
    margin: 0;
    padding: 0;
+   padding-top: 10px;
    height: 61px;
+	display: grid;
+    place-items: center;
   }
   
 /**/

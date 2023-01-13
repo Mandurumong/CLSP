@@ -337,6 +337,50 @@ a{
   opacity:1;
   right: 0;
 }
+/**/
+.graph{
+	padding-top : 10px;
+  	margin: 0;
+   	padding: 0;
+   	height: 61px;
+   	display: grid;
+    place-items: center;
+  }
+  
+#degreeOfRisk .graph ul{
+    width: 70%;
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    
+  }
+  
+#degreeOfRisk .graph ul li{
+    width: 20%;
+    padding:20px 0;
+    text-align: center;
+  }
+  
+#degreeOfRisk .graph ul li:nth-child(1){
+    background-color: #F1CDB1;
+  }
+
+#degreeOfRisk .graph ul li:nth-child(2){
+    background-color: #A5C2E3;
+
+  }
+
+#degreeOfRisk .graph ul li:nth-child(3){
+    background-color: #B1D095;
+  }
+
+#degreeOfRisk .graph ul li:nth-child(4){
+    background-color: #F9DA78;
+  }
+
+#degreeOfRisk .graph ul li:nth-child(5){
+    background-color: #EA3323;
+  }
 /*---------------------------------------*/
 #degreeOfRisk{
   align-items: center;
@@ -360,6 +404,10 @@ a{
   text-align: center;
   padding-bottom: 100px;
   margin-top: -100px;
+}
+/**/
+#text{
+	padding-top: 120px;
 }
 /*-----------------------------------------------------------*/
 /*top踰꾪듉*/

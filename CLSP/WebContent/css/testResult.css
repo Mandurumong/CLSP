@@ -469,7 +469,7 @@ a{
 }
 /**/
 .prevention_list{
-	display: inline-block;
+	/*display: inline-block;*/
 	border-bottom: 1px solid;	
 }
 .Sprevention {
@@ -517,11 +517,11 @@ a{
 	padding : 0px;
 }
 /**/
-  .method_pr div .prevention_list:not{
-    display: inline-block;
+  .method_pr div {
+    /*display: inline-block;*/
     /*border:1px solid black;*/
     background-color : rgb(245, 245, 242);
-    width: 435px;
+    width: 100%;
     height: auto;
     /*float: left;*/
   }
