@@ -4,7 +4,7 @@ public class MemberDto {
 	private String user_id;
 	private String user_pw1;
 	private String user_email;
-	private int level;
+	private int user_level;
 	
 	public MemberDto() {}
 	
@@ -12,7 +12,13 @@ public class MemberDto {
 		this.user_id = id;
 		this.user_pw1 = pw;
 		this.user_email = email;
-		this.level = level;
+		this.user_level = level;
+	}
+	
+	public MemberDto(String id, String pw, int level) {
+		this.user_id = id;
+		this.user_pw1 = pw;
+		this.user_level = level;
 	}
 
 	public String getUser_id() {
@@ -40,11 +46,11 @@ public class MemberDto {
 	}
 	
 	public int getLevel(){
-		return level;
+		return user_level;
 	}
 	
 	public void setLevel(int level) {
-		this.level = level;
+		this.user_level = level;
 	}
 
 }

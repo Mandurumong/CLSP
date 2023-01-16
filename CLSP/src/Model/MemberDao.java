@@ -1,10 +1,10 @@
 package Model;
 
-import java.lang.reflect.Member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -205,30 +205,30 @@ public class MemberDao {
 	}
 		
 	//로그인
-	public String login(String user_id, String user_pw) {
+	public MemberDto login(String user_id, String user_pw) {
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		System.out.println(user_id);
 		System.out.println(user_pw);
+		MemberDto login = null;
 			
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT user_pw, user_id FROM Member WHERE user_id = ? AND user_pw = ?");
+			pstmt = conn.prepareStatement("SELECT user_pw, user_id, user_level FROM Member WHERE user_id = ? AND user_pw = ?");
 			pstmt.setString(1, user_id);
 			pstmt.setString(2, user_pw);
 			rs = pstmt.executeQuery();
 				
-			if (rs.next()) {
+			while(rs.next()){
 				rs.getString("user_pw").equals(user_pw);
 				rs.getString("user_id").equals(user_id);
-				return "login";
-		}
-			else {
-				return "false";
-			}
-		}				
-		catch(Exception e) {
+				int user_level = rs.getInt("user_level");
+				
+				login = new MemberDto(user_id, user_pw, user_level);
+			}			
+		}catch(Exception e) {
 				System.out.println("login()예외 발생");
 				e.printStackTrace();
 			}
@@ -243,6 +243,6 @@ public class MemberDao {
 			}
 			
 		}
-		return "fail";
+		return login;
 	}
 }

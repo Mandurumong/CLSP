@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,9 +18,9 @@ public class LoginServiceImpl implements LoginService{
 		memberDao = MemberDao.getInstance();
 	}
 	
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
+	public MemberDto execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		return memberDao.login((String) request.getAttribute("user_id"), (String) request.getAttribute("user_pw"));
+		return memberDao.login((String)request.getAttribute("user_id"), (String)request.getAttribute("user_pw"));
 		
 	}	
 }

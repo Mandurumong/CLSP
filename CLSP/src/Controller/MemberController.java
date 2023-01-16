@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -124,24 +125,23 @@ public class MemberController extends HttpServlet {
 	         
 	         String user_id = request.getParameter("user_id");
 			 String user_pw = request.getParameter("user_pw");
-	         
+			 
 	         request.setAttribute("user_id", user_id);
 			 request.setAttribute("user_pw", user_pw);
-	         
+	        
 	         LoginService loginService = new LoginServiceImpl();
-	         String ls = loginService.execute(request, response);
+	         MemberDto ls = loginService.execute(request, response);
 	      
-	         
-	         if (ls.equals("login")) {
-	            HttpSession session = request.getSession();
-	            
-	            session.setAttribute("user_id", user_id);
-	            
-	            response.sendRedirect("index.jsp");
-	            
-	         }else {
+	         if(ls.getUser_id().equals(user_id)) {
+	        	 HttpSession session = request.getSession();
 	        	 
-	            response.sendRedirect("login.jsp");
+	        	 session.setAttribute("user_id", user_id);
+	        	 session.setAttribute("user_level", ls.getLevel());
+	        	 
+	        	 response.sendRedirect("index.jsp");
+	        	 
+	         }else {
+	        	 response.sendRedirect("login.jsp");
 	         }
 		}
 		

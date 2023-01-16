@@ -3,7 +3,9 @@ package Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Model.MemberDto;
+
 public interface LoginService {
 	
-	String execute(HttpServletRequest request, HttpServletResponse response);
+	MemberDto execute(HttpServletRequest request, HttpServletResponse response);
 }
