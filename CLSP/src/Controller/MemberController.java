@@ -136,6 +136,8 @@ public class MemberController extends HttpServlet {
 	        	 HttpSession session = request.getSession();
 	        	 
 	        	 session.setAttribute("user_id", user_id);
+	        	 session.setAttribute("user_pw", user_pw);
+	        	 session.setAttribute("user_email", ls.getUser_email());
 	        	 session.setAttribute("user_level", ls.getLevel());
 	        	 
 	        	 response.sendRedirect("index.jsp");

@@ -216,7 +216,7 @@ public class MemberDao {
 			
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT user_pw, user_id, user_level FROM Member WHERE user_id = ? AND user_pw = ?");
+			pstmt = conn.prepareStatement("SELECT * FROM Member WHERE user_id = ? AND user_pw = ?");
 			pstmt.setString(1, user_id);
 			pstmt.setString(2, user_pw);
 			rs = pstmt.executeQuery();
@@ -224,9 +224,10 @@ public class MemberDao {
 			while(rs.next()){
 				rs.getString("user_pw").equals(user_pw);
 				rs.getString("user_id").equals(user_id);
+				String user_email = rs.getString("user_email");
 				int user_level = rs.getInt("user_level");
 				
-				login = new MemberDto(user_id, user_pw, user_level);
+				login = new MemberDto(user_id, user_pw, user_email, user_level);
 			}			
 		}catch(Exception e) {
 				System.out.println("login()예외 발생");

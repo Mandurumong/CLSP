@@ -34,7 +34,7 @@
                 	</c:when>
                 	<c:when test="${user_level == 1 }">
                 	<button name="logout"><a href='<c:url value="logout.do"/>'>로그아웃</a></button>
-                	<button name="logout"><a href='<c:url value=""/>'>관리자페이지</button>
+                	<button name="logout"><a href='<c:url value="admin_page.jsp"/>'>관리자페이지</button>
                 	</c:when>
                 	<c:otherwise>
                 	<button name="logout"><a href='<c:url value="logout.do" />'>로그아웃</a></button>

@@ -24,7 +24,7 @@
                     </div>
     
                     <div id="top-nav">
-                        <button name="logout"><a href="#">로그아웃</a></button>
+                        <button name="logout"><a href='<c:url value="logout.do"/>'>로그아웃</a></button>
                         <button name="mypage"><a href="mypage_info.jsp">마이페이지</a></button>
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                   </div>
                   <div class="info-btn">
                     <button class="info-btn-btn" type="button" name=""><a href="modify.jsp"><span>확인</span></a></button>
-                </form>
                   </div>
+                </form>
                   </div>
                   </div>
             </div>
