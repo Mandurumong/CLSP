@@ -20,7 +20,7 @@
         <ul>
            <h2><a href="admin_page.jsp">관리자 페이지</a></h2> 
             <li><a href="admin_modify.jsp">관리자 계정 관리 </a></li>
-            <li><a href="">회원 관리</a></li>
+            <li><a href="admin_member.jsp">회원 관리</a></li>
             <li><a href="">게시글 관리</a>
                 <ul class="submemu">
                     <li><a href="">- 게시판 관리</a></li>

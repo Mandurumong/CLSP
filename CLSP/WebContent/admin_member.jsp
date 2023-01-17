@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지</title>
-    <link rel="stylesheet" href="css/admin_page.css">
+    <link rel="stylesheet" href="css/admin_member.css">
 </head>
 <body>
     <div id="header">
@@ -33,28 +33,27 @@
     	<button name="homepage" onClick="location.href='index.jsp'">홈페이지</button>
     </div>
     <div id="content">
-        <h3>관리자 계정 관리</h3>
+        <h3>회원 관리</h3>
+        <div id="search">
+        	<select>
+        		<option>이름</option>
+        		<option>이메일</option>
+        	</select>
+        	<input type="text">
+        	<button type="button">검색</button>
+        </div>
+    	<div id="top-button">
+    		<button type="button">전체 다운로드</button>
+    	</div>
         <div id="data">
             <table>
-                <tr>
-                    <th>아이디</th>
-                    <td><%=user_id %></td>
-                </tr>
-                <tr>
-                    <th>비밀번호</th>
-                    <td><%=memberDto.getUser_pw() %></td>
-                </tr>
-                <tr>
-                    <th>이메일</th>
-                    <td><%=memberDto.getUser_email() %></td>
-                </tr>
-                <tr>
-                    <th>등급</th>
-                    <td>관리자</td>
-                </tr>
+                <th>아이디</th>
+                <th>이메일</th>
+                <th>가입일</th>
+                <th>관리</th>
             </table>
             <div id="button">
-                <button type="button" onClick="location.href='admin_modify.jsp'">수정하기</button>
+                
             </div>  
         </div>
 
