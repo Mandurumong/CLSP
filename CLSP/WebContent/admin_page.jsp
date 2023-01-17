@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+    pageEncoding="utf-8" import="Model.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");//로그인 여부 판단
-	String user_pw = (String)session.getAttribute("user_pw");
-	String user_email = (String)session.getAttribute("user_email");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,36 +16,32 @@
     <div id="header">
         <ul>
            <h2><a href="admin_page.jsp">관리자 페이지</a></h2> 
-            <li><a href="admin_modify.jsp">관리자 계정 관리 </a></li>
-            <li><a href="">회원 관리</a></li>
-            <li><a href="">게시글 관리</a>
-                <ul class="submemu">
-                    <li><a href="">- 게시판 관리</a></li>
-                    <li><a href="">- 게시글 관리</a></li>
-                </ul>
-            </li>
         </ul>
+    </div>
+    <div id="top-nav">
+    	<button name="logout" onClick="location.href='logout.do'">로그아웃</button>
+    	<button name="homepage" onClick="location.href='index.jsp'">홈페이지</button>
     </div>
     <div id="content">
             <h3>비밀번호 재확인</h3>
                   <div id="data">
-                	<form id="pwReConfirm" action="#">
+                	<form name="pwReConfirm" id="pwReConfirm" action="adminInfo.do" method="POST">
 	                <table>
     	            <tr>
         	            <th>아이디</th>
-            	        <td><input type="text" id="uid" placeholder=<%= user_id %> name = "uid" readonly></td>
+            	        <td><input type="text" id="user_id" placeholder=<%= user_id %> name = "user_id" readonly></td>
                 	</tr>
   	                <tr>
    		                <th>비밀번호</th>
-                    	<td><input type="password" id="pwd1" name="pwd1" autofocus placeholder="현재 비밀번호를 입력해 주세요" required></td>
+                    	<td><input type="password" id="user_pw" name="user_pw" autofocus placeholder="비밀번호를 입력해 주세요" required></td>
                 	</tr>
             		</table>
             		<div id="button">
-                		<button type="button"><a href="admin_modify.jsp">확인</a></button>
+                		<button type="button" onClick="fn_check()">확인</button>
             		</div>
             	</form>
         	</div>
-
     </div>
+    <script src="script/admin_page.js"></script>
 </body>
 </html>

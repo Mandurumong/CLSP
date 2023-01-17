@@ -14,6 +14,10 @@ import javax.servlet.http.HttpSession;
 import Model.AnalyticsDto;
 import Model.MemberDto;
 import Model.TestDto;
+import Service.AdminListService;
+import Service.AdminListServiceImpl;
+import Service.AdminModifyService;
+import Service.AdminModifyServiceImpl;
 import Service.AnalyticsService;
 import Service.AnalyticsServiceImpl;
 import Service.DuplicationCheck;
@@ -208,6 +212,54 @@ public class MemberController extends HttpServlet {
 			
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("analytics.jsp");
 			requestDispatcher.forward(request, response);
+			
+		}
+		//관리자 정보 수정
+		else if(command.equals("/adminModify.do")) {
+			System.out.println("관리자 정보 수정 실행");
+			
+			HttpSession session = request.getSession();
+			
+			String updId = (String)session.getAttribute("user_id");
+			
+			MemberDto updMember = new MemberDto();
+			updMember.setUser_pw(request.getParameter("user_pw"));
+			updMember.setUser_email(request.getParameter("user_email"));
+			
+			request.setAttribute("user_id", updId);
+			request.setAttribute("updMember", updMember);
+			
+			AdminModifyService adminModifyService = new AdminModifyServiceImpl();
+			adminModifyService.execute(request, response);
+			
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminInfo.do");
+			requestDispatcher.forward(request, response);
+			
+		}
+		//관리자 정보 보기
+		else if(command.equals("/adminInfo.do")) {
+			System.out.println("관리자 정보 보기 실행");
+			
+			HttpSession session = request.getSession();
+			
+			String user_id = (String)session.getAttribute("user_id");
+			
+			MemberDto memberDto = new MemberDto();
+			memberDto.setUser_id(user_id);
+			
+			request.setAttribute("user_id", user_id);
+			
+			AdminListService adminList = new AdminListServiceImpl();
+			MemberDto memberList = adminList.execute(request, response);
+			
+			request.setAttribute("memberList", memberList);
+			session.setAttribute("memberList", memberList);
+			
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin_info.jsp");
+			requestDispatcher.forward(request, response);
+		}
+		//회원정보 리스트
+		else if(command.equals("/list.do")) {
 			
 		}
 	}

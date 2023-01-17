@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
 
 public class MemberDao {
 	
@@ -245,5 +247,109 @@ public class MemberDao {
 			
 		}
 		return login;
+	}
+	//정보 수정
+	public void updateData(String user_id, MemberDto memberDto) {
+		System.out.println("updateData() 실행");
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("UPDATE member SET user_pw=?, user_email=? WHERE user_id=?");
+			pstmt.setString(1, memberDto.getUser_pw());
+			System.out.println(memberDto.getUser_pw());
+			pstmt.setString(2, memberDto.getUser_email());
+			System.out.println(memberDto.getUser_email());
+			pstmt.setString(3, user_id);
+			System.out.println(user_id);
+			;
+			pstmt.executeUpdate();
+		}
+		catch(SQLException e) {
+			System.out.println("update 예외 발생");
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+	}
+	//전체 회원 정보 가져오기
+	public ArrayList<MemberDto> getList(){
+		
+		ArrayList<MemberDto> memberList = new ArrayList<MemberDto>();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try{
+			conn = getConnection();
+			pstmt = conn.prepareStatement("SELECT * FROM member ORDER BY REG_DATE DESC");
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String user_id = rs.getString("user_id");
+				String user_pw = rs.getString("user_pw");
+				String user_email = rs.getString("user_email");
+				Date reg_date = rs.getDate("reg_date");
+				int user_level = rs.getInt("user_level");
+				
+				memberList.add(new MemberDto(user_id, user_pw, user_email, reg_date, user_level));
+			}
+		}
+		catch(SQLException e) {
+			System.out.println("getList() 예외 발생");
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return memberList;
+	}
+	//한 회원 정보
+	public MemberDto getOneList(String user_id){
+		System.out.println("getOneList() 실행");
+		
+		MemberDto memberDto = new MemberDto();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("SELECT * FROM member WHERE user_id=?");
+			pstmt.setString(1, user_id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String user_pw = rs.getString("user_pw");
+				String user_email = rs.getString("user_email");
+				
+				memberDto.setUser_pw(user_pw);
+				System.out.println("pw:"+user_pw);
+				memberDto.setUser_email(user_email);
+				System.out.println("email: "+user_email);
+			}
+		}
+		catch(SQLException e) {
+			System.out.println("getOneList() 예외 발생");
+			e.printStackTrace();
+		}
+		return memberDto;
 	}
 }

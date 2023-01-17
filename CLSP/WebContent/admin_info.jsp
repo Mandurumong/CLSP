@@ -4,9 +4,8 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");//로그인 여부 판단
-	String user_pw = (String)session.getAttribute("user_pw");
-	String user_email = (String)session.getAttribute("user_email");
-	MemberDto memberDto = (MemberDto)session.getAttribute("memberList");
+	MemberDto memberDto = (MemberDto)request.getAttribute("memberList");
+	
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,21 +35,18 @@
     <div id="content">
         <h3>관리자 계정 관리</h3>
         <div id="data">
-        <form id="admin_modify" name="admin_modify" action="adminModify.do" method="POST">
             <table>
                 <tr>
                     <th>아이디</th>
-                    <td><input type="text" id="user_id" placeholder=<%= user_id %> name = "user_id" readonly="readonly">
-                    <input type="hidden" id="user_id" name = "user_id" value=<%=user_id %>>
-                    </td>
+                    <td><%=user_id %></td>
                 </tr>
                 <tr>
                     <th>비밀번호</th>
-                    <td><input type="password" id="user_pw" name="user_pw" autofocus placeholder=<%=memberDto.getUser_pw() %> value=<%=memberDto.getUser_pw() %> required></td>
+                    <td><%=memberDto.getUser_pw() %></td>
                 </tr>
                 <tr>
                     <th>이메일</th>
-                    <td><input type="text" id="user_email" name="user_email" placeholder=<%=memberDto.getUser_email() %> value=<%=memberDto.getUser_email() %>></td>
+                    <td><%=memberDto.getUser_email() %></td>
                 </tr>
                 <tr>
                     <th>등급</th>
@@ -58,13 +54,10 @@
                 </tr>
             </table>
             <div id="button">
-                <button type="button" onClick="fn_validate()">변경사항 저장</button>
-                <button type="button" onClick="location.href='adminInfo.do'">취소</button>
-            </div>
-        </form>    
+                <button type="button" onClick="location.href='admin_modify.jsp'">수정하기</button>
+            </div>  
         </div>
 
     </div>
-    <script src="script/admin_modify.js"></script>
 </body>
 </html>
