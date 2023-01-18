@@ -49,7 +49,7 @@ public class MemberDao {
 			
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("insert into Member values(?, ?, ?, ?, to_char(sysdate))");
+			pstmt = conn.prepareStatement("insert into Member values(?, ?, ?, to_char(sysdate), ?)");
 				
 			pstmt.setString(1, member.getUser_id());
 			pstmt.setString(2, member.getUser_pw());
@@ -140,6 +140,7 @@ public class MemberDao {
 		
 	//비밀번호 찾기
 	public String findPw(MemberDto member) {
+		
 		String user_pw = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -263,12 +264,9 @@ public class MemberDao {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("UPDATE member SET user_pw=?, user_email=? WHERE user_id=?");
 			pstmt.setString(1, memberDto.getUser_pw());
-			System.out.println(memberDto.getUser_pw());
 			pstmt.setString(2, memberDto.getUser_email());
-			System.out.println(memberDto.getUser_email());
 			pstmt.setString(3, user_id);
-			System.out.println(user_id);
-			;
+
 			pstmt.executeUpdate();
 		}
 		catch(SQLException e) {

@@ -17,7 +17,7 @@
     </header>
         <div id="container">
         <form id="signup" name="signup" method="post" action="insertMember.do">
-        <input type="hidden" name="user_level" id="user_level" value="0">
+        <input type="hidden" name="user_level" value="0">
             <fieldset>
                 <h1>회원가입</h1>
                 <hr>
