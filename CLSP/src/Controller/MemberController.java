@@ -132,11 +132,16 @@ public class MemberController extends HttpServlet {
 			 
 	         request.setAttribute("user_id", user_id);
 			 request.setAttribute("user_pw", user_pw);
-	        
+			 
 	         LoginService loginService = new LoginServiceImpl();
 	         MemberDto ls = loginService.execute(request, response);
-	      
-	         if(ls.getUser_id().equals(user_id)) {
+	         
+	         if(ls == null) {
+	        	 
+	        	 System.out.println("로그인 실패");
+	        	 response.sendRedirect("login.jsp");
+	        	 
+	         }else {
 	        	 HttpSession session = request.getSession();
 	        	 
 	        	 session.setAttribute("user_id", user_id);
@@ -145,9 +150,6 @@ public class MemberController extends HttpServlet {
 	        	 session.setAttribute("user_level", ls.getLevel());
 	        	 
 	        	 response.sendRedirect("index.jsp");
-	        	 
-	         }else {
-	        	 response.sendRedirect("login.jsp");
 	         }
 		}
 		

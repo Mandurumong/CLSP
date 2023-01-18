@@ -212,25 +212,29 @@ public class MemberDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		System.out.println(user_id);
-		System.out.println(user_pw);
+		
 		MemberDto login = null;
 			
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT * FROM Member WHERE user_id = ? AND user_pw = ?");
+			
+			pstmt = conn.prepareStatement("SELECT * FROM Member WHERE user_id = ?");
 			pstmt.setString(1, user_id);
-			pstmt.setString(2, user_pw);
 			rs = pstmt.executeQuery();
-				
-			while(rs.next()){
-				rs.getString("user_pw").equals(user_pw);
-				rs.getString("user_id").equals(user_id);
-				String user_email = rs.getString("user_email");
-				int user_level = rs.getInt("user_level");
-				
-				login = new MemberDto(user_id, user_pw, user_email, user_level);
-			}			
+			
+			if(rs.next()) {
+				if(rs.getString("user_pw").equals(user_pw)) {
+					String user_email = rs.getString("user_email");
+					int user_level = rs.getInt("user_level");
+					
+					login = new MemberDto(user_id, user_pw, user_email, user_level);
+				}
+				else {
+					return null;
+				}
+			}else {
+				return null;
+			}
 		}catch(Exception e) {
 				System.out.println("login()예외 발생");
 				e.printStackTrace();
@@ -341,9 +345,8 @@ public class MemberDao {
 				String user_email = rs.getString("user_email");
 				
 				memberDto.setUser_pw(user_pw);
-				System.out.println("pw:"+user_pw);
 				memberDto.setUser_email(user_email);
-				System.out.println("email: "+user_email);
+
 			}
 		}
 		catch(SQLException e) {
