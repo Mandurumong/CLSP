@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Basic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    scroll-behavior: smooth;
+}
+div{
+    padding: 20px;
+    
+    
+}
+
+a {
+    color: rgb(46, 45, 45);
+}
+
+#logo img{
+height: 150px;
+}
+header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  z-index: 1;
+}
+.header{
+    height: 150px;
+    display: flex;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1.5px solid #535353;
+}
+#top-nav{
+    position: absolute;
+    top: 10px;
+    right: 120px;
+}
+#top-nav button{
+    text-align: center;
+    margin-left: 20px;
+    background-color: #ffffff;
+}
+#top-nav button > a{
+    font-family: 'GangwonEdu_OTFBoldA';
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+}
+
+.pull-right{
+    float: right;
+    margin-bottom: 100px;
+
+}
+.search{
+    width: auto;
+    height: 30px;
+    
+}
+
+h1{
+font-size: 30px;
+margin-top: 20px;
+margin-left: 30px;
+
+}
+
+.form-control{
+    border: 1.5px solid rgb(73, 73, 73);
+    border-radius: 5px;
+
+}
+.form-control option {
+  font-family: 'GangwonEdu_OTFBoldA';
+  color: black;
+  font-size: 15pt;
+  
+}
+
+
+li, ul{
+    list-style: none;
+    color: black;
+}
+a{
+  text-decoration: none;
+}
+#logo{
+  margin-left: 90px;
+}
+.menu {
+    width: 100%;
+    overflow: hidden;
+    margin:auto;
+    text-align: center;
+  }
+  .menu > li {
+    width: 20%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    background-color: #ffffff;
+    text-decoration: none;
+  }
+  .menu a {
+    text-decoration: none;
+    font-family:'GangwonEduPowerExtraBoldA';
+    color: rgb(46, 45, 45);
+  }
+  .submenu > li {
+    line-height: 35px;
+    background-color: #ffffff;
+    font-size: 15pt;
+  }
+  .submenu {
+    height: 0; 
+    overflow: hidden;
+  }
+  .menu > li{
+    font-size: 25pt;
+  }
+  .menu > li:hover {
+    transition-duration: 0.5s;
+  }
+  .menu a:hover{
+    color: #535353;
+  }
+  .menu > li:hover .submenu {
+    height: 100px;
+    transition-duration: 1s;
+  }
+
+
+  .record_menu{
+    border-bottom: 1px solid #535353;
+    border-top:1px solid #535353;
+    margin: auto;
+    overflow: hidden;
+  }
+  .record_menu >li{
+    width: 25%;
+    float: left;
+    line-height: 40px;
+    background-color: #ffffff;
+    font-family: 'GangwonEdu_OTFBoldA';
+    color: black;
+    font-size: 15pt;
+  }
+
+  .record_menu a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+  }
+
+  #record_menu > li{
+    color: black;
+  }
+
+  /*-------------------------*/
+
+
+
+  .page-title {
+    height: auto;
+    line-height: inherit;
+    margin-bottom: 30px;
+}
+
+.page-title h3 {
+    font-size: 32px;
+    color: #3a3a4a;
+    font-family: 'NotoKr';
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.detail-view {
+    border-bottom: 1px solid #bec2c8;
+}
+
+
+
+.detail-view .title {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 85px;
+    font-size: 21px;
+    color: #3a3a4a;
+    font-weight: 700;
+    border-bottom: 2px solid #44465c;
+}
+
+.detail-view .post-info {
+    min-height: 61px;
+    padding: 21px 260px 21px 0;
+    position: relative;
+    border-bottom: 1px solid #7b7c7d;
+}
+
+.detail-view .post-info ul li.date {
+    
+    top: 21px;
+    right: 0;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+.detail-view .post-info ul li {
+    margin-top: 10px;
+}
+
+.detail-view .post-content {
+    padding: 32px 0;
+   
+    word-break: break-all;
+}
+
+.button.border.v1 {
+    background-color: #fff;
+    border: 1px solid rgb(204, 198, 198);
+}
+.button.border {
+    
+    color: #44465c;
+}
+
+.button.medium {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+a:link, a:visited, a:active {
+    color: #171717;
+    text-decoration: none;
+}
+
+.button {
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+a, button {
+    outline-color: blue;
+    outline-offset: -0.5px;
+}
+
+.b-btn01 type01 {
+    padding-top: 0px;
+}
+
+/*----------------------------------*/
+
+  /* Pagination links */
+.pagination a {
+    color: black;
+    float: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    
+  }
+.pagination {
+    text-align: center;
+
+}
+  /* Style the active/current link */
+  .pagination a.active {
+    background-color: rgb(138, 141, 143);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(39, 38, 38);
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .pagination a:hover:not(.active) {background-color: #ddd;}

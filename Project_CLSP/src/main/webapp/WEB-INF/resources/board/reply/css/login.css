@@ -1,0 +1,115 @@
+ul {
+    list-style: none;
+    padding-left: 0;
+    
+  }
+  ul li {
+    margin:25px;
+    text-align: center; 
+  }
+#container {
+    background-color: rgb(255, 255, 255);
+    margin: 180px auto;
+    width: 800px;
+  }
+
+button[type="submit"]{
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    display: block;
+    font-size: 13px 맑은고딕, 굴림, 돋움;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 20px 20px;
+    text-align: center;
+
+  }
+  
+input[type="submit"]{
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    display: block;
+    font-size: 13px 맑은고딕, 굴림, 돋움;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 20px 20px;
+    text-align: center;
+
+  }
+
+#button {
+	text-align: center;
+}    
+
+  button[type="submit"]:hover {
+    background-color:rgb(75, 75, 75);
+    color:#fff;
+    border-color:#fff;
+  }
+  
+#logo img{
+    height: 90px;
+    margin: 0 auto;
+    
+}
+
+fieldset{
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    border: 1px solidrgb(73, 73, 73);
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 700px;
+    height: 450px;
+    line-height: 30px;
+
+}
+#login h1{
+    margin-top: 90px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+input[type="text"], input[type="password"]{
+    width:250px;
+    height:40px;
+    text-align: left;
+  }
+input[type="radio"] {
+    
+    text-align: left;
+  }  
+  li label {
+    width:200px;
+    line-height: 20px;
+    font-size:15px;
+    font-weight:default;
+    
+    
+  }
+
+/*
+  #submit input {
+    width:100px;
+    height:50px;
+    font-size:20px;
+  }
+  #submit input:hover {
+    background-color:rgb(75, 75, 75);
+    color:#fff;
+    border-color:#fff;
+  }
+*/
+
+#l-link {
+    margin: 0 auto;
+    text-align: center;
+
+}
+a {
+  text-decoration-line: none;
+  color: black;
+}
