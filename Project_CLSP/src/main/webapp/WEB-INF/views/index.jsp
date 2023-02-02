@@ -7,7 +7,7 @@
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
 	int user_level = (Integer)session.getAttribute("user_level");
 %>
-    
+<c:set var="path" value="${pageContext.request.contextPath}" />    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,18 +28,18 @@
 
 				<div id="top-nav">
                 	<c:choose>
-                	<c:when test="${user_id == null }">
-                  	<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
-                  	<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
-                	</c:when>
-                	<c:when test="${user_level == 1 }">
-                	<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
-                	<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
-                	</c:when>
-                	<c:otherwise>
-                	<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
-                  	<button name="mypage"><a href='<c:url value="/mypage_info" />'>마이페이지</a></button>
-                	</c:otherwise>
+                		<c:when test="${user_id == null }">
+                  			<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
+                  			<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
+                		</c:when>
+                		<c:when test="${user_level == 1 }">
+                			<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
+                			<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
+                		</c:when>
+                		<c:otherwise>
+                			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
+                  			<button name="mypage"><a href='<c:url value="/mypage_info" />'>마이페이지</a></button>
+                		</c:otherwise>
                 	</c:choose>    
                 </div>
 
@@ -54,9 +54,8 @@
                     <li>
                       <a href="/selfTestM">자가 진단</a>
                     </li>
-                    <li><a href="#">예방법</a>
-                    <li><a href="community_freeBoard.jsp">게시판</a>
-                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="${path}/board/list">게시판</a></li>
                   </ul>
             </nav>
        </header>
@@ -76,7 +75,7 @@
                         <a href="analytics.do"><img src="img/현황분석캐러셀.png"></a>
                     </li>
                     <li class="slideitem">
-                        <a href="#"><img src="img/예방법캐러셀.png"></a>
+                        <a href="${path}/api/prevent"><img src="img/예방법캐러셀.png"></a>
                     </li>
                     <li class="slideitem">
                         <a href="selfTestM.jsp"><img src="img/자가진단캐러셀.png"></a>

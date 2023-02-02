@@ -10,6 +10,7 @@
 	<typeAliases>
 		<typeAlias alias="member" type="com.project.clsp.model.MemberDto"/>
 		<typeAlias alias="freeBoard" type="com.project.clsp.model.FreeBoardDto"/>
+		<typeAlias alias="api" type="com.project.clsp.dao.ApiVdRepository"/>
 		<typeAlias alias="memberMapper" type="com.project.clsp.mapper.MemberMapper"/>
 	</typeAliases>
 	

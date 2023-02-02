@@ -7,6 +7,7 @@
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
 	int user_level = (Integer)session.getAttribute("user_level");
 %>
+<c:set var="path" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,9 +70,8 @@
                     <li>
                       <a href="/selfTestM">자가 진단</a>
                     </li>
-                    <li><a href="#">예방법</a>
-                    <li><a href="/community_freeBoard">게시판</a>
-                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="${path}/board/list">게시판</a></li>
                   </ul>
             </nav>
        </header>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.project.clsp.dao.BoardRepository">
+	<resultMap id = "getBoardInfo" type = "com.project.clsp.model.FreeBoardDto">
+		<result property = "fbNum" column = "FB_NUM" />
+		<result property = "fbTitle" column = "FB_TITLE" />
+		<result property = "fbContent" column = "FB_CONTENT" />
+		<result property = "fbCategory" column = "FB_CATEGORY" />
+		<result property = "fbUserId" column = "FB_USERID" />
+		<result property = "fbCount" column = "FB_COUNT" />
+		<result property = "fbDate" column = "FB_DATE" />
+		<result property = "fbGroup" column = "FB_GROUP" />
+		<result property = "fbStep" column = "FB_STEP" />
+		<result property = "fbIndent" column = "FB_INDENT" />
+	</resultMap>
+	
+		<select id ="getBoardCount"  parameterType="map"  resultType = "int">
+		SELECT COUNT(*) FROM freeboard
+		where 1=1
+		 <if test="type != null and type != ''">
+				 <if test='type.equals("title")'>
+				 		AND fb_title LIKE '%' || #{keyword} || '%' 
+				 	</if>
+				 	<if test='type.equals("content")'>
+				 		AND fb_content LIKE '%' || #{keyword} || '%' 
+				 	</if>
+				 		<if test='type.equals("user")'>
+				 		AND fb_userid LIKE '%' || #{keyword} || '%' 
+				 	</if>
+			   	</if>
+			   	
+			    <if test="category != 'all'" >
+			   		AND fb_category = #{category} 
+			    </if>
+			    
+	</select>
+	
+	<select id="getBoards" parameterType="map"  resultType="map" >
+		select * from (
+			select rownum rn, a.* from (
+				select * from freeboard 
+				where 1=1
+				 <if test="type != null and type != ''">
+				 	<if test='type.equals("title")'>
+				 		AND fb_title LIKE '%' || #{keyword} || '%' 
+				 	</if>
+				 	<if test='type.equals("content")'>
+				 		AND fb_content LIKE '%' || #{keyword} || '%' 
+				 	</if>
+				 		<if test='type.equals("user")'>
+				 		AND fb_userid LIKE '%' || #{keyword} || '%' 
+				 	</if>
+			   	</if>
+			   	
+			    <if test="category != 'all'" >
+			   		AND fb_category = #{category} 
+			    </if>
+			    
+                order by fb_group desc, fb_step
+			) a
+		
+		) where rn between #{start} and #{end}
+	</select>
+	<select id="getBoardView" resultType="map" parameterType="int">
+		SELECT * FROM freeboard where fb_num=#{fbNum}
+	</select>
+	
+	<update id="updateHit" parameterType="map">
+		UPDATE freeboard SET fb_count = #{count} WHERE fb_num = #{fbNum}
+	</update>
+	
+	<select id ="getReplies" resultType="map"  parameterType="int">
+		select * from reply where fb_num = #{fbNum} ORDER BY replynum ASC
+	</select>
+	
+	<insert id="insertBoard" parameterType="map">
+        insert into freeboard(fb_num, fb_group, fb_title, fb_content,fb_category,fb_userId, fb_count, fb_step, fb_indent, fb_date)
+		values(fb_seq.nextval,fb_seq.nextval, #{title},#{content},#{category},#{userId}, 0, 0, 0, TO_CHAR (SYSDATE,'YYYY"년" MM"월" DD"일" hh24"시" mi"분" ss"초"'))
+	</insert>
+	
+	<insert id="insertReplyBoard" parameterType="map">
+        insert into freeboard(fb_num, fb_group, fb_title, fb_content,fb_category,fb_userId, fb_count, fb_step, fb_indent, fb_date)
+		values(fb_seq.nextval,#{group}, #{title},#{content},#{category},#{userId}, 0, #{step}, #{indent}, TO_CHAR (SYSDATE,'YYYY"년" MM"월" DD"일" hh24"시" mi"분" ss"초"'))
+	</insert>
+	
+	<update id="updateReplySort"  parameterType="map">
+		update freeboard set fb_step = fb_step + 1 where fb_group = #{group} and fb_step >= #{step}
+	</update>
+	
+	
+	<select id="currentBoardIdx" resultType="int">
+	    select fb_seq.currval FROM DUAL
+	</select>
+	
+	<update id="updateBoard" parameterType="map">
+		UPDATE freeboard SET fb_title= #{title}, fb_content=#{content}, fb_category=#{category} WHERE fb_num= #{fbNum}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from freeboard where fb_num = #{fbNum}
+	</delete>
+	
+	<insert id="insertReply" parameterType="map">
+		insert into reply(replynum, fb_num, replyparentnum,replyuserId ,replycontent, replydate)
+		values(reply_seq.nextval,#{fbNum},#{replyParentNum},#{replyUserId},#{content},TO_CHAR (SYSDATE,'YYYY"년" MM"월" DD"일" hh24"시" mi"분" ss"초"'))
+	</insert>
+	
+	<delete id="replyDelete" parameterType="int">
+		delete from reply where replynum = #{replyNum}
+	</delete>
+	
+	<update id="updateReply" parameterType="map">
+		UPDATE freeboard SET replycontent=#{content} WHERE replynum= #{replyNum}
+	</update>
+	
+	</mapper>

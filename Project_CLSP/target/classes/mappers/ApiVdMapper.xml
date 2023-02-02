@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "api">
+
+	<select id="getVdsCount" resultType="int">
+		SELECT count(*) FROM video ORDER BY vdo_ttl_nm	
+	</select>
+	
+	<select id="getVds" parameterType="map" resultType="map">
+		SELECT * FROM (
+			SELECT
+				rownum rn, a.*
+			FROM
+				(select row_num,vdo_ttl_nm ttlNm, file_url fileUrl, file_nm fileNm, vdo_desc vdoDesc,
+			aggrp_nm aggNm, trng_aim_nm aimNm, nvl(trng_nm, '업독') tnm, tool_nm toolNm, ftns_fctr_nm fNm, nvl(trng_part_nm, '당뇨병 예방 운동프로그램') partNm from video
+				order by row_num desc) a
+		)WHERE rn between #{start} and #{end}
+	</select>
+	
+	<insert id="insertVd" parameterType="map">
+		insert into video (row_num, vdo_ttl_nm, file_url, file_nm, vdo_desc,
+			aggrp_nm, trng_aim_nm, trng_nm, tool_nm, ftns_fctr_nm, trng_part_nm)
+		values (vid_seq.nextval, #{ttlNm}, #{fileUrl}, #{fileNm}, #{vdoDesc}, 
+			#{aggNm}, #{aimNm}, #{tnm}, #{toolNm}, #{fNm}, #{partNm})	
+	</insert> 
+	
+	<select id="getVdDetail" parameterType="int" resultType="map">
+		select row_num,vdo_ttl_nm ttlNm, file_url fileUrl, file_nm fileNm, vdo_desc vdoDesc,
+			aggrp_nm aggNm, trng_aim_nm aimNm,  nvl(trng_nm, '업독') tnm, tool_nm toolNm, ftns_fctr_nm fNm, nvl(trng_part_nm, '당뇨병 예방 운동프로그램') partNm
+		from video	
+		where row_num = #{num}
+	</select>
+	
+</mapper>

@@ -6,14 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.project.clsp.dao.ITestRepository;
 import com.project.clsp.model.TestDto;
+import com.project.clsp.service.ITestService;
 
 @Controller
 public class TestController {
 	
 	@Autowired
-	ITestRepository testRepository;
+	ITestService testService;
 
 	@GetMapping("/selfTestM")
 	public String selfTestM() {
@@ -28,10 +28,7 @@ public class TestController {
 	@PostMapping("/test.do")
 	public String testResult(TestDto test, Model model) {
 		
-		testRepository.eatingTest(test);
-		testRepository.lifeTest(test);
-		testRepository.exerciseTest(test);
-		testRepository.etcTest(test);
+		testService.test(test);
 		
 		model.addAttribute("test", test);
 		
