@@ -16,5 +16,6 @@ public interface IBoardService {
 	void replyDelete(int replyNum);
 	int insertBoard(Map<String, Object> map);
 	void updateBoard(Map<String, Object> map);
+	void deleteBoard(int fbNum);
 	
 }

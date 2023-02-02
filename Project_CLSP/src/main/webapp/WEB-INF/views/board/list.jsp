@@ -5,6 +5,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+	int user_level = (Integer)session.getAttribute("user_level");
 %>    
 <c:set var="path" value="${pageContext.request.contextPath}"/>
     
@@ -16,65 +17,60 @@
     <link rel="stylesheet" href="${path}/css/community_freeBoard.css">
 	
 </head>
-<body>	
-
     <body class="body-set">
         <div id="container">
             <header>
                 <div class="header">
                     <div id="logo">
-                        <a href="index.jsp" class="logo">
-                        <img src="#" alt="logo">
+                        <a href="<c:url value='/'/>" class="logo">
+                        <img src="img/그림2.png" alt="logo">
                         </a>
                     </div>
     
-                    <div id="top-nav">
-                <c:choose>
-                <c:when test="${user_id == null }">
-                  <button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
-                  <button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
-                </c:when>
-                <c:otherwise>
-                	<button name="logout"><a href='<c:url value="/logout" />'>로그아웃</a></button>
-                  	<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
-                </c:otherwise>
-                </c:choose>
-                    </div>
+				<div id="top-nav">
+                	<c:choose>
+                		<c:when test="${user_id == null }">
+                  			<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
+                  			<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
+                		</c:when>
+                		<c:when test="${user_level == 1 }">
+                			<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
+                			<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
+                		</c:when>
+                		<c:otherwise>
+                			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
+                  			<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
+                		</c:otherwise>
+                	</c:choose>    
+                </div>
     
                 </div>
     
-                <nav>
-                    <ul class="menu">
-                        <li>
-                          <a href="index.jsp">홈</a></li>
-                        <li>
-                          <a href="analytics.jsp">현황 분석</a></li>
-                        <li>
-                          <a href="selfTestM.jsp">자가 진단</a>
-                        </li>
-                        <li><a href="#">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-<!--                             <li><a href="community_notice.jsp">공지사항</a></li> -->
-                            <li><a href="freeBoard.do">자유게시판</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                </nav>
+            <nav>
+                <ul class="menu">
+                    <li>
+                      <a href="<c:url value='/index'/>">홈</a></li>
+                    <li>
+                      <a href="analytics.do">현황 분석</a></li>
+                    <li>
+                      <a href="/selfTestM">자가 진단</a>
+                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="/board/list">게시판</a></li>
+                  </ul>
+            </nav>
+            
            </header>
 
            <div id="main">
             
            <nav>
             <ul class="record_menu">
-              <li><a href="#">커뮤니티</a></li>
-<!--               <li><a href="community_notice.jsp">공지사항</a></li> -->
-              <li><a href="community_freeBoard.jsp">자유게시판</a></li>
-            </ul>
+             <li><a href="/board/list">게시판</a></li>
            </nav>
            <div class="container">
             <h1>
-                <a href="freeBoard.do">자유게시판</a>
+                <a href="/board/list">게시판</a>
             </h1>
             <div class="search" >
                 
@@ -132,39 +128,27 @@
             </div>
             <c:if test="${user_id ne null }">
             <div class="write">
-                <a href="/clsp/board/write" class="btn btn-primary pull-right">작성하기</a>
+                <a href="write" class="btn btn-primary pull-right">작성하기</a>
             </div>
             </c:if>
         </div>
-   
-
-   <!--         <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a class="active" href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
-          </div> -->
           
           <div class="pagebtn" style="display: block; text-align: center;">		
-		<c:if test="${paging.startPage != 1 }">
-			<ahref="/clsp/board/list?page=${paging.startPage - 1 }">&lt;</a>
-		</c:if>
-		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
-			<c:choose>
-				<c:when test="${p == paging.nowPage }">
-					<b>${p }</b>
-				</c:when>
-				<c:when test="${p != paging.nowPage }">
-					<a onclick="go(${p})" >${p }</a>
-				</c:when>
-			</c:choose>
-		</c:forEach>
+			<c:if test="${paging.startPage != 1 }">
+				<a href="/board/list?page=${paging.startPage - 1 }">&lt;</a>
+			</c:if>
+			<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+				<c:choose>
+					<c:when test="${p == paging.nowPage }">
+						<b>${p }</b>
+					</c:when>
+					<c:when test="${p != paging.nowPage }">
+						<a onclick="go(${p})" >${p}</a>
+					</c:when>
+				</c:choose>
+			</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a  href="/clsp/board/list?page=${paging.endPage+1 }">&gt;</a>
+			<a  href="board/list?page=${paging.endPage+1 }">&gt;</a>
 		</c:if>
 	</div>
            </div>

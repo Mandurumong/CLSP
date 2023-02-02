@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.clsp.model.MemberDto;
 import com.project.clsp.service.ILoginService;
@@ -26,12 +27,13 @@ public class LoginController {
 	@PostMapping(value="/login.do")
 	public String login(
 			@RequestParam(value="user_id", required=true)String user_id, 
-			@RequestParam(value="user_pw", required=true)String user_pw, HttpSession session) {
+			@RequestParam(value="user_pw", required=true)String user_pw, HttpSession session, RedirectAttributes attributes) {
 		
 		MemberDto ls = loginService.login(user_id, user_pw);
 		
 		if(ls == null) {
 			System.out.println("로그인 실패");
+			attributes.addFlashAttribute("msg", "일치하는 회원이 없습니다.");
 			return "login";
 		}
 		else {

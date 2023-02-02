@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace = "com.project.clsp.dao.BoardRepository">
+<mapper namespace = "board">
+
 	<resultMap id = "getBoardInfo" type = "com.project.clsp.model.FreeBoardDto">
 		<result property = "fbNum" column = "FB_NUM" />
 		<result property = "fbTitle" column = "FB_TITLE" />
@@ -86,7 +87,6 @@
 	<update id="updateReplySort"  parameterType="map">
 		update freeboard set fb_step = fb_step + 1 where fb_group = #{group} and fb_step >= #{step}
 	</update>
-	
 	
 	<select id="currentBoardIdx" resultType="int">
 	    select fb_seq.currval FROM DUAL

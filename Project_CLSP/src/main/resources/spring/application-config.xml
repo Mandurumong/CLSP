@@ -25,6 +25,8 @@
 	<bean id="adminUserInfoController" class="com.project.clsp.controller.AdminUserInfoController"/> 
 	<bean id="memberInfoController" class="com.project.clsp.controller.MemberInfoController"/>
 	<bean id="apiController" class="com.project.clsp.controller.ApiController"/>
+	<bean id="boardController" class="com.project.clsp.controller.BoardController"/>
+	<bean id="myPageController" class="com.project.clsp.controller.MyPageController"/>
 	
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

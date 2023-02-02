@@ -38,7 +38,7 @@
                 		</c:when>
                 		<c:otherwise>
                 			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
-                  			<button name="mypage"><a href='<c:url value="/mypage_info" />'>마이페이지</a></button>
+                  			<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
                 		</c:otherwise>
                 	</c:choose>    
                 </div>
@@ -55,7 +55,7 @@
                       <a href="/selfTestM">자가 진단</a>
                     </li>
                     <li><a href="${path}/api/prevent">예방법</a></li>
-                    <li><a href="${path}/board/list">게시판</a></li>
+                    <li><a href="/board/list">게시판</a></li>
                   </ul>
             </nav>
        </header>

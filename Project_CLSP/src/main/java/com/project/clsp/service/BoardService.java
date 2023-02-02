@@ -7,13 +7,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.clsp.dao.BoardRepository;
+import com.project.clsp.dao.IBoardRepository;
 
 @Service
 public class BoardService implements IBoardService{
 	
-	@Autowired(required = false)
-	BoardRepository boardRepository;
+	@Autowired
+	IBoardRepository boardRepository;
 
 	@Override
 	public int getBoardCount(Map<String, Object> map) {
@@ -77,6 +77,10 @@ public class BoardService implements IBoardService{
 	@Override
 	public void updateBoard(Map<String, Object> map) {
 		boardRepository.updateBoard(map);
+	}
+	@Override
+	public void deleteBoard(int fbNum) {
+		boardRepository.deleteBoard(fbNum);
 	}
 
 }

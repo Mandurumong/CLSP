@@ -5,7 +5,9 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+	int user_level = (Integer)session.getAttribute("user_level");
 %>
+
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,54 +28,47 @@
                         </a>
                     </div>
     
-                    <div id="top-nav">
-		                <c:choose>
-		                <c:when test="${user_id == null }">
-		                  <button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
-		                  <button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
-		                </c:when>
-		                <c:otherwise>
-		                	<button name="logout"><a href='<c:url value="/logout" />'>로그아웃</a></button>
-		                  	<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
-		                </c:otherwise>
-		                </c:choose>  
-                    </div>
+				<div id="top-nav">
+                	<c:choose>
+                		<c:when test="${user_id == null }">
+                  			<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
+                  			<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
+                		</c:when>
+                		<c:when test="${user_level == 1 }">
+                			<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
+                			<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
+                		</c:when>
+                		<c:otherwise>
+                			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
+                  			<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
+                		</c:otherwise>
+                	</c:choose>    
+                </div>
     
                 </div>
     
-                <nav>
-                    <ul class="menu">
-                        <li>
-                          <a href="index.jsp">홈</a></li>
-                        <li>
-                          <a href="analytics.jsp">현황 분석</a></li>
-                        <li>
-                          <a href="selfTestM.jsp">자가 진단</a>
-                        </li>
-                        <li><a href="#">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-<!--                             <li><a href="community_notice.jsp">공지사항</a></li> -->
-                            <li><a href="community_freeBoard.jsp">자유게시판</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                </nav>
+            <nav>
+                <ul class="menu">
+                    <li>
+                      <a href="<c:url value='/index'/>">홈</a></li>
+                    <li>
+                      <a href="analytics.do">현황 분석</a></li>
+                    <li>
+                      <a href="/selfTestM">자가 진단</a>
+                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="/board/list">게시판</a></li>
+                  </ul>
+            </nav>
            </header>
 
            <div id="main">
             
            <nav>
             <ul class="record_menu">
-              <li><a href="#">커뮤니티</a></li>
-<!--               <li><a href="community_notice.jsp">공지사항</a></li> -->
-              <li><a href="community_freeBoard.jsp">자유게시판</a></li>
-            </ul>
+              <li><a href="/board/list">게시판</a></li>
            </nav>
            <div class="container">
-            <h1>
-                <a href="community_freeBoard.jsp">자유게시판</a>
-            </h1>
             <div class="board_wrap">
                 <div class="board_title">
                     
@@ -112,26 +107,6 @@
             </div>
         </div>
         </div>
-        </div>
-        </body>
-        </body>
-        </html>
-<script type="text/javascript">
-//해당 페이지 들어오면 바로 실행 
-document.addEventListener("DOMContentLoaded", function(){
-	selectedControl()
-});
-
-function selectedControl(){
-	var category = '${board.FB_CATEGORY}'
-	var el = document.getElementById('category');
-	var len = el.options.length;
-
-	for (let i=0; i<len; i++){  
-	    if(el.options[i].value == category){
-	    	el.options[i].selected = true;
-	    }
-	  }  
-}
-
-</script>
+        <script type="text/javascript" src="js/boardModify.js"></script>
+       </body>
+</html>

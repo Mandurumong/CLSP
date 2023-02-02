@@ -3,34 +3,89 @@ package com.project.clsp.dao;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BoardRepository {
+public class BoardRepository implements IBoardRepository{
+
+	@Inject
+	SqlSession sqlSession;
 	
-	int getBoardCount(Map<String, Object> map);
-	
-	List<Map<String, Object>> getBoards(Map<String, Object> map);
+	@Override
+	public int getBoardCount(Map<String, Object> map) {
+		
+		return sqlSession.selectOne("board.getBoardCount", map);
+	}
 
-	void updateHit(Map<String, Object> map);
+	@Override
+	public List<Map<String, Object>> getBoards(Map<String, Object> map) {
+		
+		return sqlSession.selectList("board.getBoards", map);
+	}
 
-	Map<String, Object> getBoardView(int fbNum);
-	
-	List<Map<String, Object>> getReplies(int fbNum);
+	@Override
+	public void updateHit(Map<String, Object> map) {
+		sqlSession.update("board.updateHit", map);
+		
+	}
 
-	int insertBoard(Map<String, Object> map);
-	
-	int currentBoardIdx();
+	@Override
+	public Map<String, Object> getBoardView(int fbNum) {
+		return sqlSession.selectMap("board.getBoardView", fbNum, "all");
+	}
 
-	void updateBoard(Map<String, Object> map);
+	@Override
+	public List<Map<String, Object>> getReplies(int fbNum) {
+		return sqlSession.selectList("board.getReplies", fbNum);
+	}
 
-	void deleteBoard(int fbNum);
+	@Override
+	public int insertBoard(Map<String, Object> map) {
+		return sqlSession.insert("board.insertBoard", map);
+	}
 
-	void insertReply(Map<String, Object> map);
+	@Override
+	public int currentBoardIdx() {
+		return sqlSession.selectOne("board.currentBoardIdx");
+	}
 
-	void insertReplyBoard(Map<String, Object> map);
-	
-	void updateReplySort(Map<String, Object> map);
+	@Override
+	public void updateBoard(Map<String, Object> map) {
+		sqlSession.update("board.updateBoard", map);
+		
+	}
 
-	void replyDelete(int replyNum);
+	@Override
+	public void deleteBoard(int fbNum) {
+		sqlSession.delete("board.deleteBoard", fbNum);
+		
+	}
+
+	@Override
+	public void insertReply(Map<String, Object> map) {
+		sqlSession.insert("board.insertReply", map);
+		
+	}
+
+	@Override
+	public void insertReplyBoard(Map<String, Object> map) {
+		sqlSession.insert("board.insertReplyBoard", map);
+		
+	}
+
+	@Override
+	public void updateReplySort(Map<String, Object> map) {
+		sqlSession.update("board.updateReply", map);
+		
+	}
+
+	@Override
+	public void replyDelete(int replyNum) {
+		sqlSession.delete("board.replyDelete", replyNum);
+		
+	}
+
 }
