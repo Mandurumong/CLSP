@@ -33,38 +33,47 @@ public class BoardController {
 	@RequestMapping("/board")
 	public String boardList(@RequestParam(required=true)int fbNum, Model model, HttpServletRequest req) {
 		
-		String referer = req.getHeader("Referer");
+//		String referer = req.getHeader("Referer");
+		StringBuffer referer = req.getRequestURL();
+		String gueryString = req.getQueryString();
 		System.out.println("referer "+ referer);
+		System.out.println("gueryString" + gueryString);
 		
-		// ´ñ±Ûµé ºÒ·¯¿À±â
+		// ëŒ“ê¸€ë“¤ ë¶ˆëŸ¬ì˜¤ê¸°
 		List<Map<String, Object>> replies = boardService.getReplies(fbNum);
-		// °Ô½Ã±Û ºÒ·¯¿À±â
-		Map<String, Object> board = boardService.getBoardView(fbNum);
-		System.out.println("board "+ board);
 		
-		// Á¶È¸¼ö
-		// ºê¶ó¿ìÀú»ó¿¡¼­ ¿äÃ»À» µÎ¹øÇÏ´Â ¿À·ù·Î Á¶È¸¼ö°¡ 2¾¿ Áõ°¡ÇÏ°íÀÖ¾úÀ½
-		// ½ÇÁ¦ ¿äÃ»¸¸ ÆÇº°ÇÏ±â À§ÇØ ¿äÃ» Çì´õÀÇ ¸®ÆÛ·¯¸¦ ÀÌ¿ë, ½ÇÁ¦ ¿äÃ»¿¡¸¸ Á¶È¸¼ö¸¦ Áõ°¡½ÃÅ°µµ·Ï ÇÔ
+		// ê²Œì‹œê¸€ ë¶ˆëŸ¬ì˜¤ê¸°
+		Map<String, Object> board = (Map)boardService.getBoardView(fbNum).get(null);
+		System.out.println("board "+ board);
+		System.out.println("fb_num" + board.get("FB_NUM"));
+		
+		// ì¡°íšŒìˆ˜
+		// ë¸Œë¼ìš°ì €ìƒì—ì„œ ìš”ì²­ì„ ë‘ë²ˆí•˜ëŠ” ì˜¤ë¥˜ë¡œ ì¡°íšŒìˆ˜ê°€ 2ì”© ì¦ê°€í•˜ê³ ìˆì—ˆìŒ
+		// ì‹¤ì œ ìš”ì²­ë§Œ íŒë³„í•˜ê¸° ìœ„í•´ ìš”ì²­ í—¤ë”ì˜ ë¦¬í¼ëŸ¬ë¥¼ ì´ìš©, ì‹¤ì œ ìš”ì²­ì—ë§Œ ì¡°íšŒìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¤ë„ë¡ í•¨
 		if(referer != null) {
-			if(referer.split("clsp")[1].contains("fbNum") ) {
+			System.out.println("ì¡°íšŒìˆ˜ ì¡°íšŒ");
+			if(gueryString.contains("fbNum") ) {
+				System.out.println("ë“¤ì–´ì˜´");
 				boardService.updateHit(fbNum, board.get("FB_COUNT").toString());
 			}
-		}
-		
-		
+			else {
+				System.out.println("ë¬¸ì œ");
+			}
+		}	
 		model.addAttribute("board", board);
 		model.addAttribute("replies", replies);
 		
 		return "/board/view";
 	}
-	
-	@RequestMapping("board/list")
+	//list
+	@RequestMapping("/board/list")
 	public String boardList(@RequestParam(required=false, defaultValue="1")int page,
 			@RequestParam(required = false, defaultValue = "all")String category,
 			@RequestParam(required = false)String type,
 			@RequestParam(required = false)String keyword,
 			HttpServletRequest req, Model model) {
 		
+		// ê²€ìƒ‰ì„ ìœ„í•œ íŒŒë¼ë¯¸í„° ë§µ
 		Map<String, Object> map = new HashMap<>();
 		map.put("category", category);
 		map.put("type", type);
@@ -74,7 +83,7 @@ public class BoardController {
 		
 		PagingDto paging  = new PagingDto(cnt, page, 10);
 		
-		//ÆäÀÌÂ¡µµ µÇ¾î¾ßÇÏ¹Ç·Î ÆäÀÌÂ¡ µ¥ÀÌÅÍ ´ã±â
+		// í˜ì´ì§•ë„ ë˜ì–´ì•¼í•˜ë¯€ë¡œ í˜ì´ì§• ë°ì´í„°ë„ ë‹´ê¸°
 		map.put("start", paging.getStart());
 		map.put("end", paging.getEnd());
 		
@@ -92,7 +101,7 @@ public class BoardController {
 		return "board/list";
 	}
 	
-	@GetMapping(value="board/reply/write")
+	@GetMapping(value="/board/reply/write")
 	public String boardReplyWriteForm(Model model, @RequestParam(required=true) int fbNum) {
 		Map<String, Object> board = boardService.getBoardView(fbNum);
 		model.addAttribute("board", board);
@@ -104,8 +113,9 @@ public class BoardController {
 		return "/board/write";
 	}
 
-	@PostMapping(value="board/write")
+	@PostMapping(value="/board/write")
 	public String boardWrite(@RequestParam Map<String,Object> map, Model model, HttpServletRequest req) {
+			
 		String referer = req.getHeader("Referer");
 		System.out.println("referer "+ referer);
 		System.out.println("write map : "+ map);
@@ -114,20 +124,20 @@ public class BoardController {
 		String id = session.getAttribute("user_id").toString();
 		map.put("userId", id);
 		
-		// ´ä±ÛÀÏ °æ¿ì
+		// ë‹µê¸€ì¼ ê²½ìš°
 		if(map.get("group") != null) {
 			if(referer != null) {
 			boardService.insertReplyBoard(map);
 			}
 			
 		}else {
-			// °Ô½Ã±Û ÀÛ¼º	
+			// ê²Œì‹œê¸€ ì‘ì„±	
 			if(referer != null) {
 				boardService.insertBoard(map);
 			}
 		}
 		
-		// ÀÛ¼ºÇÑ °Ô½Ã±ÛÀÇ ÀÎµ¦½º °¡Á®¿À±â
+		// ì‘ì„±í•œ ê²Œì‹œê¸€ì˜ ì¸ë±ìŠ¤ ê°€ì ¸ì˜¤ê¸°
 		int fbNum = boardService.currentBoardIdx();
 					
 		return "redirect:/board?fbNum="+fbNum;
@@ -152,10 +162,10 @@ public class BoardController {
 		String id = session.getAttribute("user_id").toString();
 		map.put("userId", id);
 		
-		// °Ô½Ã±Û ¼öÁ¤
+		// ê²Œì‹œê¸€ ìˆ˜ì •
 		boardService.updateBoard(map);
 		
-		// ÀÛ¼ºÇÑ °Ô½Ã±ÛÀÇ ÀÎµ¦½º °¡Á®¿À±â
+		// ì‘ì„±í•œ ê²Œì‹œê¸€ì˜ ì¸ë±ìŠ¤ ê°€ì ¸ì˜¤ê¸°
 		int fbNum = Integer.parseInt(map.get("fbNum").toString());
 		
 	
@@ -166,7 +176,7 @@ public class BoardController {
 	@GetMapping(value="/board/delete")
 	public String boardDelete(@RequestParam(required=true) int fbNum, HttpServletRequest req) {
 		
-		// °Ô½Ã±Û »èÁ¦
+		// ê²Œì‹œê¸€ ì‚­ì œ
 		boardService.deleteBoard(fbNum);
 		
 	
@@ -186,12 +196,12 @@ public class BoardController {
 		System.out.println("userId "+ id);
 		
 		
-		// ´ñ±Û ÀÛ¼º
+		// ëŒ“ê¸€ ì‘ì„±
 		if(referer != null) {
 			boardService.insertReply(map);
 		}
 		
-		// ÀÛ¼ºÇÑ °Ô½Ã±ÛÀÇ ÀÎµ¦½º °¡Á®¿À±â
+		// ì‘ì„±í•œ ê²Œì‹œê¸€ì˜ ì¸ë±ìŠ¤ ê°€ì ¸ì˜¤ê¸°
 		String fbNum = map.get("fbNum").toString();
 		
 		return "redirect:/board?fbNum="+fbNum;

@@ -5,6 +5,9 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+	int user_level = (Integer)session.getAttribute("user_level");
+	
+	 request.setCharacterEncoding("UTF-8");
 %>
 
 <c:set var="path" value="${pageContext.request.contextPath}"/>
@@ -50,7 +53,7 @@
             <nav>
                 <ul class="menu">
                     <li>
-                      <a href="<c:url value='/index'/>">홈</a></li>
+                      <a href="<c:url value='/'/>">홈</a></li>
                     <li>
                       <a href="analytics.do">현황 분석</a></li>
                     <li>
@@ -77,16 +80,16 @@
                 </div>
                 <div class="board_write_wrap">
                     <div class="board_write">
-                        <form action="write" method="post" id="writeForm">
+                        <form action="write" method="post" id="writeForm" accept-charset="utf-8">
                         <input type="hidden" name = "user_id" value="${user_id }">
                         	<p>카테고리</p>
                         	<br>
                             <select class="category-control" name="category" id="category">
-                                <option value="qna">질문</option>
-                                <option value="tip">정보</option>
-                                <option value="daily">일상</option>
-                                <option value="diet">식단</option>
-                                <option value="etc">기타</option>
+                                <option value="질문">질문</option>
+                                <option value="정보">정보</option>
+                                <option value="일상">일상</option>
+                                <option value="식단">식단</option>
+                                <option value="기타">기타</option>
                        	 	</select>
                        	 		<br><br>
                                 <p>제목</p>
@@ -105,7 +108,6 @@
                   
                 </div>
             </div>
-        </div>
         </div>
         </div>
         </body>

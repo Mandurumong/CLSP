@@ -62,6 +62,7 @@
 		
 		) where rn between #{start} and #{end}
 	</select>
+	
 	<select id="getBoardView" resultType="map" parameterType="int">
 		SELECT * FROM freeboard where fb_num=#{fbNum}
 	</select>

@@ -17,50 +17,48 @@
     <link rel="stylesheet" href="${path}/css/modify.css">
 
 </head>
-<body>
     <body class="body-set">
         <div id="container">
-            <header>
-                <div class="header">
-                    <div id="logo">
-                        <a href="index.jsp" class="logo">
-                        <img src="#" alt="logo">
-                        </a>
-                    </div>
-    
-                    <div id="top-nav">
-		                <c:choose>
-		                <c:when test="${user_id == null }">
-		                  <button name="login"><a href='<c:url value="login.jsp" />'>로그인</a></button>
-		                  <button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
-		                </c:when>
-		                <c:otherwise>
-		                	<button name="logout"><a href='<c:url value="logout.do" />'>로그아웃</a></button>
-		                  	<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
-		                </c:otherwise>
-		                </c:choose>
-                    </div>
+        <header>
+            <div class="header">
+                <div id="logo">
+                    <a href="<c:url value='/'/>" class="logo">
+                    <img src="img/그림2.png" alt="logo">
+                    </a>
                 </div>
-    
-                <nav>
-                    <ul class="menu">
-                        <li>
-                          <a href="index.jsp">홈</a></li>
-                        <li>
-                          <a href="analytics.jsp">현황 분석</a></li>
-                        <li>
-                          <a href="selfTestM.jsp">자가 진단</a>
-                        </li>
-                        <li><a href="#">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-<!--                             <li><a href="community_notice.jsp">공지사항</a></li> -->
-                            <li><a href="community_freeBoard.jsp">자유게시판</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                </nav>
-           </header>
+
+				<div id="top-nav">
+                	<c:choose>
+                		<c:when test="${user_id == null }">
+                  			<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
+                  			<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
+                		</c:when>
+                		<c:when test="${user_level == 1 }">
+                			<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
+                			<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
+                		</c:when>
+                		<c:otherwise>
+                			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
+                  			<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
+                		</c:otherwise>
+                	</c:choose>    
+                </div>
+            </div>
+
+            <nav>
+                <ul class="menu">
+                    <li>
+                      <a href="<c:url value='/index'/>">홈</a></li>
+                    <li>
+                      <a href="analytics.do">현황 분석</a></li>
+                    <li>
+                      <a href="/selfTestM">자가 진단</a>
+                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="/board/list">게시판</a></li>
+                  </ul>
+            </nav>
+       </header>
 
            <div id="main">
             
@@ -111,10 +109,6 @@
                   </div>
             </div>
 
+<script type="text/javascript" src="${path}/js/modify.js"></script>
 </body>
 </html>
-
-<script type="text/javascript" src="${path}/js/modify.js">
-
-
-</script>

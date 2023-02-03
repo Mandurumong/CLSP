@@ -32,8 +32,7 @@ public class LoginController {
 		MemberDto ls = loginService.login(user_id, user_pw);
 		
 		if(ls == null) {
-			System.out.println("·Î±×ÀÎ ½ÇÆĞ");
-			attributes.addFlashAttribute("msg", "ÀÏÄ¡ÇÏ´Â È¸¿øÀÌ ¾ø½À´Ï´Ù.");
+			attributes.addFlashAttribute("msg", "ì¼ì¹˜í•˜ëŠ” íšŒì›ì´ ì—†ìŠµë‹ˆë‹¤.");
 			return "login";
 		}
 		else {

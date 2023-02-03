@@ -32,7 +32,7 @@ public class BoardService implements IBoardService{
 		map.put("fbNum", fbNum);
 		map.put("count", count+1);
 		
-		System.out.println("map "+ map);
+		System.out.println("hit map "+ map);
 		
 		boardRepository.updateHit(map);
 		

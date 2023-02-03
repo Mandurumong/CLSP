@@ -107,6 +107,7 @@
                             <th>제목</th>
                             <th>작성일</th>
                             <th>작성자</th>
+                            <th>조회수</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -118,9 +119,10 @@
                             <c:forEach var="i" begin="1" end="${list.FB_INDENT}" step="1">
                             	->
                             </c:forEach>
-                           <a href="/clsp/board?fbNum=${list.FB_NUM}">${list.FB_TITLE}</a></td>
+                           <a href="/board?fbNum=${list.FB_NUM}"> ${list.FB_TITLE}</a></td>
                             <td>${list.FB_DATE }</td>
                             <td>${list.FB_USERID}</td>
+                            <td>${list.FB_COUNT}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -135,7 +137,7 @@
           
           <div class="pagebtn" style="display: block; text-align: center;">		
 			<c:if test="${paging.startPage != 1 }">
-				<a href="/board/list?page=${paging.startPage - 1 }">&lt;</a>
+				<a href="/list?page=${paging.startPage - 1 }">&lt;</a>
 			</c:if>
 			<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 				<c:choose>
@@ -148,11 +150,11 @@
 				</c:choose>
 			</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a  href="board/list?page=${paging.endPage+1 }">&gt;</a>
+			<a  href="/list?page=${paging.endPage+1 }">&gt;</a>
 		</c:if>
 	</div>
            </div>
-
+</div>
 <script type="text/javascript" src="${path}/js/list.js">
 
 </script>

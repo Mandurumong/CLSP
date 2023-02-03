@@ -15,56 +15,55 @@
     <link rel="stylesheet" href="${path}/css/mypage_info.css">
 
 </head>
-<body>
-    <body class="body-set">
-        <div id="container">
-            <header>
-                <div class="header">
-                    <div id="logo">
-                        <a href="index.jsp" class="logo">
-                        <img src="#" alt="logo">
-                        </a>
-                    </div>
-    
-                    <div id="top-nav">
-		                <c:choose>
-		                <c:when test="${user_id == null }">
-		                  <button name="login"><a href='<c:url value="login.jsp" />'>로그인</a></button>
-		                  <button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
-		                </c:when>
-		                <c:otherwise>
-		                	<button name="logout"><a href='<c:url value="logout.do" />'>로그아웃</a></button>
-		                  	<button name="mypage"><a href='<c:url value="mypage_info.jsp" />'>마이페이지</a></button>
-		                </c:otherwise>
-		                </c:choose>
-                    </div>
+<body class="body-set">
+    <div id="container">
+        <header>
+            <div class="header">
+                <div id="logo">
+                    <a href="<c:url value='/'/>" class="logo">
+                    <img src="/img/그림2.png" alt="logo">
+                    </a>
                 </div>
+
     
-                <nav>
-                    <ul class="menu">
-                        <li>
-                          <a href="index.jsp">홈</a></li>
-                        <li>
-                          <a href="analytics.jsp">현황 분석</a></li>
-                        <li>
-                          <a href="selfTestM.jsp">자가 진단</a>
-                        </li>
-                        <li><a href="#">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-<!--                             <li><a href="community_notice.jsp">공지사항</a></li> -->
-                            <li><a href="community_freeBoard.jsp">문의게시판</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                </nav>
-           </header>
+				<div id="top-nav">
+                	<c:choose>
+                		<c:when test="${user_id == null }">
+                  			<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
+                  			<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
+                		</c:when>
+                		<c:when test="${user_level == 1 }">
+                			<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
+                			<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
+                		</c:when>
+                		<c:otherwise>
+                			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
+                  			<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
+                		</c:otherwise>
+                	</c:choose>    
+                </div>
+            </div>
+    
+            <nav>
+                <ul class="menu">
+                    <li>
+                      <a href="<c:url value='/index'/>">홈</a></li>
+                    <li>
+                      <a href="analytics.do">현황 분석</a></li>
+                    <li>
+                      <a href="/selfTestM">자가 진단</a>
+                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="/board/list">게시판</a></li>
+                  </ul>
+            </nav>
+       </header>
 
            <div id="main">
             
            <nav>
             <ul class="record_menu">
-              <li><a href="#">마이페이지</a></li>
+              <li><a href="mypage/mypage_info">마이페이지</a></li>
               <li><a href="#">개인정보 수정</a></li>
               <li><a href="#">나의 문의 사항</a></li>
             </ul>
@@ -80,33 +79,30 @@
                     <h3>비밀번호 재확인</h3>
                   </div>
                   <div class="info-form">
-                <form id="pwReConfirm" method="post" action="/clsp/confirm">
+                <form id="pwReConfirm" method="post" action="/confirm">
                   <div class="main-info-input">
                     <ul>
                         <li>
                          <label for="pwd1">비밀번호</label>
-                         <input type="password" id="pw" name="pw" autofocus placeholder="현재 비밀번호를 입력해 주세요" required>
+                         <input type="password" id="pw1" name="pw" autofocus placeholder="현재 비밀번호를 입력해 주세요" required>
                        </li>
                     </ul>    
                   </div>
                   <div class="info-btn">
-                    <button class="info-btn-btn" type="submit">확인 
-                    </button>
+                    <button class="info-btn-btn" type="submit">확인 </button>
+                  </div>
                 </form>
                   </div>
                   </div>
                   </div>
             </div>
 
-</body>
-</html>
-<script type="text/javascript"> 
-
+<script type="text/javascript">
 var message = '${msg}'; 
 console.log(message.length)
 if(message != '' && message.length > 0 ){
 	alert(message); 
 }
-
-
 </script>
+</body>
+</html>

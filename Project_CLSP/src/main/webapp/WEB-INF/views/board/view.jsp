@@ -6,78 +6,72 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+	int user_level = (Integer)session.getAttribute("user_level");
+	request.setCharacterEncoding("UTF-8");
 %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>공지사항</title>
+    <title>게시판</title>
     <link rel="stylesheet" href="${path}/css/qnaView.css"/>
 	
 </head>
-<body>
-<!-- <script src="script/reply.js?1234"></script> -->
     <body class="body-set">
         <div id="container">
             <header>
-                <div class="header">
-                    <div id="logo">
-                        <a href="index.jsp" class="logo">
-                        <img src="#" alt="logo">
-                        </a>
-                    </div>
+            <div class="header">
+                <div id="logo">
+                    <a href="<c:url value='/'/>" class="logo">
+                    <img src="img/그림2.png" alt="logo">
+                    </a>
+                </div>
     
-                    <div id="top-nav">
-		                <c:choose>
-		                <c:when test="${user_id == null }">
-		                  <button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
-		                  <button name="register"><a href='<c:url value="register.jsp" />'>회원가입</a></button>
-		                </c:when>
-		                <c:otherwise>
-		                	
-		                	<button name="logout"><a href='<c:url value="logout" />'>로그아웃</a></button>
-		                  	<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
-		                </c:otherwise>
-		                </c:choose>  
-                    </div>
+				<div id="top-nav">
+                	<c:choose>
+                		<c:when test="${user_id == null }">
+                  			<button name="login"><a href='<c:url value="/login" />'>로그인</a></button>
+                  			<button name="register"><a href='<c:url value="/register" />'>회원가입</a></button>
+                		</c:when>
+                		<c:when test="${user_level == 1 }">
+                			<button name="logout"><a href='<c:url value="/logout.do"/>'>로그아웃</a></button>
+                			<button name="logout"><a href='<c:url value="/admin_page"/>'>관리자페이지</button>
+                		</c:when>
+                		<c:otherwise>
+                			<button name="logout"><a href='<c:url value="/logout.do" />'>로그아웃</a></button>
+                  			<button name="mypage"><a href='<c:url value="/confirm/view" />'>마이페이지</a></button>
+                		</c:otherwise>
+                	</c:choose>    
+                </div>
     
                 </div>
     
-                <nav>
-                    <ul class="menu">
-                        <li>
-                          <a href="index.jsp">홈</a></li>
-                        <li>
-                          <a href="analytics.jsp">현황 분석</a></li>
-                        <li>
-                          <a href="selfTestM.jsp">자가 진단</a>
-                        </li>
-                        <li><a href="${path}/api/prevent">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-                            <li><a href="${path}/board/list">자유게시판</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                </nav>
+            <nav>
+                <ul class="menu">
+                    <li>
+                      <a href="<c:url value='/'/>">홈</a></li>
+                    <li>
+                      <a href="analytics.do">현황 분석</a></li>
+                    <li>
+                      <a href="/selfTestM">자가 진단</a>
+                    </li>
+                    <li><a href="${path}/api/prevent">예방법</a></li>
+                    <li><a href="/board/list">게시판</a></li>
+                  </ul>
+            </nav>
            </header>
 
            <div id="main">
             
            <nav>
             <ul class="record_menu">
-              <li><a href="#">커뮤니티</a></li>
-              <li><a href="${path}/board/list">자유게시판</a></li>
+              <li><a href="${path}/board/list">게시판</a></li>
             </ul>
            </nav>
            <div class="container">
-            <h1>
-                <a href="${path}/board/list">자유게시판</a>
-            </h1>
                 <div class="cmn-content" class="cmn-search">
                 <div class="common01">
-                    <div class>
                         <div class="detail-view">
                             <p class="title">${board.FB_TITLE}</p>
                             <div class="post-info">
@@ -86,7 +80,7 @@
 
                                         <p>
                                             <strong>카테고리</strong>
-                                            ${board.FB_CATEGORY}
+                                      		${board.FB_CATEGORY}
                                         </p>
                                     </li>    
                                     <li class="date">
@@ -120,7 +114,7 @@
 						 <c:if test="${user_id ne null}"> 
 						 <div>
 	                       
-		                        <form action="/clsp/reply/write" method="post" name = "replyForm">
+		                        <form action="/reply/write" method="post" name = "replyForm">
 								<!-- 히든으로 글번호, 유저아이디 전달  -->
 		                        <input name="fbNum" type ="hidden" value="${board.FB_NUM }">
 		                        <input name="replyUserId" type="hidden" value=""> 
@@ -143,7 +137,7 @@
 									<c:if test="${user_id ne null}">
 									 <c:if test="${user_id == reply.REPLYUSERID}"> 
 									<a onclick="replyModifyBtn(${reply.REPLYNUM})">수정</a>									
-									<a href="/clsp/reply/delete?replyNum=${reply.REPLYNUM}&fbNum=${board.FB_NUM}">삭제</a>
+									<a href="/reply/delete?replyNum=${reply.REPLYNUM}&fbNum=${board.FB_NUM}">삭제</a>
 									</c:if>
 									<a onclick="rereplyshow(${status.index})">답글달기</a>									
 																		
@@ -162,7 +156,7 @@
 									<td>
 									<c:if test="${user_id ne null}">
 									 <c:if test="${user_id eq rereply.REPLYUSERID}"> 
-									<a href="/clsp/reply/delete?replyNum=${rereply.REPLYNUM}&fbNum=${board.FB_NUM}">삭제</a>
+									<a href="/reply/delete?replyNum=${rereply.REPLYNUM}&fbNum=${board.FB_NUM}">삭제</a>
 									</c:if>
 																		
 									</c:if>  
@@ -182,7 +176,7 @@
 								 <td style="padding-left: 40px">${user_id }</td>
 								    <c:if test="${user_id ne null}"> 
 								 <td>
-									 <form action="/clsp/reply/write" method="post" name = "replyForm">
+									 <form action="/reply/write" method="post" name = "replyForm">
 									<!-- 히든으로 글번호, 유저아이디 전달  -->
 				                         <input name="fbNum" type ="hidden" value="${board.FB_NUM }">
 		                       			 <input name="replyUserId" type="hidden" value=""> 
@@ -200,49 +194,22 @@
                     </div>
                     <div class="b-btn01 type01">
                         <div class="button-group a-r">
-                            <a class="button medium border v1" href="/clsp/board/list"> <strong>목록</strong></a>
+                            <a class="button medium border v1" href="/board/list"> <strong>목록</strong></a>
                              <c:if test="${user_id ne null}"> 
                               <c:if test="${user_id == board.FB_USERID}"> 
-                            <a class="button medium border v1" href="/clsp/board/edit?fbNum=${board.FB_NUM}"> <strong>수정</strong></a>
+                            <a class="button medium border v1" href="/board/edit?fbNum=${board.FB_NUM}"> <strong>수정</strong></a>
                             <a class="button medium border v1" onclick="deleteBtn()"> <strong>삭제</strong></a>
                            </c:if>
-                            <a class="button medium border v1" href="/clsp/board/reply/write?fbNum=${board.FB_NUM}"> <strong>답글등록</strong></a>
+                            <a class="button medium border v1" href="/board/reply/write?fbNum=${board.FB_NUM}"> <strong>답글등록</strong></a>
                             </c:if>
                            
                         </div>
                     </div>
-
                 </div>
-                </div>    
-                   
-             
+                </div>              
             </div>
         </div>
-
-
-
-           </div>
-
-    
+<script type="text/javascript" src="js/view.js"></script>
 </body>
 </html>
 
-
-<script type="text/javascript" >
-
-function deleteBtn(){
-	var cf = window.confirm('삭제하시겠습니까?')
-	if(cf){
-		location.href="/clsp/board/delete?fbNum=${board.FB_NUM}"
-	}
-}
-
-
-function replyModifyBtn(b){
-	var e = document.getElementsByClassName('reply_content_'+b)
-	var c = e[0].innerText
-	
-	
-	
-}
-</script>

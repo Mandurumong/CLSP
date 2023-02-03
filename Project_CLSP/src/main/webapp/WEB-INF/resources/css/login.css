@@ -12,18 +12,21 @@ ul {
     margin: 180px auto;
     width: 800px;
   }
+#button{
+	margin: 0 auto;
+	text-align: center;
+}
 
 button[type="submit"]{
     cursor: pointer;
     display: flex;
     border-radius: 5px;
     display: block;
-    font-size: 13px 留묒�怨좊뵓, 援대┝, �룍��;
+    font-size: 13px 맑은고딕, 굴림, 돋움;
     letter-spacing: 1px;
     margin: auto;
     padding: 20px 20px;
     text-align: center;
-
   }
 
   button[type=submit]:hover {
@@ -69,23 +72,21 @@ input[type="radio"] {
     width:200px;
     line-height: 20px;
     font-size:15px;
-    font-weight:default;
-    
-    
+    font-weight:default; 
   }
+  
+  input[type="submit"]{
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    display: block;
+    font-size: 13px 맑은고딕, 굴림, 돋움;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 20px 20px;
+    text-align: center;
 
-/*
-  #submit input {
-    width:100px;
-    height:50px;
-    font-size:20px;
   }
-  #submit input:hover {
-    background-color:rgb(75, 75, 75);
-    color:#fff;
-    border-color:#fff;
-  }
-*/
 
 #l-link {
     margin: 0 auto;

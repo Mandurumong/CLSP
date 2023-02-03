@@ -28,8 +28,7 @@ public class BoardRepository implements IBoardRepository{
 
 	@Override
 	public void updateHit(Map<String, Object> map) {
-		sqlSession.update("board.updateHit", map);
-		
+		sqlSession.update("board.updateHit", map);	
 	}
 
 	@Override

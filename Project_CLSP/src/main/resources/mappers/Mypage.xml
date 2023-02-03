@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace = "com.project.clsp.dao.MemberRepository">
+<mapper namespace = "mypage">
+
+	<!-- 회원 정보 -->
+	<!--
+	<select id="getMyInfo" parameterType="String" resultType="map">
+		select * from member where user_id = #{id}
+	</select>
+	  -->
 	
+	<!-- 내가 쓴 게시글 가져오기-->
 	<select id="getMyBoards" parameterType="map" resultType="map">
 		select * from (
 			select rownum rn, a.* from (
@@ -11,11 +19,12 @@
 		) where rn between #{start} and #{end}
 	</select>
 	
+	<!-- 게시글 수 -->
 	<select id ="getBoardCount"  parameterType="String"  resultType = "int">
 	 select count(*) from freeboard where fb_userid = #{id}
 	</select>
 	
-	
+	<!-- 내가 쓴 댓글 가져오기 -->
 	<select id="getMyReplies" parameterType="map" resultType="map">
  		select * from (
 			select rownum rn, a.* from (
@@ -24,11 +33,12 @@
 		) where rn between #{rstart} and #{rend}
 	</select>
 	
-	
+	<!-- 댓글 수  -->
 	<select id ="getReplyCount"  parameterType="String"  resultType = "int">
 	 select count(*) from reply where replyuserid = #{id}
 	</select>
 	
+	<!-- 프로필 업데이트 -->
 	<update id="updateProfile" parameterType="map">
 		 update member 
 		 set user_email = #{email},
