@@ -6,6 +6,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String user_id = (String)session.getAttribute("user_id");	//로그인 여부 판단
+	int user_level = (Integer)session.getAttribute("user_level");
 %>
 
 <c:set var="path" value="${pageContext.request.contextPath}"/>
@@ -17,8 +18,6 @@
     <link rel="stylesheet" href="${path}/css/videoView.css"/>
 	
 </head>
-<body>
-<!-- <script src="script/reply.js?1234"></script> -->
     <body class="body-set">
         <div id="container">
             <header>
@@ -75,7 +74,9 @@
            
                 <div class="cmn-content" class="cmn-search">
                 <div class="common01">
-                    <div class>
+                
+                
+                
                         <div class="detail-view">
                             <p class="title">${video.TNM}</p>
                             <div class="post-info">
@@ -148,7 +149,7 @@
                     </div>
                     <div class="b-btn01 type01">
                         <div class="button-group a-r">
-                            <a class="button medium border v1" href="/clsp/api/video/list"> <strong>목록</strong> </a>
+                            <a class="button medium border v1" href="/api/video/list"> <strong>목록</strong> </a>
                         </div>
                     </div>
 
@@ -158,11 +159,6 @@
              
             </div>
         </div>
-
-
-
-           </div>
-
-    
+        </div>
 </body>
 </html>

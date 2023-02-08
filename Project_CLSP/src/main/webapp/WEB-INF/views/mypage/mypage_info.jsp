@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>개인정보수정</title>
+    <title>마이페이지</title>
     <link rel="stylesheet" href="${path}/css/mypage_info.css">
 
 </head>
@@ -64,8 +64,6 @@
            <nav>
             <ul class="record_menu">
               <li><a href="mypage/mypage_info">마이페이지</a></li>
-              <li><a href="#">개인정보 수정</a></li>
-              <li><a href="#">나의 문의 사항</a></li>
             </ul>
            </nav>
             <div class="main-info">
@@ -84,7 +82,7 @@
                     <ul>
                         <li>
                          <label for="pwd1">비밀번호</label>
-                         <input type="password" id="pw1" name="pw" autofocus placeholder="현재 비밀번호를 입력해 주세요" required>
+                         <input type="password" id="pw1" name="user_pw" autofocus placeholder="현재 비밀번호를 입력해 주세요" required>
                        </li>
                     </ul>    
                   </div>
@@ -98,11 +96,11 @@
             </div>
 
 <script type="text/javascript">
-var message = '${msg}'; 
-console.log(message.length)
-if(message != '' && message.length > 0 ){
-	alert(message); 
-}
+	var message = '${msg}'; 
+	console.log(message.length)
+	if(message != '' && message.length > 0 ){
+		alert(message); 
+	}
 </script>
 </body>
 </html>

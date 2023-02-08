@@ -50,13 +50,10 @@
 			<nav>
 				<ul class="menu">
 					<li><a href="<c:url value='/index'/>">홈</a></li>
-					<li><a href="analytics.do">현황 분석</a></li>
+					<li><a href="/analytics.do">현황 분석</a></li>
 					<li><a href="/selfTestM">자가 진단</a></li>
 					<li><a href="${path}/api/prevent">예방법</a>
-					<li><a href="#">커뮤니티</a>
-						<ul class="submenu">
-							<li><a href="${path}/board/list">자유게시판</a></li>
-						</ul></li>
+					<li><a href="${path}/board/list">자유게시판</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -203,7 +200,7 @@
 															height="170"></video>
 													</div>
 													<div class="videoSemiListTitle">
-														<a href="/clsp/api/video?num=${v.ROW_NUM}">
+														<a href="/api/video?num=${v.ROW_NUM}">
 															<h2 class="h2Title">${v.TNM}</h2>
 														</a>
 													</div>
@@ -211,7 +208,7 @@
 											</div>
 										</c:forEach>
 									<div id="listMorebtn">
-										<a href="/clsp/api/video/list">영상 더보기</a>
+										<a href="/api/video/list">영상 더보기</a>
 									</div>
 									</div>
 								</div>

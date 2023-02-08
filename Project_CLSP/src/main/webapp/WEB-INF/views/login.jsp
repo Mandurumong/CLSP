@@ -47,5 +47,12 @@
     </div>
 </div>
 <script type="text/javascript" src="js/login_validate.js"></script>
+<script type="text/javascript">
+	var message = '${msg}'; 
+	console.log(message.length)
+	if(message != '' && message.length > 0 ){
+		alert(message); 
+	}
+</script>
 </body>
 </html>

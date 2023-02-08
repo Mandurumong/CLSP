@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <title>답글작성</title>
-    <link rel="stylesheet" href="${path}/css/Write.css">
+    <link rel="stylesheet" href="/css/write.css">
 
 </head>
     <body class="body-set">
@@ -24,7 +24,7 @@
             <div class="header">
                 <div id="logo">
                     <a href="<c:url value='/'/>" class="logo">
-                    <img src="img/그림2.png" alt="logo">
+                    <img src="/img/그림2.png" alt="logo">
                     </a>
                 </div>
 

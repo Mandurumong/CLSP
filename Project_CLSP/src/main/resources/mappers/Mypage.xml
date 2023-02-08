@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace = "mypage">
 
 	<!-- 회원 정보 -->
-	<!--
-	<select id="getMyInfo" parameterType="String" resultType="map">
+	<select id="getMember" parameterType="String" resultType="map">
 		select * from member where user_id = #{id}
 	</select>
-	  -->
 	
 	<!-- 내가 쓴 게시글 가져오기-->
 	<select id="getMyBoards" parameterType="map" resultType="map">
-		select * from (
-			select rownum rn, a.* from (
-				(select * from freeboard where fb_userid = #{id})
-			) a
-		) where rn between #{start} and #{end}
+		select * from (select rownum rn, a.* from ((select * from freeboard where fb_userid = #{id})) a) where rn between #{start} and #{end}
 	</select>
 	
 	<!-- 게시글 수 -->
@@ -45,5 +38,9 @@
 		 user_pw = #{npw}
 		 where user_id = #{id}
 	</update>
+	
+	<delete id="withdrawal" parameterType="String">
+		delete from member where user_id = #{id}
+	</delete>
 		
 </mapper>

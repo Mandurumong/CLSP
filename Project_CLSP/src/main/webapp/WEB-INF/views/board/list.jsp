@@ -23,7 +23,7 @@
                 <div class="header">
                     <div id="logo">
                         <a href="<c:url value='/'/>" class="logo">
-                        <img src="img/그림2.png" alt="logo">
+                        <img src="/img/그림2.png" alt="logo">
                         </a>
                     </div>
     

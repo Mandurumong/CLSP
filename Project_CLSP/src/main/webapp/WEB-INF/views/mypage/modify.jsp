@@ -23,7 +23,7 @@
             <div class="header">
                 <div id="logo">
                     <a href="<c:url value='/'/>" class="logo">
-                    <img src="img/그림2.png" alt="logo">
+                    <img src="/img/그림2.png" alt="logo">
                     </a>
                 </div>
 
@@ -74,41 +74,46 @@
                   <div class="title">
                     <h3>개인 정보 수정</h3>
                   </div>
-                  </div>
-                  <div class="info-form">
-                <form id="pwReConfirm" action="/clsp/mypage/modify" method="post">
-                  <div class="main-info-input">
-                    <ul>
-                     
-                        <li>
-                         <label for="pwd1">현재 비밀번호</label>
-                         <input type="password" id="pwd1" name="pw" autofocus placeholder="기존 비밀번호를 입력해 주세요" required>
-                       </li>
-                        <li>
-                        <label for="newPwd1">새 비밀번호</label>
-                        <input type="password" id="newPwd1" name="npw" placeholder="새 비밀번호를 입력해 주세요" required>
-                        </li>
-                        <li>
-                          <label for="newPwd2">새 비밀번호 확인</label>
-                          <input type="password" id="newPwd2" name="npwc" placeholder="새 비밀번호를 다시 입력해 주세요" required>
-                          </li>
-                        <li>
-                            <label for="email">이메일</label>
-                            <input type="email" id="email" name="email" placeholder="user@gmail.com" required>
-                        </li>
-                    </ul>    
-                  </div>
-                  <div class="info-btn">
-                  <button class="info-btn-btn-uc" id="userCorrection" name="userCorrection" type="submit">회원정보수정</button>
-                    <button class="info-btn-btn-uw" onclick="withdrawal()" id="userWithdrawal" name="userWithdrawal" type="button">회원탈퇴</button>
+                 </div>
+                 <div class="info-form">
+                	<form id="pwReConfirm" action="/mypage/modify" method="post">
+                  		<div class="main-info-input">
+                    		<ul> 
+                        		<li>
+                         			<label for="pwd1">현재 비밀번호</label>
+                         			<input type="password" id="pwd1" name="pw" autofocus placeholder="기존 비밀번호를 입력해 주세요" required>
+                       			</li>
+                        		<li>
+                        			<label for="newPwd1">새 비밀번호</label>
+                        			<input type="password" id="newPwd1" name="npw" placeholder="새 비밀번호를 입력해 주세요" required>
+                        		</li>
+                        		<li>
+                          			<label for="newPwd2">새 비밀번호 확인</label>
+                          			<input type="password" id="newPwd2" name="npwc" placeholder="새 비밀번호를 다시 입력해 주세요" required>
+                          		</li>
+                        		<li>
+                            		<label for="email">이메일</label>
+                            		<input type="email" id="email" name="email" placeholder="user@gmail.com" required>
+                        		</li>
+                    		</ul>    
+                  		</div>
+                  		<div class="info-btn">
+                  			<button class="info-btn-btn-uc" id="userCorrection" name="userCorrection" type="submit">회원정보수정</button>
+                   			<button class="info-btn-btn-uw" onclick="withdrawal()" id="userWithdrawal" name="userWithdrawal" type="button">회원탈퇴</button>
                     
+                  		</div>
+                	</form>
                   </div>
-                </form>
-                  </div>
-                  </div>
-                  </div>
+              </div>
             </div>
-
-<script type="text/javascript" src="${path}/js/modify.js"></script>
+          </div>
+<script type="text/javascript" src="/js/modify.js"></script>
+<script type="text/javascript">
+	var message = '${msg}'; 
+	console.log(message.length)
+	if(message != '' && message.length > 0 ){
+		alert(message); 
+	}
+</script>
 </body>
 </html>

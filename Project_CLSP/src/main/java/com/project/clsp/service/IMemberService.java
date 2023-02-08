@@ -7,13 +7,19 @@ import com.project.clsp.model.MemberDto;
 
 public interface IMemberService {
 	
-	 MemberDto getMember(String id);
+	Map<String, Object> getMember(String id);
+	
+//	MemberDto getOneList(String user_id);
 
-	 List<Map<String, Object>> getMyBoards(Map<String, Object> map);
+	List<Map<String, Object>> getMyBoards(Map<String, Object> map);
 		
-		List<Map<String, Object>> getMyReplies(Map<String, Object> map);
+	List<Map<String, Object>> getMyReplies(Map<String, Object> map);
 		
-		int getBoardCount(String id);
+	int getBoardCount(String id);
 		
-		int getReplyCount(String id);
+	int getReplyCount(String id);
+
+	void updateProfile(Map<String, Object> map);
+
+	void withdrawal(String id);
 }

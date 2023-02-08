@@ -12,8 +12,12 @@
 		<typeAlias alias="freeBoard" type="com.project.clsp.model.FreeBoardDto"/>
 		<typeAlias alias="api" type="com.project.clsp.dao.ApiVdRepository"/>
 		<typeAlias alias="board" type="com.project.clsp.dao.BoardRepository"/>
-		<typeAlias alias="mypage" type="com.project.clsp.dao.MypageRepository"/>
+		<typeAlias alias="mypage" type="com.project.clsp.dao.MyPageRepository"/>
 		<typeAlias alias="memberMapper" type="com.project.clsp.mapper.MemberMapper"/>
 	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/Mypage.xml"/>
+	</mappers>
 	
 </configuration>

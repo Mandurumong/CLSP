@@ -65,7 +65,7 @@
             <ul class="record_menu">
                 <li><a href="#">마이페이지</a></li>
                 <li><a href="${path}/mypage/modify">개인정보 수정</a></li>
-                <li><a href="${path}/mypage">나의 문의 사항</a></li>
+                <li><a href="/mypage">나의 문의 사항</a></li>
             </ul>
            </nav>
            <div class="container">
@@ -88,7 +88,7 @@
                             <c:forEach var="i" begin="1" end="${list.FB_INDENT}" step="1">
                             	->
                             </c:forEach>
-                           <a href="/clsp/board?fbNum=${list.FB_NUM}">${list.FB_TITLE}</a></td>
+                           <a href="/board?fbNum=${list.FB_NUM}">${list.FB_TITLE}</a></td>
                             <td>${list.FB_DATE }</td>
                             <td>${list.FB_USERID}</td>
                         </tr>
@@ -106,9 +106,9 @@
         
         <!-- 부트스트랩 참조 영역 -->
 
-            <div class="pagebtn" ">		
+            <div class="pagebtn">		
 		<c:if test="${bPaging.startPage != 1 }">
-			<a href="/clsp/mypage?page=${bPaging.startPage - 1 }">&lt;</a>
+			<a href="/mypage?page=${bPaging.startPage - 1 }">&lt;</a>
 		</c:if>
 		<c:forEach begin="${bPaging.startPage }" end="${bPaging.endPage }" var="p">
 			<c:choose>
@@ -121,8 +121,9 @@
 			</c:choose>
 		</c:forEach>
 		<c:if test="${bPaging.endPage != bPaging.lastPage}">
-			<a  href="/clsp/mypage?page=${bPaging.endPage+1 }">&gt;</a>
+			<a  href="/mypage?page=${bPaging.endPage+1 }">&gt;</a>
 		</c:if>
+	</div>
 	</div>
 	</div>    
 <script type="text/javascript" src="${path}/js/userQna.js"></script>

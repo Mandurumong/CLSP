@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>공지사항</title>
-    <link rel="stylesheet" href="${path}/css/write.css">
+    <link rel="stylesheet" href="/css/write.css">
 
 </head>
 <body>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="board_write_wrap">
                     <div class="board_write">
-                        <form action="/clsp/board/edit" method="post" id="writeForm">
+                        <form action="/board/edit" method="post" id="writeForm">
                         <input type="hidden" name = "user_id" value="${user_id }">
                          <input type="hidden" name = "fbNum" value="${board.FB_NUM }">
                         	<p>카테고리</p>
@@ -107,6 +107,6 @@
             </div>
         </div>
         </div>
-        <script type="text/javascript" src="js/boardModify.js"></script>
+        <script type="text/javascript" src="/js/boardModify.js"></script>
        </body>
 </html>

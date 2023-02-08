@@ -1,5 +1,6 @@
 package com.project.clsp.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class LoginController {
 		
 		if(ls == null) {
 			attributes.addFlashAttribute("msg", "일치하는 회원이 없습니다.");
-			return "login";
+			return "redirect:/login";
 		}
 		else {
 			session.setAttribute("user_id", ls.getUser_id());

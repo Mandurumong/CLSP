@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>답글보기</title>
-    <link rel="stylesheet" href="${path}/css/qnaView.css"/>
+    <link rel="stylesheet" href="/css/qnaView.css"/>
 	
 </head>
 <body>
@@ -25,7 +25,7 @@
             <div class="header">
                 <div id="logo">
                     <a href="<c:url value='/'/>" class="logo">
-                    <img src="img/그림2.png" alt="logo">
+                    <img src="/img/그림2.png" alt="logo">
                     </a>
                 </div>
 

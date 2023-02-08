@@ -21,7 +21,7 @@ public class RegisterController {
 		return "register";
 	}
 	
-	//¾ÆÀÌµğ Áßº¹ Ã¼Å©
+	//ì•„ì´ë”” ì¤‘ë³µì²´í¬
 	@PostMapping(value="/idCheck")
 	@ResponseBody
 	public int idCheck(@RequestParam("user_id") String user_id) {
@@ -29,7 +29,7 @@ public class RegisterController {
 		int cnt = registerService.idCheck(user_id);
 		return cnt;
 	}
-	//È¸¿ø°¡ÀÔ
+	//DBì „ì†¡
 	@PostMapping(value="/insertMember.do")
 	public String insertMember(MemberDto member) {
 		

@@ -6,18 +6,24 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.clsp.dao.IMypageRepository;
+import com.project.clsp.dao.IMemberRepository;
+import com.project.clsp.dao.MemberRepository;
+import com.project.clsp.dao.MyPageRepository;
 import com.project.clsp.model.MemberDto;
 
 @Service
 public class MemberService implements IMemberService{
 	
 	@Autowired
-	IMypageRepository myPageRepository;
+	MyPageRepository myPageRepository;
+	
+	@Autowired
+	IMemberRepository memberRepository;
 	
 	@Override
-	public MemberDto getMember(String user_id) {
-		return myPageRepository.getMyInfo(user_id);
+	public Map<String, Object> getMember(String id) {
+		System.out.println("getMember Service");
+		return myPageRepository.getMember(id);
 	}
 
 	@Override
@@ -38,6 +44,17 @@ public class MemberService implements IMemberService{
 	@Override
 	public int getReplyCount(String user_id) {
 		return myPageRepository.getReplyCount(user_id);
+	}
+	
+	@Override
+	public void updateProfile(Map<String, Object> m) {
+		myPageRepository.updateProfile(m);
+	}
+	
+	@Override
+	public void withdrawal(String id) {
+		myPageRepository.withdrawal(id);
+		
 	}
 
 }

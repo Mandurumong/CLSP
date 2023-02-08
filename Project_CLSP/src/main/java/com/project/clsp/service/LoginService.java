@@ -13,8 +13,7 @@ public class LoginService implements ILoginService{
 	IMemberRepository memberRepository;
 
 	@Override
-	public MemberDto login(String user_id, String user_pw) {
-		
+	public MemberDto login(String user_id, String user_pw) {	
 		return memberRepository.login(user_id, user_pw);
 	}
 

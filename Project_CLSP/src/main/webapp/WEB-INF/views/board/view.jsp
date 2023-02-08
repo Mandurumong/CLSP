@@ -210,6 +210,14 @@
             </div>
         </div>
 <script type="text/javascript" src="js/view.js"></script>
+<script type="text/javascript">
+function deleteBtn(){
+	var cf = window.confirm('삭제하시겠습니까?')
+	if(cf){
+		location.href="/board/delete?fbNum=${board.FB_NUM}"
+	}
+}
+</script>
 </body>
 </html>
 

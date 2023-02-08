@@ -17,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <title>공지사항</title>
-    <link rel="stylesheet" href="${path}/css/write.css">
+    <link rel="stylesheet" href="css/write.css">
 
 </head>
 <body>
@@ -27,7 +27,7 @@
                 <div class="header">
                     <div id="logo">
                         <a href="<c:url value='/'/>" class="logo">
-                        <img src="#" alt="logo">
+                        <img src="img/그림2.png" alt="logo">
                         </a>
                     </div>
     
