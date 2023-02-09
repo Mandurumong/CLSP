@@ -59,7 +59,7 @@
 	            	</c:choose>
 	            	</td>
 	            	<td>
-	            		<a href="deleteMember.do?user_id=${memberDto.user_id }"><button type="button" id="trash"><img src="img/trashcan.png" alt="삭제"></button></a>
+	            		<button type="button" id="trash"><img src="img/trashcan.png" alt="삭제"></button>
 	            		<a href="memberInfo.do?user_id=${memberDto.user_id }"><button type="button"><img src="img/gear.png" alt="설정"></button></a>
 	            	</td>
             	</tr>
@@ -69,6 +69,14 @@
             </div>  
         </div>
     </div>
+    <script type="text/javascript">
+    	function fn_delete(){
+    		 if (confirm("회원정보를 삭제하시겠습니까?") == true){ 
+    		     location.href="deleteMember.do?user_id=${memberDto.user_id }"
+    		 }else{ 
+    		     return false;
+    		 }
+    	}
+    </script>
 </body>
-<script src="js/admin_member.js"></script>
 </html>

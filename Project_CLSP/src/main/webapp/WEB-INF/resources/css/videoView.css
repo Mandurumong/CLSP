@@ -33,8 +33,14 @@ html{
 }
 div{
     padding: 20px;
-    margin-bottom: 30px;
+    
+    
 }
+
+a {
+    color: rgb(46, 45, 45);
+}
+
 #logo img{
 height: 150px;
 }
@@ -102,6 +108,7 @@ margin-left: 30px;
 
 li, ul{
     list-style: none;
+    color: black;
 }
 a{
   text-decoration: none;
@@ -168,53 +175,114 @@ a{
     font-size: 15pt;
   }
 
+  .record_menu a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+  }
+
   #record_menu > li{
     color: black;
   }
 
+  /*-------------------------*/
 
-.rowTable {
-    width: auto;
-    height: 400px;
-    /*background-color: antiquewhite;*/
-    padding: 0px;
-    
+
+
+  .page-title {
+    height: auto;
+    line-height: inherit;
+    margin-bottom: 30px;
 }
 
-.table {
-    position: absolute;
-    /*background-color: #ae2e2e;*/
-    
-    width: 90%;
-    text-align: center; 
-    /*border: 2px solid #dddddd*/
-    border-collapse : collapse}
-    
-.table a {
-  
-  color: black;
-
+.page-title h3 {
+    font-size: 32px;
+    color: #3a3a4a;
+    font-family: 'NotoKr';
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-
-.table td{
-    
-    border-bottom: 1px solid #252525;
-    height: 45px;
-}
-
-th{
-  border-top: 1px solid #252525;  
-  background-color: #eeeeee; 
-  text-align: center;
-  border-bottom: 1px solid #252525;
-  height: 60px;
-  font-family: 'GangwonEdu_OTFBoldA';
-  color: black;
-  font-size: 16pt;
+.detail-view {
+    border-bottom: 1px solid #bec2c8;
 }
 
 
+
+.detail-view .title {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 85px;
+    font-size: 21px;
+    color: #3a3a4a;
+    font-weight: 700;
+    border-bottom: 2px solid #44465c;
+}
+
+.detail-view .post-info {
+    min-height: 61px;
+    padding: 21px 260px 21px 0;
+    position: relative;
+    border-bottom: 1px solid #7b7c7d;
+}
+
+.detail-view .post-info ul li.date {
+    
+    top: 21px;
+    right: 0;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+.detail-view .post-info ul li {
+    margin-top: 10px;
+}
+
+.detail-view .post-content {
+    padding: 32px 0;
+   
+    word-break: break-all;
+}
+
+.button.border.v1 {
+    background-color: #fff;
+    border: 1px solid rgb(204, 198, 198);
+}
+.button.border {
+    
+    color: #44465c;
+}
+
+.button.medium {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+a:link, a:visited, a:active {
+    color: #171717;
+    text-decoration: none;
+}
+
+.button {
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+a, button {
+    outline-color: blue;
+    outline-offset: -0.5px;
+}
+
+.b-btn01 type01 {
+    padding-top: 0px;
+}
+
+/*----------------------------------*/
 
   /* Pagination links */
 .pagination a {

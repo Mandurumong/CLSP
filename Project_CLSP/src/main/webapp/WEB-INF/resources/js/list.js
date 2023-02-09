@@ -1,4 +1,3 @@
-
 var category;
 var keyword;
 var type;
@@ -21,13 +20,13 @@ function go(p){
 		type = ''
 	}
 	console.log("1", keyword, "2",type, "3",category)
-	location.href="/clsp/board/list?category="+category+"&page="+p+"&type="+type+"&keyword="+keyword
+	location.href="/board/list?category="+category+"&page="+p+"&type="+type+"&keyword="+keyword
 }
 
 // 카테고리 옵션값에 따라 보드 검색  
 function selectOption(e){
 	category = e.options[e.selectedIndex].value
-	location.href = '/clsp/board/list?category='+category
+	location.href = '/board/list?category='+category
 }
 
 // href 페이지 이동을 통해 얻어진 쿼리스트링 값으로 옵션 선택
@@ -104,7 +103,6 @@ function searchcheck() {
 		if(category == undefined || category.length < 1){
 			category = 'all'
 		}
-		location.href = '/clsp/board/list?type='+type+"&keyword="+keyword+"&category="+category
+		location.href = '/board/list?type='+type+"&keyword="+keyword+"&category="+category
 	}
 }
-

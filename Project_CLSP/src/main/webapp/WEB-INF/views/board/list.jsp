@@ -65,15 +65,20 @@
            <div id="main">
             
            <nav>
-            <ul class="record_menu">
+           	<ul class="record_menu">
              <li><a href="/board/list">게시판</a></li>
+            </ul>
            </nav>
            <div class="container">
             <h1>
                 <a href="/board/list">게시판</a>
             </h1>
             <div class="search" >
-                
+            	<c:if test="${user_id ne null }">
+            		<div class="write">
+                		<a href="write" class="btn btn-primary pull-right">작성하기</a>
+            		</div>
+            	</c:if>
                     <div class="row" >
                             <table class="searchTable">
                                 <tr>
@@ -97,11 +102,11 @@
                         <tr>
                             <th><select class="category-control" name="categoryField" id="category" onchange="selectOption(this)">
                                 <option value="all">전체보기</option>
-                                <option value="qna">질문</option>
-                                <option value="tip">정보</option>
-                                <option value="daily">일상</option>
-                                <option value="diet">식단</option>
-                                <option value="etc">기타</option>
+                                <option value="질문">질문</option>
+                                <option value="정보">정보</option>
+                                <option value="일상">일상</option>
+                                <option value="식단">식단</option>
+                                <option value="기타">기타</option>
                         </select></th>
                             <th>번호</th>
                             <th>제목</th>
@@ -128,21 +133,16 @@
                     </tbody>
                 </table>
             </div>
-            <c:if test="${user_id ne null }">
-            <div class="write">
-                <a href="write" class="btn btn-primary pull-right">작성하기</a>
-            </div>
-            </c:if>
         </div>
           
           <div class="pagebtn" style="display: block; text-align: center;">		
 			<c:if test="${paging.startPage != 1 }">
 				<a href="/list?page=${paging.startPage - 1 }">&lt;</a>
 			</c:if>
-			<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="p">
 				<c:choose>
 					<c:when test="${p == paging.nowPage }">
-						<b>${p }</b>
+						<b>${p}</b>
 					</c:when>
 					<c:when test="${p != paging.nowPage }">
 						<a onclick="go(${p})" >${p}</a>

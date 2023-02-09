@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>예방법</title>
-    <link rel="stylesheet" href="${path}/css/videoList.css"/>
+    <link rel="stylesheet" href="/css/videoList.css"/>
 	
 </head>
 <body>

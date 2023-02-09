@@ -70,31 +70,27 @@ z-index: 1;
 }
 
 
+.row{
+	float: right;
+	display: inline-block;
+}
+
 .searchTable{
-  
-  /*background-color: beige;*/
   float: right;
   margin-bottom: 100px;
+  padding-right: 30px;
  
-  
-
 }
 
 .searchTable button {
-  cursor: pointer
-  
+  cursor: pointer;
 
 }
 .search{
-
-  /*background-color: #ddd;*/
   width: auto;
   height: 30px;
-
-  
+ 
 }
-
-
 
 h1{
 font-size: 30px;
@@ -107,9 +103,6 @@ margin-left: 30px;
   border: 1.5px solid rgb(73, 73, 73);
   border-radius: 5px;
   
-  
-  
-
 }
 .form-control option {
   font-family: 'GangwonEdu_OTFBoldA';
@@ -195,7 +188,6 @@ margin-left: 90px;
 .rowTable {
   width: auto;
   height: 310px;
-  /*background-color: antiquewhite;*/
   padding: 0px;
   
 }
@@ -213,10 +205,6 @@ a{
   /*border: 2px solid #dddddd*/
   border-collapse : collapse
   
-  
-  
-
-
 }
 .table td{
   
@@ -268,19 +256,16 @@ select option {
 }
 
 .write{
-  padding-right: 40px;
-  
-  text-align: right;
-  cursor: pointer
-  
+	display:inline-block;
+  	cursor: pointer;
+  	float: left;
+  	padding-left: 1250px;
   
 }
 .write a {
   font-family: 'GangwonEdu_OTFBoldA';
   color: black;
   font-size: 15pt;
-  
- 
  
 
 }
@@ -308,3 +293,11 @@ select option {
 
 /* Add a grey background color on mouse-over */
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+/*페이징버튼*/
+.pagebtn {
+   margin-top : 200px;
+   cursor: pointer;
+   padding : 0px;
+   
+}

@@ -164,8 +164,11 @@ public class BoardController {
 		
 		// 게시글 수정
 		boardService.updateBoard(map);
+		System.out.println("map 업데이트");
 		
 		// 작성한 게시글의 인덱스 가져오기
+		System.out.println(map.get("fbNum"));
+		
 		int fbNum = Integer.parseInt(map.get("fbNum").toString());
 		
 	

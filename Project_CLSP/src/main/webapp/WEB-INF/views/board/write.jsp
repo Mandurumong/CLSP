@@ -17,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <title>공지사항</title>
-    <link rel="stylesheet" href="css/write.css">
+    <link rel="stylesheet" href="/css/write.css">
 
 </head>
 <body>

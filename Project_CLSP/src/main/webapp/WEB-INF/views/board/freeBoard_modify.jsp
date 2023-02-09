@@ -67,6 +67,7 @@
            <nav>
             <ul class="record_menu">
               <li><a href="/board/list">게시판</a></li>
+            </ul>
            </nav>
            <div class="container">
             <div class="board_wrap">
@@ -78,8 +79,8 @@
                     <div class="board_write">
                         <form action="/board/edit" method="post" id="writeForm">
                         <input type="hidden" name = "user_id" value="${user_id }">
-                         <input type="hidden" name = "fbNum" value="${board.FB_NUM }">
-                        	<p>카테고리</p>
+                         <input type="hidden" name = "fbNum" value="${board.get(key).FB_NUM }">
+                        	<p>카테고리 ${board.get(key).FB_NUM}</p>
                         	<br>
                             <select class="category-control" name="category" id="category">
                                 <option value="qna">질문</option>
@@ -90,11 +91,11 @@
                        	 	</select>
                        	 		<br><br>
                                 <p>제목</p>
-                                <input id="title" type = "text" name = "title" value="${board.FB_TITLE}">
+                                <input id="title" type = "text" name = "title" value="${board.get(key).FB_TITLE}" placeholder="${board.get(key).FB_TITLE}">
                                 <br><br>
 								<p>본문</p>
                                 <textarea style="resize: none;" id="content" name="content"  
-                                rows="10" cols="60"> ${board.FB_CONTENT}</textarea>
+                                rows="10" cols="60"> ${board.get(key).FB_CONTENT}</textarea>
                             <div class="sBtn">
                             <input id = "submit-bt" type="submit" value="등록">
                         </div>

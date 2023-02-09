@@ -9,21 +9,21 @@ import lombok.Setter;
 @Setter
 @Getter
 public class PagingDto {
-	// ÇöÀçÆäÀÌÁö
+		// í˜„ì¬í˜ì´ì§€
 		private int nowPage;
-		// ½ÃÀÛÆäÀÌÁö
+		// ì‹œì‘í˜ì´ì§€
 		private int startPage; 
-		// ³¡ÆäÀÌÁö
+		// ëí˜ì´ì§€
 		private int endPage;
-		// °Ô½Ã±Û ÃÑ °¹¼ö
+		// ê²Œì‹œê¸€ ì´ ê°¯ìˆ˜
 		private int total; 
-		// ÆäÀÌÁö´ç ±Û °¹¼ö
+		// í˜ì´ì§€ë‹¹ ê¸€ ê°¯ìˆ˜
 		private int cntPerPage;
-		// ¸¶Áö¸·ÆäÀÌÁö 
+		// ë§ˆì§€ë§‰í˜ì´ì§€ 
 		private int lastPage; 
-		// sql Äõ¸®¿ë start
+		// sql ì¿¼ë¦¬ìš© start
 		private int start; 
-		// sql Äõ¸®¿ë end
+		// sql ì¿¼ë¦¬ìš© end
 		private int end;
 		private int cntPage = 5;
 		
@@ -38,11 +38,11 @@ public class PagingDto {
 			calcStartEndPage(getNowPage(), cntPage);
 			calcStartEnd(getNowPage(), getCntPerPage());
 		}
-		// Á¦ÀÏ ¸¶Áö¸· ÆäÀÌÁö °è»ê
+		// ì œì¼ ë§ˆì§€ë§‰ í˜ì´ì§€ ê³„ì‚°
 		public void calcLastPage(int total, int cntPerPage) {
 			setLastPage((int) Math.ceil((double)total / (double)cntPerPage));
 		}
-		// ½ÃÀÛ, ³¡ ÆäÀÌÁö °è»ê
+		// ì‹œì‘, ë í˜ì´ì§€ ê³„ì‚°
 		public void calcStartEndPage(int nowPage, int cntPage) {
 			setEndPage(((int)Math.ceil((double)nowPage / (double)cntPage)) * cntPage);
 			if (getLastPage() < getEndPage()) {
@@ -53,7 +53,7 @@ public class PagingDto {
 				setStartPage(1);
 			}
 		}
-		// DB Äõ¸®¿¡¼­ »ç¿ëÇÒ start, end°ª °è»ê
+		// DB ì¿¼ë¦¬ì—ì„œ ì‚¬ìš©í•  start, endê°’ ê³„ì‚°
 		public void calcStartEnd(int nowPage, int cntPerPage) {
 			setEnd(nowPage * cntPerPage);
 			setStart(getEnd() - cntPerPage + 1);

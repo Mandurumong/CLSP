@@ -9,7 +9,5 @@ function fn_check(){
 		pwReConfirm.method="post";
 		pwReConfirm.action="adminInfo.do";
 		pwReConfirm.submit();
-		alert("확인 되었습니다.")
-		
 	}
 }
