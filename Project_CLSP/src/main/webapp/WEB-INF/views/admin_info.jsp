@@ -18,7 +18,7 @@
            <h2><a href="/admin_page">관리자 페이지</a></h2> 
             <li><a href="/admin_modify">관리자 계정 관리 </a></li>
             <li><a href="memberList.do">회원 관리</a></li>
-            <li><a href="">게시글 관리</a></li>
+            <li><a href="/adminBoard">게시글 관리</a></li>
         </ul>
     </div>
     <div id="top-nav">

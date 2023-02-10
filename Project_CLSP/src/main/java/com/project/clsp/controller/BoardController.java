@@ -33,7 +33,6 @@ public class BoardController {
 	@RequestMapping("/board")
 	public String boardList(@RequestParam(required=true)int fbNum, Model model, HttpServletRequest req) {
 		
-//		String referer = req.getHeader("Referer");
 		StringBuffer referer = req.getRequestURL();
 		String gueryString = req.getQueryString();
 		System.out.println("referer "+ referer);
@@ -108,7 +107,7 @@ public class BoardController {
 		return "/board/repWrite";
 	}
 	
-	@RequestMapping(value="/board/write", method=RequestMethod.GET )
+	@GetMapping(value="/board/write")
 	public String boardWriteForm(Model model) {
 		return "/board/write";
 	}
@@ -127,7 +126,7 @@ public class BoardController {
 		// 답글일 경우
 		if(map.get("group") != null) {
 			if(referer != null) {
-			boardService.insertReplyBoard(map);
+				boardService.insertReplyBoard(map);
 			}
 			
 		}else {

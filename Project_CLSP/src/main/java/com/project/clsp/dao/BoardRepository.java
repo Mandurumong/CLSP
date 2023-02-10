@@ -77,7 +77,7 @@ public class BoardRepository implements IBoardRepository{
 
 	@Override
 	public void updateReplySort(Map<String, Object> map) {
-		sqlSession.update("board.updateReply", map);
+		sqlSession.update("board.updateReplySort", map);
 		
 	}
 

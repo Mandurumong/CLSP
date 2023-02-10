@@ -49,12 +49,12 @@
             	</tr>
             	<c:forEach var="memberDto" items="${memberList}">
             	<tr>
-	            	<td><c:out value="${memberDto.user_id}"/></td>
-	            	<td><c:out value="${memberDto.user_email}"/></td>
-	            	<td><c:out value="${memberDto.reg_date}"/></td>
+	            	<td><c:out value="${memberDto.USER_ID }"/></td>
+	            	<td><c:out value="${memberDto.USER_EMAIL}"/></td>
+	            	<td><c:out value="${memberDto.REG_DATE}"/></td>
 	            	<td>
 	            	<c:choose>
-	            		<c:when test="${memberDto.user_level == 0 }">일반회원</c:when>
+	            		<c:when test="${memberDto.USER_LEVEL == 0 }"> 일반회원</c:when>
 	            		<c:otherwise>관리자</c:otherwise>
 	            	</c:choose>
 	            	</td>

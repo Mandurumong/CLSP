@@ -86,7 +86,7 @@
 	</insert>
 	
 	<update id="updateReplySort"  parameterType="map">
-		update freeboard set fb_step = fb_step + 1 where fb_group = #{group} and fb_step >= #{step}
+		UPDATE freeboard SET fb_step = fb_step + 1 where fb_group = #{group, jdbcType=INTEGER} and fb_step >= #{step, jdbcType=INTEGER}
 	</update>
 	
 	<select id="currentBoardIdx" resultType="int">

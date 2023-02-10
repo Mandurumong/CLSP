@@ -27,6 +27,7 @@
 	<bean id="apiController" class="com.project.clsp.controller.ApiController"/>
 	<bean id="boardController" class="com.project.clsp.controller.BoardController"/>
 	<bean id="myPageController" class="com.project.clsp.controller.MyPageController"/>
+	<bean id="downloadController" class="com.project.clsp.controller.DownloadController"/>
 	
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

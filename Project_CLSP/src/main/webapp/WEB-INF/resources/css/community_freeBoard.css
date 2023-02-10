@@ -89,6 +89,7 @@ z-index: 1;
 .search{
   width: auto;
   height: 30px;
+  position: static;
  
 }
 
@@ -258,9 +259,7 @@ select option {
 .write{
 	display:inline-block;
   	cursor: pointer;
-  	float: left;
-  	padding-left: 1250px;
-  
+  	float: right;
 }
 .write a {
   font-family: 'GangwonEdu_OTFBoldA';

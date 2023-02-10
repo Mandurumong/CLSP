@@ -117,7 +117,7 @@
 		                        <form action="/reply/write" method="post" name = "replyForm">
 								<!-- 히든으로 글번호, 유저아이디 전달  -->
 		                        <input name="fbNum" type ="hidden" value="${board.FB_NUM }">
-		                        <input name="replyUserId" type="hidden" value=""> 
+		                        <input name="replyUserId" type="hidden" value="${user_id }"> 
 		                        <input name="replyParentNum" type="hidden" value="0">
 		                          <input name="content" style="border: solid 1px; width:300px; height: 30px" type="text"  placeholder="댓글을 작성하세요">
 		                          <button type="submit" >댓글달기</button>

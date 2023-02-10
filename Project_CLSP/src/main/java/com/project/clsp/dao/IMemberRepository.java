@@ -26,4 +26,8 @@ public interface IMemberRepository {
 	public void deleteMember(String user_id);
 	
 	public int idCheck(String user_id);
+	
+	public int getMemberCount(Map<String, Object> map);
+	
+	public List<Map<String, Object>> getMemberList(Map<String, Object> map);
 }

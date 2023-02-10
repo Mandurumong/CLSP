@@ -148,8 +148,9 @@ public class MemberRepository implements IMemberRepository{
 	//회원 삭제
 	@Override
 	public void deleteMember(String user_id) {
+		System.out.println("delete member");
+		System.out.println("user_id: " + user_id);
 		sqlSession.delete("member.deleteMember", user_id);
-		
 	}
 	
 	//아이디 중복검사
@@ -161,5 +162,18 @@ public class MemberRepository implements IMemberRepository{
 		int cnt = jdbcTemplate.queryForObject(sql, Integer.class, user_id);
 		
 		return cnt;
+	}
+	//회원 수 조회
+	@Override
+	public int getMemberCount(Map<String, Object> map) {
+		
+		return sqlSession.selectOne("member.getMemberCount", map);
+	}
+	//검색 결과
+	@Override
+	public List<Map<String, Object>> getMemberList(Map<String, Object> map){
+		
+		return sqlSession.selectList("member.getMemberList", map);
+		
 	}
 }

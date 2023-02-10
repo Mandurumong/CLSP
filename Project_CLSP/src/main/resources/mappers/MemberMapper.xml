@@ -25,4 +25,36 @@
 	SELECT COUNT(user_id) FROM Member WHERE user_id = #{user_id}
 </select>
 
+<select id="getMemberCount" parameterType="map" resultType="int">
+	SELECT COUNT(*) FROM MEMBER
+	WHERE 1=1
+			 <if test="type != null and type != ''">
+				 <if test='type.equals("user_id")'>
+					AND user_id LIKE '%' || #{keyword} || '%' 
+				 </if>
+				 <if test='type.equals("user_email")'>
+				 	AND user_email LIKE '%' || #{keyword} || '%' 
+				 </if>
+		   	</if>
+</select>
+
+<select id="getMemberList" parameterType="map"  resultType="map" >
+		select * from (
+			select rownum rn, a.* from (
+				select * from member 
+				where 1=1
+			 <if test="type != null and type != ''">
+				 <if test='type.equals("user_id")'>
+					AND user_id LIKE '%' || #{keyword} || '%' 
+				 </if>
+				 <if test='type.equals("user_email")'>
+				 	AND user_email LIKE '%' || #{keyword} || '%' 
+				 </if>
+		   	</if>
+                ORDER BY reg_date DESC
+			) a
+		
+		) where rn between #{start} and #{end}
+	</select>
+
 </mapper>

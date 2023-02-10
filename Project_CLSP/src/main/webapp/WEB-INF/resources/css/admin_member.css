@@ -159,5 +159,36 @@ body {
  	padding-left: 10px;
  	padding-right: 10px;
   }
+  /* Pagination links */
+.pagination a {
+  color: black;
+  float: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  
+}
+.pagination {
+  text-align: center;
+
+}
+/* Style the active/current link */
+.pagination a.active {
+  background-color: rgb(138, 141, 143);
+  color: white;
+  border-radius: 10px;
+  border: 1px solid rgb(39, 38, 38);
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+/*페이징버튼*/
+.pagebtn {
+   margin-top : 200px;
+   cursor: pointer;
+   padding : 0px;
+   
+}
 
 

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.clsp.model.MemberDto;
 import com.project.clsp.service.IAdminInfoService;
@@ -35,16 +36,14 @@ public class AdminInfoController {
 		
 		if(user_id.equals(checkid)){
 		
-		memberDto.setUser_id(user_id);
+			memberDto.setUser_id(user_id);
+			model.addAttribute("user_id", user_id);
+			memberDto = adminInfoService.amdinInfo(user_id);
 		
-		model.addAttribute("user_id", user_id);
+			model.addAttribute("adminInfo", memberDto);
+			session.setAttribute("adminInfo", memberDto);
 		
-		memberDto = adminInfoService.amdinInfo(user_id);
-		
-		model.addAttribute("adminInfo", memberDto);
-		session.setAttribute("adminInfo", memberDto);
-		
-		return "admin_info";
+			return "admin_info";
 		}
 		else {
 			return "admin_page";

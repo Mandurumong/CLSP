@@ -18,7 +18,7 @@
            <h2><a href="/admin_page">관리자 페이지</a></h2> 
             <li><a href="/admin_modify">관리자 계정 관리 </a></li>
             <li><a href="memberList.do">회원 관리</a></li>
-            <li><a href="/adminBoard">게시글 관리</a></li>
+            <li><a href="">게시글 관리</a></li>
         </ul>
     </div>
     <div id="top-nav">
@@ -26,25 +26,29 @@
     	<button name="homepage" onClick="location.href='/'">홈페이지</button>
     </div>
     <div id="content">
-        <h3>회원 관리</h3>
+        <h3>게시글 관리</h3>
         <div id="search">
         	<select class="search-control" name="searchField" id="searchField">
-        		<option value="user_id">아이디</option>
-        		<option value="user_email">이메일</option>
+            	<option value="all">전체보기</option>
+            	<option value="질문">질문</option>
+            	<option value="정보">정보</option>
+            	<option value="일상">일상</option>
+            	<option value="식단">식단</option>
+            	<option value="기타">기타</option>
         	</select>
         	<input type="text" class="search-control" name="searchText" id="searchText" maxlength="100">
         	<button type="button" onclick="searchcheck()">검색</button>
         </div>
     	<div id="top-button">
-    		<button type="button" onclick="fn_mdown()">전체 다운로드</button>
+    		<button type="button" onclick="fn_Bdown()">전체 다운로드</button>
     	</div>
         <div id="data">
             <table>
             	<tr>
-                	<th>아이디</th>
-                	<th>이메일</th>
-                	<th>가입일</th>
-                	<th>등급</th>
+                	<th>카테고리</th>
+                	<th>제목</th>
+                	<th>작성자</th>
+                	<th>작성시간</th>
                 	<th>관리</th>
             	</tr>
             	<c:forEach var="memberDto" items="${memberList}">
@@ -60,7 +64,6 @@
 	            	</td>
 	            	<td>
 	            		<button type="button" id="trash" onClick="fn_delete('${memberDto.user_id}')"><img src="img/trashcan.png" alt="삭제"></button>
-	            		<a href="memberInfo.do?user_id=${memberDto.user_id }"><button type="button"><img src="img/gear.png" alt="설정"></button></a>
 	            	</td>
             	</tr>
             	</c:forEach>
@@ -90,8 +93,8 @@
 </body>
     <script type="text/javascript">
     	function fn_delete(user_id){
-    		 if (confirm("회원정보를 삭제하시겠습니까?") == true){ 
-    		     location.href="deleteMember.do?user_id="+user_id;
+    		 if (confirm("삭제하시겠습니까?") == true){ 
+    		     location.href="/board/delete?fbNum=${board.FB_NUM}";
     		 }else{ 
     		     return false;
     		 }

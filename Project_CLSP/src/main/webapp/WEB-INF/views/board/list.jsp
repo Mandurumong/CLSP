@@ -155,8 +155,6 @@
 	</div>
            </div>
 </div>
-<script type="text/javascript" src="${path}/js/list.js">
-
-</script>
+<script type="text/javascript" src="${path}/js/list.js"></script>
 </body>
 </html>

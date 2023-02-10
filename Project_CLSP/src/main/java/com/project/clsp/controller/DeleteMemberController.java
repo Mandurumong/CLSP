@@ -15,7 +15,7 @@ public class DeleteMemberController {
 	
 	@RequestMapping("deleteMember.do")
 	public String memberDelete(@RequestParam String user_id) {
-		System.out.println("deleteMember.do ½ÇÇà");
+		System.out.println("deleteMember.do ì‹¤í–‰");
 		deleteMember.deleteMember(user_id);
 		return "memberList";
 	}

@@ -81,14 +81,14 @@
                         <input type="hidden" name = "user_id" value="${user_id }">
                         	<p>카테고리</p>
                         	<br>
-                          <input id="title" type ="text" name = "category" value="${board.FB_CATEGORY}" readonly>
+                          <input id="title" type ="text" name = "category" value="${board.get(key).FB_CATEGORY}" readonly>
                        	 		<br><br>
                                 <p>제목</p>
                                 <input id="title" type ="text" name = "title" value="">
-                                <input id="indent" type ="hidden" name = "indent" value="${board.FB_INDENT + 1 }">
-                                <input id="group" type ="hidden" name = "group" value="${board.FB_GROUP }">
-                                <input id="step" type ="hidden" name = "step" value="${board.FB_STEP + 1}">
-                                <input id="p_fbnum" type ="hidden" name = "p_fbnum" value="${board.FB_NUM }">
+                                <input id="indent" type ="hidden" name = "indent" value="${board.get(key).FB_INDENT + 1 }">
+                                <input id="group" type ="hidden" name = "group" value="${board.get(key).FB_GROUP }">
+                                <input id="step" type ="hidden" name = "step" value="${board.get(key).FB_STEP + 1}">
+                                <input id="p_fbnum" type ="hidden" name = "p_fbnum" value="${board.get(key).FB_NUM }">
                                 <br><br>
 								<p>본문</p>
                                 <textarea style="resize: none;" id="content" name="content" title="내용을 입력해 주세요." 
