@@ -55,13 +55,8 @@
                           <a href="selfTestM.jsp">자가 진단</a>
                         </li>
                         <li><a href="${path}/api/prevent">예방법</a>
-                        <li><a href="#">커뮤니티</a>
-                          <ul class="submenu">
-                            <li><a href="community_notice.jsp">공지사항</a></li>
-                            <li><a href="community_freeBoard.jsp">자유게시판</a></li>
-                          </ul>
-                        </li>
-                      </ul>
+                        <li><a href="community_freeBoard.jsp">게시판</a></li>
+                     </ul>
                 </nav>
            </header>
             

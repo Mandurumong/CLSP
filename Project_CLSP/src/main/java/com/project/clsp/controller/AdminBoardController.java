@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -56,6 +57,16 @@ public class AdminBoardController {
 				model.addAttribute("boardList", list);
 		
 		return "admin_board";
+	}
+	
+	@GetMapping(value="/adminboardDelete")
+	public String boardDelete(@RequestParam(required=true) int fbNum, HttpServletRequest req) {
+		
+		// 게시글 삭제
+		boardService.deleteBoard(fbNum);
+		
+	
+		return "redirect:/adminBoard";
 	}
 
 }

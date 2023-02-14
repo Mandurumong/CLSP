@@ -108,7 +108,7 @@ body {
   table{
     border-top: 1px solid;
     border-collapse: collapse;
-    width: 90%;
+    width: 97%;
   }
   
   th, td{
@@ -131,6 +131,9 @@ body {
   
   th:first-child, td:first-child {
     border-left: none;
+  }
+  th:last-child, td:last-child{
+  	width: 10% !important;
   }
   #search{
   	padding-top: 10px;

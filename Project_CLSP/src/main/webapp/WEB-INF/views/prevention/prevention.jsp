@@ -53,7 +53,7 @@
 					<li><a href="/analytics.do">현황 분석</a></li>
 					<li><a href="/selfTestM">자가 진단</a></li>
 					<li><a href="${path}/api/prevent">예방법</a>
-					<li><a href="${path}/board/list">자유게시판</a></li>
+					<li><a href="${path}/board/list">게시판</a></li>
 				</ul>
 			</nav>
 		</header>

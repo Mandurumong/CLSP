@@ -100,9 +100,9 @@ public class ApiController {
 	@RequestMapping("/api/call")
 	@ResponseBody
 	public String handlerApi() {
-		return callApi();
-	}
-
+	      return vdService.callApi(SERVICE_KEY);
+	  }
+	
 	public String callApi() {
 
 		URL url = null;
@@ -186,10 +186,10 @@ public class ApiController {
 				vd.put("vdoDesc", temp.get("vdo_desc").toString());
 				vd.put("aggNm", temp.get("aggrp_nm").toString());
 				vd.put("aimNm", temp.get("trng_aim_nm").toString());
-				vd.put("tnm", temp.getOrDefault("trng_nm", "¾÷µ¶"));
+				vd.put("tnm", temp.getOrDefault("trng_nm", "ï¿½ï¿½ï¿½ï¿½"));
 				vd.put("toolNm", temp.get("tool_nm").toString());
 				vd.put("fNm", temp.get("ftns_fctr_nm").toString());
-				vd.put("partNm",  map.getOrDefault("trng_part_nm", "Àü½Å"));
+				vd.put("partNm",  map.getOrDefault("trng_part_nm", "ï¿½ï¿½ï¿½ï¿½"));
 				
 				vdService.insertVd(vd);
 			}

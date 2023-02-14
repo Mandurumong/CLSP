@@ -23,7 +23,7 @@
             <header>
                 <div class="header">
                     <div id="logo">
-                        <a href="index.jsp" class="logo">
+                        <a href="/" class="logo">
                         <img src="#" alt="logo">
                         </a>
                     </div>

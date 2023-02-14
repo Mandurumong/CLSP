@@ -62,7 +62,7 @@
 	            	<td><c:out value="${list.FB_USERID}"/></td>
 	            	<td><c:out value="${list.FB_DATE }"/></td>
 	            	<td>
-	            		<button type="button" id="trash" onclick="deleteBtn()"><img src="img/trashcan.png" alt="삭제"></button>
+	            		<button type="button" id="trash" onclick='deleteBtn("${list.FB_NUM}")'><img src="img/trashcan.png" alt="삭제"></button>
 	            	</td>
             	</tr>
             	</c:forEach>
@@ -91,10 +91,10 @@
     </div>
 </body>
 <script type="text/javascript">
-	function deleteBtn(){
+	function deleteBtn(fbnum){
 		var cf = window.confirm('삭제하시겠습니까?')
 		if(cf){
-			location.href="/board/delete?fbNum=${board.FB_NUM}"
+			location.href="/adminboardDelete?fbNum=" + fbnum
 		}
 	}
 </script>

@@ -9,5 +9,6 @@ public interface IApiVdService {
 	List<Map<String,Object>> getVds(Map<String, Object>map);
 	void insertVd(Map<String,Object> vo);
 	Map<String,Object> getVdDetail(int num);
+	String callApi(String serviceKey);
 
 }
