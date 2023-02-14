@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지</title>
-    <link rel="stylesheet" href="css/admin_member.css">
+    <link rel="stylesheet" href="css/admin_board.css">
 </head>
 <body>
     <div id="header">
@@ -39,31 +39,30 @@
         	<input type="text" class="search-control" name="searchText" id="searchText" maxlength="100">
         	<button type="button" onclick="searchcheck()">검색</button>
         </div>
-    	<div id="top-button">
+<!-- 
+ 			<div id="top-button">
     		<button type="button" onclick="fn_Bdown()">전체 다운로드</button>
-    	</div>
+	  	  	</div>
+ -->    	
         <div id="data">
             <table>
             	<tr>
                 	<th>카테고리</th>
+                	<th>번호</th>
                 	<th>제목</th>
                 	<th>작성자</th>
                 	<th>작성시간</th>
                 	<th>관리</th>
             	</tr>
-            	<c:forEach var="memberDto" items="${memberList}">
+            	<c:forEach var="list" items="${boardList}">
             	<tr>
-	            	<td><c:out value="${memberDto.user_id}"/></td>
-	            	<td><c:out value="${memberDto.user_email}"/></td>
-	            	<td><c:out value="${memberDto.reg_date}"/></td>
+	            	<td><c:out value="${list.FB_CATEGORY}"/></td>
+	            	<td><c:out value="${list.FB_NUM}"/></td>
+	            	<td><c:out value="${list.FB_TITLE}"/></td>
+	            	<td><c:out value="${list.FB_USERID}"/></td>
+	            	<td><c:out value="${list.FB_DATE }"/></td>
 	            	<td>
-	            	<c:choose>
-	            		<c:when test="${memberDto.user_level == 0 }">일반회원</c:when>
-	            		<c:otherwise>관리자</c:otherwise>
-	            	</c:choose>
-	            	</td>
-	            	<td>
-	            		<button type="button" id="trash" onClick="fn_delete('${memberDto.user_id}')"><img src="img/trashcan.png" alt="삭제"></button>
+	            		<button type="button" id="trash" onclick="deleteBtn()"><img src="img/trashcan.png" alt="삭제"></button>
 	            	</td>
             	</tr>
             	</c:forEach>
@@ -91,15 +90,14 @@
         </div>
     </div>
 </body>
-    <script type="text/javascript">
-    	function fn_delete(user_id){
-    		 if (confirm("삭제하시겠습니까?") == true){ 
-    		     location.href="/board/delete?fbNum=${board.FB_NUM}";
-    		 }else{ 
-    		     return false;
-    		 }
-    	}
-    </script>
+<script type="text/javascript">
+	function deleteBtn(){
+		var cf = window.confirm('삭제하시겠습니까?')
+		if(cf){
+			location.href="/board/delete?fbNum=${board.FB_NUM}"
+		}
+	}
+</script>
     <script type="text/javascript" src="js/member_list.js"></script>
     <script type="text/javascript" src="js/down.js"></script>
 </html>

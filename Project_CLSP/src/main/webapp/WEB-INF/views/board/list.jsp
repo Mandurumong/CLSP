@@ -119,7 +119,7 @@
                     <c:forEach var="list" items="${boardList}">
                         <tr>
                             <td>${list.FB_CATEGORY}</td>
-                            <td>${list.FB_NUM }</td>
+                            <td>${list.FB_NUM}</td>
                             <td> 
                             <c:forEach var="i" begin="1" end="${list.FB_INDENT}" step="1">
                             	->
